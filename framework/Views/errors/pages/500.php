@@ -1,0 +1,1 @@
+<h2 class="text-center text-danger position-absolute perfect-center">ACCESS DENIED</h2>

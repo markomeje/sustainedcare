@@ -1,0 +1,46 @@
+{
+    "name": "speck/daignostics",
+    "type": "project",
+    "description": "Imaging, Diagnostics and Healthcare Software",
+    "keywords": ["control", "authorization", "security", "login", "encryption", "validation", "files", "accounts"],
+    "homepage": "https://speckdiagnostics.com",
+    
+    "authors": [{
+        "name": "Mark Omeje",
+        "email": "markomejeonline@gmail.com",
+        "role": "Software Developer"
+    }],
+
+    "require-dev": {
+        "phpdocumentor/phpdocumentor": "2.*"
+    },
+
+    "replace": {  
+        "container-interop/container-interop": "*",  
+        "zendframework/zend-cache": "*",  
+        "zendframework/zend-config": "*",  
+        "zendframework/zend-eventmanager": "*",  
+        "zendframework/zend-filter": "*",  
+        "zendframework/zend-hydrator": "*",  
+        "zendframework/zend-json": "*",  
+        "zendframework/zend-serializer": "*",  
+        "zendframework/zend-servicemanager": "*",  
+        "zendframework/zend-stdlib": "*",
+        "zendframework/zend-i18n": "*"
+    },
+
+    "require": {
+        "phpmailer/phpmailer": "~6.1",
+        "whichbrowser/parser": "*",
+        "gregwar/captcha": "1.*",
+        "tecnickcom/tcpdf": "^6.3",
+        "vlucas/phpdotenv": "^5.0"
+    },
+
+    "autoload": {
+        "psr-4": {
+            "Application\\": "application/",
+            "Framework\\": "framework/"
+        }
+    }
+}
