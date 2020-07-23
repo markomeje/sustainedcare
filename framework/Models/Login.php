@@ -36,12 +36,16 @@ class Login extends Model {
         	return ["status" => "not-found"];
         }elseif ($this->isBlocked($logger) === true) {
         	return ["status" => "blocked"];
+        }elseif(empty($logger[0]->status) || $logger[0]->status !== "active") {
+        	return ["status" => "inactive"];
         }elseif (password_verify($this->password, $logger[0]->password)) {
 	        $this->loginWithSession($logger);
 			$this->setRememberMeCookie($logger);
-			$fields = ["failed" => null, "attempts" => null, "token" => session_id(), "last" => time(), "status" => (int)1];
+			$fields = ["failed" => null, "attempts" => null, "token" => session_id(), "timestamp" => time(), "counter" => $logger[0]->counter + (int)1];
 			$this->updateLoginState($fields, $logger[0]->id);
-			return ["status" => "success", "redirect" => DOMAIN."/dashboard"];
+			if (Cookie::exists(ACCESS_DENIED_KEY)) Cookie::destroy(ACCESS_DENIED_KEY);
+			$redirect = ($logger[0]->role === "admin") ? DOMAIN."/dashboard" : DOMAIN."/profile";
+			return ["status" => "success", "redirect" => $redirect];
 		}else {
 			$fields = ["failed" => time(), "attempts" => $logger[0]->attempts + 1];
 	    	$this->updateLoginState($fields, $logger[0]->id);
@@ -58,7 +62,7 @@ class Login extends Model {
 	public function addLoginDetails($data = []) {
 		try {
 			$password = password_hash($this->password, PASSWORD_DEFAULT);
-			$fields = ["email" => $this->email, "password" => $password, "role" => $data["role"]];
+			$fields = ["email" => $this->email, "password" => $password, "role" => $data["role"], "status" => $data["status"]];
 			$result = Query::create($this->table, $fields);
 			return $result;
         } catch (\Exception $error) {
@@ -103,5 +107,11 @@ class Login extends Model {
 			return ["status" => "error"];
 		}
 	}
+
+	public static function isVerifiedEmail($email) {
+        $condition = ["email" => $email, "status" => "active"];
+        $result = Query::read(["email", "status"], $this->table, "", $condition, "", "", 1, "");
+        return ($result["rowCount"] > 0) ? true : false;
+    }
 
 }

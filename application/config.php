@@ -26,7 +26,7 @@ foreach (["LIVE_DATABASE_HOST", "LIVE_DATABASE_NAME", "LIVE_DATABASE_USERNAME", 
 }
 
 define("REMEMBER_ME_COOKIE_EXPIRY", 3600 * 24 * 365); /** One Year **/
-define("REMEMBER_ME_COOKIE_NAME", "h89hIteIHB7nb5yh3ufer7fad2q9yv98");
+define("REMEMBER_ME_COOKIE_NAME", "__reh89hIteIHB7nb5yh3ufer7fad2q9yv98");
 define("COOKIE_PATH", "/");
 define("COOKIE_DOMAIN", "");
 define("COOKIE_SECURE", false);

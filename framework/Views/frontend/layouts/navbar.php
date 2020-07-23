@@ -1,10 +1,10 @@
-<div class="navbar fixed-top bg-gray pt-2 pb-4">
+<div class="navbar fixed-top bg-gray">
 	<div class="container d-flex justify-content-between align-items-center align-content-center navbar-wrapper">
 		<div class="navbar-left">
 			<div class="logo">
 				<a href="<?= DOMAIN; ?>" class="text-decoration-none text-shade">
 					<!-- <img src="<?= IMAGES_URL; ?>/banners/logo.png" class="img-fluid object-fit-cover"> -->
-					<h4 class="">Sustained<span class="text-forest care">Care</span></h4>
+					<h4 class="mt-2">Sustained<span class="text-forest care">Care</span></h4>
 				</a>
 			</div>
 		</div>

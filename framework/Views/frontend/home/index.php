@@ -11,8 +11,8 @@
 							</small>
 							<p class="text-muted mb-0">Post Pandemic Offer</p>
 						</div>
-						<h1 class="text-shade font-weight-bolder mb-4" data-aos="fade-down" data-aos-delay="700">Get Special <em class="text-orange">Grants</em> For Business <span class="text-orange d-inline">.</span></h1>
-						<p class="text-muted mb-4" data-aos="fade-down" data-aos-delay="900">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
+						<h1 class="text-shade font-weight-bolder mb-4" data-aos="fade-down">Get Special <em class="text-orange">Grants</em> For Business <span class="text-orange d-inline">.</span></h1>
+						<p class="text-muted mb-4" data-aos="fade-down">Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim</p>
 						<div class="" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
 						</div>
@@ -104,14 +104,14 @@
 							</div>
 						</div>
 					</div>
-					<div class="card light-shadow bg-white border-0 mb-4" data-aos="fade-right">
+					<div class="card forest-shadow lemon-gradient border-0 mb-4" data-aos="fade-right">
 						<div class="card-body d-flex align-items-center">
-							<div class="icon rounded-circle light-shadow bg-gray text-center text-orange mr-3">
+							<div class="icon rounded-circle light-shadow bg-gray text-center text-forest mr-3">
 								<i class="icofont-ui-edit"></i>
 							</div>
 							<div class="">
-								<h3 class="mb-0 pb-0 text-shade">Our Service</h3>
-								<p class="m-0 text-muted">Just describe</p>
+								<h3 class="mb-0 pb-0 text-white">Our Service</h3>
+								<p class="m-0 text-white">Just describe</p>
 							</div>
 						</div>
 					</div>
@@ -174,3 +174,4 @@
 		</div>
 	</div>
 </div>
+<?php require FRONTEND_PATH . DS . "layouts" . DS . "bottom.php"; ?> 

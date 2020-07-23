@@ -11,7 +11,6 @@ use Framework\Models\Pagination;
 class Applicants extends Model {
 
 	private $table = "applicants";	
-	public $grantAmounts = ["250000", "500000", "750000"];
 
 	public function __construct() {
 		parent::__construct();
@@ -40,7 +39,7 @@ class Applicants extends Model {
 			return ["status" => "invalid-age"];
 		}elseif(empty($this->address) || !Validate::range($this->address, 5, 55)) {
 			return ["status" => "invalid-address"];
-		} elseif(empty($this->amount) || !in_array($this->amount, $this->grantAmounts)) {
+		} elseif(empty($this->amount) || !$this->amount) {
 			return ["status" => "invalid-amount"];
 		} elseif(empty($this->state) || !$this->state) {
 			return ["status" => "invalid-state"];
@@ -57,11 +56,11 @@ class Applicants extends Model {
 		}
 
         try {
-        	$result = $this->login->addLoginDetails(["role" => "applicant"]);
+        	$result = $this->login->addLoginDetails(["role" => "applicant", "status" => null]);
         	if ($result["rowCount"] > 0) {
         		$fields = ["surname" => ucfirst($this->surname), "firstname" => ucfirst($this->firstname), "middlename" => ucfirst($this->middlename), "phone" => $this->phone, "referrer" => $this->referrer, "birthdate" => $this->birthdate, "address" => ucfirst($this->address), "amount" => $this->amount, "state" => $this->state, "gender" => $this->gender, "relationship" => $this->relationship, "how" => ucfirst($this->how), "why" => ucfirst($this->why), "status" => "active", "login" => $result["lastInsertId"]];
 				$result = Query::create($this->table, $fields);
-				if($result["rowCount"] > 0) return ["status" => "success"];
+				if($result["rowCount"] > 0) return ["status" => "success", "redirect" => DOMAIN."/apply/success"];
         	}
         } catch (\Exception $error) {
         	Logger::log("ADDING APPLICANT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
@@ -107,7 +106,7 @@ class Applicants extends Model {
 			return ["status" => "invalid-age"];
 		}elseif(empty($this->address) || !Validate::range($this->address, 5, 55)) {
 			return ["status" => "invalid-address"];
-		} elseif(empty($this->amount) || !in_array($this->amount, $this->grantAmounts)) {
+		} elseif(empty($this->amount) || !$this->amount) {
 			return ["status" => "invalid-amount"];
 		} elseif(empty($this->state) || !$this->state) {
 			return ["status" => "invalid-state"];
@@ -125,7 +124,7 @@ class Applicants extends Model {
     		$fields = ["surname" => ucfirst($this->surname), "firstname" => ucfirst($this->firstname), "middlename" => ucfirst($this->middlename), "phone" => $this->phone, "birthdate" => $this->birthdate, "address" => ucfirst($this->address), "amount" => $this->amount, "state" => $this->state, "gender" => $this->gender, "relationship" => $this->relationship, "how" => ucfirst($this->how), "why" => ucfirst($this->why)];
     		$condition = ["id" => $id];
 			$result = Query::update($this->table, $fields, $condition, 1);
-			if($result["rowCount"] > 0) return ["status" => "success"];
+			return ($result["rowCount"] > 0) ? ["status" => "success"] : ["status" => "none"];
         } catch (\Exception $error) {
         	Logger::log("EDITING APPLICANT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
         	return ["status" => "error"];

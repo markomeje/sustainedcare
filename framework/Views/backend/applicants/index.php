@@ -1,5 +1,4 @@
-<div class="wrapper">
-    <!-- DASHBOARD NAVBAR -->
+<div class="wrapper bg-gray">
     <?php require BACKEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
     <div class="pt-5">
 	    <div class="container pt-5">
@@ -37,7 +36,7 @@
             		</div>
             		<div class="col-12 col-md-6 col-lg-6 mb-4">
             			<div class="text-muted bg-white light-shadow rounded px-3 py-2 d-flex">
-            				<a href="javascript:;" class="text-muted">Delete</a>
+            				<a href="javascript:;" class="text-muted">Multiple delete</a>
             			</div>
             		</div>
             	</div>

@@ -21,8 +21,6 @@
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/bootstrap/bootstrap.min.css">
     <!-- General CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/general.css">
-    <!-- Home CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/home.css">
     <!-- aos CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/aos/aos.css">
     <!-- aos CSS -->

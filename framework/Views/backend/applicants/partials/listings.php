@@ -1,5 +1,5 @@
 <div class="col-12 col-md-6 col-lg-3 mb-4">
-	<div class="card border-0 light-shadow">
+	<div class="card border-0">
 		<div class="card-body">
 			<a href="<?= DOMAIN; ?>/applicants/applicant/<?= $applicant->id; ?>" class="text-muted">
 				<?php $fullname = Application\Core\Help::limitStringLength($applicant->surname." ".$applicant->firstname." ".$applicant->middlename, 18); ?>

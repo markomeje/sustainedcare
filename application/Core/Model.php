@@ -36,26 +36,5 @@ class Model extends Application {
         return ($result["rowCount"] > 0) ? true : false;
     }
 
-    public function getAllNumbers($table) {
-        $result = Query::read(["number"], $table, "", [], "", "", "", "");
-        return $result["fetchAll"];
-    }
-
-    public function getNumber($table) {
-        try {
-            $serial = Help::generateNumbers();
-            $numbers = $this->getAllNumbers($table);
-            if (empty($numbers) && isset($serial[0])) return $serial[0];
-            foreach ($numbers as $key => $value) {
-                $data[] = $value->number;
-            }
-            $unique = array_values(array_diff($serial, $data));
-            return $unique[0];
-        } catch (\Exception $error) {
-            Logger::log("GENERATING NUMBER ERROR", $error->getMessage(), __FILE__, __LINE__);
-            return false;
-        }
-    }
-
 
 }

@@ -64,16 +64,8 @@
         <div class="form-group input-group-lg col-md-6">
             <label class="text-muted" for="lga">Amount</label>
             <select class="custom-select amount" name="amount">
-                <?php if(empty($grantAmounts)): ?>
-                    <option value="">No grants available</option>
-                <?php else: ?>
-                	<option value="">Select grant amount</option>
-                	<?php foreach($grantAmounts as $amount): ?>
-	                	<option value="<?= $amount; ?>">
-	                		NGN<?= number_format($amount); ?>
-	                	</option>
-	                <?php endforeach; ?>
-                <?php endif; ?>
+                <option value="">Select grant amount</option>
+                <option value="1000000">NGN1,000,000</option>
             </select>
             <small class="error amount-error text-danger"></small>
         </div>
@@ -145,7 +137,7 @@
     <div class="form-group">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="on" name="agree" class="custom-control-input agree" id="agree">
-            <label class="custom-control-label text-muted cursor-pointer" for="agree">I agree to terms and conditions.</label>
+            <label class="custom-control-label text-muted cursor-pointer" for="agree">I agree to <a href="<?= DOMAIN; ?>/terms">terms and conditions</a>.</label>
         </div>
         <small class="error agree-error text-danger"></small>
     </div>

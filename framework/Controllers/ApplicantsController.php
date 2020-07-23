@@ -14,7 +14,7 @@ class ApplicantsController extends Controller {
 	public function index($pageNumber = "") {
 		$applicants = $this->applicants->getAllWithPagination($pageNumber);
 		$applicantsCount = $this->applicants->getCount();
-		View::render("applicants/index", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["applicants"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "grantAmounts" => $this->applicants->grantAmounts, "applicantsCount" => $applicantsCount]);
+		View::render("applicants/index", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["applicants"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "applicantsCount" => $applicantsCount]);
 	}
 
 	public function apply() {

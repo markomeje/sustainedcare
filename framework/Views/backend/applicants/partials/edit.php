@@ -50,15 +50,7 @@
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted" for="lga">Amount</label>
                             <select class="custom-select amount" name="amount">
-                                <?php if(empty($grantAmounts)): ?>
-                                    <option value="">No grants available</option>
-                                <?php else: ?>
-                                    <?php foreach($grantAmounts as $amount): ?>
-                                        <option value="<?= $amount; ?>" <?= ($applicant->amount === $amount) ? "selected" : ""; ?>>
-                                            NGN<?= number_format($amount); ?>
-                                        </option>
-                                    <?php endforeach; ?>
-                                <?php endif; ?>
+                                <option value="1000000">NGN1,000,000</option>
                             </select>
                             <small class="error amount-error text-danger"></small>
                         </div>

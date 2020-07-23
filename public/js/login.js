@@ -37,6 +37,12 @@
                 handleErrors($('.password'), $('.password-error'), '');
                 handleErrors($('.email'), $('.email-error'), '');
 
+            }else if (response.status === 'inactive') {
+                handleButton(button, spinner);
+                message.removeClass('d-none alert-success').addClass('alert-danger');
+                message.html('Please verify your email.').fadeIn();
+                handleErrors($('.email'), $('.email-error'), '');
+
             }else if (response.status === 'invalid-login') {
                 handleButton(button, spinner);
                 message.removeClass('d-none alert-success').addClass('alert-danger');
