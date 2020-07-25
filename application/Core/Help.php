@@ -126,7 +126,7 @@ class Help {
 		return ["Abia", "Abuja", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"];
 	}
 
-	public function getRelationshipStatus() {
+	public static function getRelationshipStatus() {
 		return ["Married", "Widowed", "Single", "Divorced"];
 	}
 
@@ -150,7 +150,7 @@ class Help {
 		return $countOfWeeks;
 	}
 
-	public function getGenders() {
+	public static function getGenders() {
 		return ["Male", "Female"];
 	}
 
