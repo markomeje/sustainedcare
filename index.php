@@ -23,7 +23,7 @@ define("DS", str_replace("\\", "/", DIRECTORY_SEPARATOR));
  */
 define("FRAMEWORK_PATH", ROOT . DS . "framework");
 define("APPLICATION_PATH", ROOT . DS . "application");
-define("VIEWS_PATH", FRAMEWORK_PATH . DS . "views"); 
+define("VIEWS_PATH", FRAMEWORK_PATH . DS . "Views"); 
 define("BACKEND_PATH", VIEWS_PATH . DS . "backend");
 define("PUBLIC_PATH", ROOT . DS . "public");
 define("FRONTEND_PATH", VIEWS_PATH . DS . "frontend");
