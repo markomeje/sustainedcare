@@ -106,7 +106,7 @@ class Help {
 	    }
 	}
 
-	public function getAge($birthdate) {
+	public static function getAge($birthdate) {
 		$birthyear = date("Y", strtotime($birthdate));
 		$age = (date("Y") - $birthyear);
 		return $age;
@@ -122,7 +122,7 @@ class Help {
 		return round($value);
 	}
 
-	public function getNigerianStates() {
+	public static function getNigerianStates() {
 		return ["Abia", "Abuja", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"];
 	}
 
