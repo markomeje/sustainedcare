@@ -15,9 +15,11 @@ class Model extends Application {
                 $parts = explode("-", $keys);
                 if (count($parts) === 2) {
                     $keys = $parts[0].ucfirst($parts[1]);
+                }else {
+                    throw new \Exception("Form name attribute must not have more than one hyphen", 1);
                 }
             }
-            $this->$keys = $values;
+            $this->$keys = $this->escape($values);
         }
     }
 
@@ -36,5 +38,9 @@ class Model extends Application {
         return ($result["rowCount"] > 0) ? true : false;
     }
 
+    public function escape($input) {
+        $input = trim(strip_tags($input));
+        return htmlentities(stripslashes($input), ENT_QUOTES);
+    }
 
 }

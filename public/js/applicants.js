@@ -39,6 +39,9 @@
             } else if (response.status === 'email-exist') {
                 handleButton(button, spinner);
                 handleErrors($('.email'), $('.email-error'), 'Email is already in use.');
+            } else if (response.status === 'invalid-code') {
+                handleButton(button, spinner);
+                handleErrors($('.referrer'), $('.referrer-error'), 'Leave box empty or enter a valid code.');
             } else if (response.status === 'invalid-password') {
                 handleButton(button, spinner);
                 handleErrors($('.password'), $('.password-error'), 'Password must be between 6 - 15 characters.');

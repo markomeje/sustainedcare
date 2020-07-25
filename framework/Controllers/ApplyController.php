@@ -10,8 +10,8 @@ class ApplyController extends Controller {
 		parent::__construct();
 	}
 
-	public function index($referrer = "") {
-		View::render("apply/index", "frontend", ["title" => "Apply for grant", "controller" => $this->controller, "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders()]);
+	public function index($code = "") {
+		View::render("apply/index", "frontend", ["title" => "Apply for grant", "controller" => $this->controller, "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "code" => $code]);
 	}
 
 	public function success() {

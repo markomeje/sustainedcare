@@ -1,66 +1,66 @@
 <div class="col-12 col-md-6 col-lg-3 mb-4">
-	<div class="card border-0 light-shadow">
+	<div class="card border-0 border-orange light-shadow">
 		<div class="card-body bg-white d-flex align-items-center rounded">
 			<div class="rounded bg-primary text-center mr-3 panel-icons">
 				<i class="icofont-hospital text-white"></i>
 			</div>
 			<div class="m-0">
 				<div class="">
-					<a href="<?= DOMAIN; ?>/applicants">Applicants</a>
+					<a href="<?= DOMAIN; ?>/applicants">Referrals</a>
 				</div>
 				<small class="text-muted">
-					<?= empty($applicantsCount) ? "0" : $applicantsCount; ?> Applied
+					<?= empty($applicantsCount) ? "0" : $applicantsCount; ?> Referred
 				</small>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="col-12 col-md-6 col-lg-3 mb-4">
-	<div class="card border-0">
+	<div class="card border-0 border-orange light-shadow">
 		<div class="card-body bg-white d-flex align-items-center rounded">
 			<div class="rounded bg-secondary text-center mr-3 panel-icons">
 				<i class="icofont-hospital text-white"></i>
 			</div>
 			<div class="m-0">
 				<div class="">
-					<a href="<?= DOMAIN; ?>/expenses">Donations</a>
+					<a href="<?= DOMAIN; ?>/expenses">Earnings</a>
 				</div>
 				<small class="text-muted">
-					NGN45,000
+					NGN0
 				</small>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="col-12 col-md-6 col-lg-3 mb-4">
-	<div class="card border-0">
+	<div class="card border-0 border-orange light-shadow">
 		<div class="card-body bg-white d-flex align-items-center rounded">
 			<div class="rounded bg-warning text-center mr-3 panel-icons">
 				<i class="icofont-hospital text-white"></i>
 			</div>
 			<div class="m-0">
 				<div class="">
-					<a href="<?= DOMAIN; ?>/referrer">Accounts</a>
+					<a href="<?= DOMAIN; ?>/referrer">Withdrawals</a>
 				</div>
 				<small class="text-muted">
-					NGN45,000
+					NGN0
 				</small>
 			</div>
 		</div>
 	</div>
 </div>
 <div class="col-12 col-md-6 col-lg-3 mb-4">
-	<div class="card border-0">
+	<div class="card border-0 border-orange light-shadow">
 		<div class="card-body bg-white d-flex align-items-center rounded">
 			<div class="rounded bg-success text-center mr-3 panel-icons">
 				<i class="icofont-hospital text-white"></i>
 			</div>
 			<div class="m-0">
 				<div class="">
-					<a href="<?= DOMAIN; ?>/moderators">Payments</a>
+					<a href="<?= DOMAIN; ?>/moderators">Funds</a>
 				</div>
 				<small class="text-muted">
-					NGN45,000
+					NGN0
 				</small>
 			</div>
 		</div>

@@ -97,11 +97,11 @@ class Login extends Model {
 
 	public function logout() {
 		try {
-			$fields = ["token" => null, "status" => null];
+			$fields = ["token" => null];
 			$this->updateLoginState($fields, Session::get("id"));
 			Session::destroy();
 			Cookie::destroy(REMEMBER_ME_COOKIE_NAME);
-			return ["status" => "logout", "redirect" => DOMAIN];
+			return ["status" => "logout", "redirect" => DOMAIN."/login"];
 		} catch (\Exception $error) {
 			Logger::log("LOGGING OUT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
 			return ["status" => "error"];
@@ -109,9 +109,14 @@ class Login extends Model {
 	}
 
 	public static function isVerifiedEmail($email) {
-        $condition = ["email" => $email, "status" => "active"];
-        $result = Query::read(["email", "status"], $this->table, "", $condition, "", "", 1, "");
-        return ($result["rowCount"] > 0) ? true : false;
+		try {
+	        $condition = ["email" => $email, "status" => "active"];
+	        $result = Query::read(["email", "status"], $this->table, "", $condition, "", "", 1, "");
+	        return ($result["rowCount"] > 0) ? true : false;
+	    } catch (\Exception $error) {
+			Logger::log("CHECKING VERIFIED EMAIL ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+			return ["status" => "error"];
+		}
     }
 
 }

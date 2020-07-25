@@ -30,9 +30,14 @@
           	<small class="error email-error text-danger"></small>
         </div>
         <div class="form-group input-group-lg col-md-6">
-          	<label class="text-muted">Referral code (<em><?= (empty($code) ? "if any" : "already filled"); ?></em>)
+          	<label class="text-muted">Referral code 
+                (<?php if(empty($code)): ?>
+                    <em class="text-info">if any</em> 
+                <?php else: ?>
+                    <em class="text-success">already filled</em>
+                <?php endif; ?>)
             </label>
-          	<input type="text" name="referrer" class="form-control referrer" placeholder="e.g., n8e721hd902">
+          	<input type="text" name="referrer" class="form-control referrer" placeholder="e.g., tn8e721hd902" value="<?= empty($code) ? "" : $code; ?>">
           	<small class="error referrer-error text-danger"></small>
         </div>
     </div>
@@ -137,7 +142,7 @@
     <div class="form-group">
         <div class="custom-control custom-switch">
             <input type="checkbox" value="on" name="agree" class="custom-control-input agree" id="agree">
-            <label class="custom-control-label text-muted cursor-pointer" for="agree">I agree to <a href="<?= DOMAIN; ?>/terms">terms and conditions</a>.</label>
+            <label class="custom-control-label text-muted cursor-pointer" for="agree">I agree to <a href="<?= DOMAIN; ?>/terms" style="font-size: 14px !important;">terms and conditions</a>.</label>
         </div>
         <small class="error agree-error text-danger"></small>
     </div>

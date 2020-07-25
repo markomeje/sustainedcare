@@ -6,8 +6,8 @@
 		<div class="container position-relative">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-12 col-md-6 col-lg-4">
-					<div class="bg-white rounded">
-						<h1 class="text-shade"><em class="text-orange">Login</em> Here</h1>
+					<div class="login-form-wrapper bg-white rounded light-shadow">
+						<h1 class="text-forest">Login Here</h1>
 						<form action="javascript:;" method="POST" class="login-form" data-action="<?= DOMAIN; ?>/login/login">
 							<div class="alert my-3 px-3 login-message d-none"></div>
 							<input type="hidden" name="csrf" value="<?= Application\Library\Session::csrf(); ?>">
@@ -41,3 +41,4 @@
 		</div>
 	</div>
 </div>
+<?php require FRONTEND_PATH . DS . "layouts" . DS . "bottom.php"; ?> 

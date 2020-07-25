@@ -126,12 +126,16 @@ class Help {
 		return ["Abia", "Abuja", "Adamawa", "Akwa Ibom", "Anambra", "Bauchi", "Bayelsa", "Benue", "Borno", "Cross River", "Delta", "Ebonyi", "Edo", "Ekiti", "Enugu", "Gombe", "Imo", "Jigawa", "Kaduna", "Kano", "Katsina", "Kebbi", "Kogi", "Kwara", "Lagos", "Nasarawa", "Niger", "Ogun", "Ondo", "Osun", "Oyo", "Plateau", "Rivers", "Sokoto", "Taraba", "Yobe", "Zamfara"];
 	}
 
-	public static function formatDatetime($datetime) {
-		return date("F j, Y, g:i a", strtotime($datetime));
-	}
-
 	public function getRelationshipStatus() {
 		return ["Married", "Widowed", "Single", "Divorced"];
+	}
+
+	public static function formatDatetime($datetime = "") {
+		return empty($datetime) ? date("F j, Y, g:i a") : date("F j, Y, g:i a", strtotime($datetime));
+	}
+
+	public static function formatDate($datetime = "") {
+		return empty($datetime) ? date("F j, Y") : date("F j, Y", strtotime($datetime));
 	}
 
 	public static function getWeeksOfAMonth($month, $year) {
@@ -148,10 +152,6 @@ class Help {
 
 	public function getGenders() {
 		return ["Male", "Female"];
-	}
-
-	public static function formatDate($date) {
-		return date("F j, Y", strtotime($date));
 	}
 
 }

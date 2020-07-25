@@ -8,7 +8,7 @@ use Application\Library\{Session, Cookie};
 
 class Controller extends Application {
 
-    public $links = ["dashboard", "referrer", "accounts", "applicants", "bills", "payments", "investigations", "expenses", "users"];
+    public $links = ["dashboard", "referrer", "accounts", "applicants", "profile", "payments", "expenses", "users"];
     public $controller;
 
 
@@ -58,11 +58,6 @@ class Controller extends Application {
         header("Expires: -1");
       	http_response_code(200);
       	echo json_decode($response);
-    }
-
-    public function escape($input) {
-        $input = trim(strip_tags($input));
-        return htmlentities(stripslashes($input), ENT_QUOTES);
     }
 
 }
