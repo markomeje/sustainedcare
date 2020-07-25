@@ -79,9 +79,12 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 | or an exception has been thrown.
 |
 */
-if (PRODUCTION_MODE) {
-	Application\Exceptions\Handler::register();
+
+if(!in_array(SERVER_HOST, LOCALHOSTS)) {
+    Application\Exceptions\Handler::register();
 }
+	
+
 
 
 
