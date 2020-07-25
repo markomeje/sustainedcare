@@ -6,7 +6,7 @@
 		<div class="container position-relative">
 			<div class="row align-items-center justify-content-center">
 				<div class="col-12 col-md-6 col-lg-4">
-					<div class="login-form-wrapper bg-white rounded light-shadow">
+					<div class="login-form-wrapper">
 						<h1 class="text-forest">Login Here</h1>
 						<form action="javascript:;" method="POST" class="login-form" data-action="<?= DOMAIN; ?>/login/login">
 							<div class="alert my-3 px-3 login-message d-none"></div>
@@ -27,7 +27,7 @@
 									<label class="custom-control-label text-muted cursor-pointer" for="remember-me">Remember Login</label>
 								</div>
 							</div>
-							<button type="submit" class="btn border-0 orange-shadow orange-gradient rounded-pill text-white login-button px-4">
+							<button type="submit" class="btn border-0 orange-shadow orange-gradient rounded-pill text-white login-button px-4 btn-block">
 								<img src="<?= IMAGES_URL; ?>/banners/spinner.svg" class="mr-2 d-none login-spinner mb-1">
 								Login
 							</button>

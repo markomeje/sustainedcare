@@ -39,14 +39,6 @@
 
 .login-section {
 	padding: 140px 0;
-	background-image: url(../images/banners/login.png);
-	background-repeat: no-repeat;
-	background-size: cover;
-	background-position: center;
-}
-
-.login-form-wrapper {
-	padding: 50px;
 }
 
 .banner-left h1 {
@@ -125,10 +117,6 @@
 @media (max-width: 425px) {
 	.navbar-wrapper {
 		padding: 0 !important;
-	}
-
-	.login-form-wrapper {
-		padding: 25px;
 	}
 }
 

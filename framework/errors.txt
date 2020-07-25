@@ -1,3 +1,12 @@
 
 
 
+*******************************************************************
+| GETING APPLICANT PROFILE ERROR |  Logged On July 25, 2020, 5:07 am | 
+
+SQLSTATE[42000]: Syntax error or access violation: 1064 You have an error in your SQL syntax; check the manual that corresponds to your MariaDB server version for the right syntax to use near 'AND applicants.login =  LIMIT 1' at line 1 | 
+
+At File C:\xampp\htdocs\sustainedcare\application\Library\Database.php | On Line 79 | 
+*******************************************************************
+
+
