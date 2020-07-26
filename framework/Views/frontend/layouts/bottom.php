@@ -37,6 +37,6 @@
 				</div>
 			</div>
 		</div>
-		<div class="text-white">&copy Copyright Sustained<span class="text-forest">Care</span> <?= (date("Y") === "2020") ? "2020" : "2020 - ". date("Y"); ?></div>
+		<small class="text-white">&copy Copyright Sustained<span class="text-forest">Care</span> <?= (date("Y") === "2020") ? "2020" : "2020 - ". date("Y"); ?></small>
 	</div>
 </div>
