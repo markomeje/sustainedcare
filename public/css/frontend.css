@@ -1,3 +1,8 @@
+.navbar-wrapper {
+	padding-top: 5px;
+	padding-bottom: 5px;
+}
+
 .navbar-link:hover {
 	color: #2D641F;
 }
@@ -106,7 +111,7 @@
 
 @media (max-width: 425px) {
 	.navbar-wrapper {
-		padding: 0 !important;
+		padding: 12px 0 !important;
 	}
 }
 

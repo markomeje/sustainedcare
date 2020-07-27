@@ -39,4 +39,4 @@ define("ENCRYPTION_KEY", "H43ag5js60z4D86tgEsh6w4e385Y");
 define("REMEMBER_ME_SESSION_NAME", "4638295qgkh81y8qhrkngan8y4985ghnkjg");
 
 define("ACCESS_DENIED_KEY", "672kbauh892ytqBGKA89jnbproeqnjhrwk017Ty89");
-define("PAGINATION_DEFAULT_LIMIT", 3);
+define("PAGINATION_DEFAULT_LIMIT", 30);
