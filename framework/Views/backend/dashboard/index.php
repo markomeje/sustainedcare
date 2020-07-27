@@ -8,7 +8,7 @@
 	            <div class="col-12 col-md-6 col-lg-6 mb-4">
 	                <div class="border-0 border-orange rounded px-3 d-flex align-items-center bg-white top-right-bar">
 	                    <a href="javascript:;" class="mr-3 text-muted" data-toggle="modal" data-target="#add-admin">Add user</a>
-	                    <a href="javascript:;" class="mr-3 text-muted">Generate report</a>
+	                    <a href="javascript:;" class="mr-3 text-muted">Reports</a>
 	                </div>
 	            </div>
 	        </div>
