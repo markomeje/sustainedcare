@@ -26,12 +26,12 @@
     <div class="">
 	    <div class="container">
     		<?php if(empty($applicants)): ?>
-                <div class="text-muted">No applicants yet.</div>
+                <div class="text-muted">No applicant(s) found.</div>
             <?php else: ?>
             	<div class="row">
             		<div class="col-12 col-md-6 col-lg-6 mb-4">
             			<div class="text-muted bg-white light-shadow rounded px-3 py-2 d-flex">
-            				<?= empty($applicantsCount) ? 0 : $applicantsCount; ?> applicants
+            				<?= empty($applicants) ? 0 : count($applicants); ?> applicant(s) found
             			</div>
             		</div>
             		<div class="col-12 col-md-6 col-lg-6 mb-4">
@@ -51,7 +51,9 @@
                 	<?php endforeach; ?>
                 </div>
             <?php endif; ?>
-			<?php require BACKEND_PATH . DS . "applicants" . DS . "pagination" . DS . "index.php"; ?>
+            <div class="">
+                <?php require BACKEND_PATH . DS . "applicants" . DS . "pagination" . DS . "search.php"; ?>
+            </div>
 	    </div>
     </div>
 </div>

@@ -10,10 +10,10 @@
 	            <?php require BACKEND_PATH . DS . "layouts" . DS . "links.php"; ?>
 	            <div class="col-12 col-md-6 col-lg-6 mb-4">
 	                <div class="border-0 border-orange rounded px-3 d-flex align-items-center bg-white top-right-bar">
-	                    <?php if(strtolower($profile->payment) === "paid"): ?>
+	                    <?php if(isset($profile->payment) && strtolower($profile->payment) === "paid"): ?>
 	                    	<a href="javascript:;" class="mr-3 text-muted">No referral link</a>
 	                    <?php else: ?>
-	                    	<a href="<?= DOMAIN; ?>/apply/index/<?= $profile->code; ?>" class="mr-3 text-muted">Copy link</a>
+	                    	<a href="<?= DOMAIN; ?>/apply/index/<?= empty($profile->code) ? "" : $profile->code; ?>" class="mr-3 text-muted">Copy link</a>
 	                    <?php endif; ?>
 	                </div>
 	            </div>
@@ -29,8 +29,8 @@
 				<div class="col-12 mb-4">
 					<div class="card border-orange mt-1">
 						<div class="card-header orange-gradient d-flex justify-content-between">
-							<div class="text-white">Referrals chart</div>
-							<div class="text-white">+16.34%</div>
+							<small class="text-white">Referrals chart</small>
+							<small class="text-white">+16.34%</small>
 						</div>
 						<div class="card-body position-relative px-0">
 							<div class="bills-charts-loader position-absolute center-absolute">

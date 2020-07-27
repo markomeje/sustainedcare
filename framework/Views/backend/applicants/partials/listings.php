@@ -18,8 +18,8 @@
             </div>
 			<small class="cursor-pointer text-white">
                 <i class="icofont-edit mr-1" data-toggle="modal" data-target="#edit-<?= $applicant->id; ?>"></i>
-                <i class="icofont-bullseye mr-1 font-weight-bold" data-toggle="modal" data-target="#view-<?= $applicant->id; ?>"></i>
-                <i class="icofont-ui-delete delete-applicant" id="<?= $applicant->id; ?>"></i>
+                <!-- <i class="icofont-bullseye mr-1 font-weight-bold" data-toggle="modal" data-target="#view-<?= $applicant->id; ?>"></i> -->
+                <i class="icofont-ui-delete delete-applicant" data-url="<?= DOMAIN; ?>/applicants/delete/<?= $applicant->login; ?>"></i>
             </small>
 		</div>
 	</div>

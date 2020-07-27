@@ -77,15 +77,13 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 |
 | Here we will register the methods that will fire whenever there is an error
 | or an exception has been thrown.
+| Only log exceptions on live server but display on development.
 |
 */
 
 if(!in_array(SERVER_HOST, LOCALHOSTS)) {
     Application\Exceptions\Handler::register();
 }
-	
-
-
 
 
 /**

@@ -25,3 +25,4 @@
 		</div>
 	</div>
 </div>
+<?php require FRONTEND_PATH . DS . "layouts" . DS . "bottom.php"; ?> 

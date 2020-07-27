@@ -23,8 +23,8 @@
 				<div class="col-12 mb-4">
 					<div class="card border-orange mt-1">
 						<div class="card-header orange-gradient d-flex justify-content-between">
-							<div class="text-white">Applicants chart</div>
-							<div class="text-white">+16.34%</div>
+							<small class="text-white">Applicants chart</small>
+							<small class="text-white">+16.34%</small>
 						</div>
 						<div class="card-body position-relative px-0">
 							<div class="bills-charts-loader position-absolute center-absolute">

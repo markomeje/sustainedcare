@@ -5,7 +5,7 @@
 			<div class="col-12 px-0">
 				<nav aria-label="">
                     <?php $query = $pagination->search("query"); $string = "/?query="; ?>
-					<?php $currentPage = $pagination->currentPage; $link = DOMAIN."/patients/search/"; ?>
+					<?php $currentPage = $pagination->currentPage; $link = DOMAIN."/applicants/search/"; ?>
 				  	<ul class="pagination mb-0">
 				  		<?php if($pagination->hasPreviousPage()): ?>
 				  			<li class="page-item">
@@ -15,7 +15,7 @@
 						    </li>
 						<?php endif; ?>
 						<?php $visiblePages = (($currentPage - 1) > 1) ? ($currentPage - 1): 1; ?>
-				        <?php $pageEnd = (($currentPage + 1) < $totalPages) ? ($currentPage + 1) : $totalPages; ?>
+				        <?php $pageEnd = (($currentPage + 1) < count($applicants)) ? ($currentPage + 1) : count($applicants); ?>
 					    <?php for($page = $visiblePages; $page <= $pageEnd; $page++): ?>
 					    	<?php  $active = ($page === $currentPage) ? true : false; ?>
 						    <li class="page-item">

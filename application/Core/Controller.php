@@ -1,7 +1,7 @@
 <?php
 
 namespace Application\Core;
-use Application\Core\Application;
+use Application\Core\{Application, Authenticate};
 use Gregwar\Captcha\CaptchaBuilder;
 use Application\Library\{Session, Cookie};
 
@@ -14,6 +14,7 @@ class Controller extends Application {
 
     public function __construct() {
         parent::__construct();
+        // Authenticate::logged();
         $this->controller = View::active($this->get("url"));
     }
 

@@ -108,7 +108,7 @@ class Query {
 		$options = ($options) ? $options : "";
 
 		if ($condition) {
-			$query .= " {$options} WHERE ";
+			$query .= "{$options} WHERE ";
 			foreach ($condition as $key => $value) {
 				if (strpos($value, "IN") === false) {
 					if(strpos($key, ".") === false) {

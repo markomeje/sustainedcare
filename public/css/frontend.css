@@ -2,23 +2,15 @@
 	color: #2D641F;
 }
 
-.navbar-right {
-	/*margin-top: 15px !important;*/
-}
-
 .banner-circle {
 	width: 10px;
 	height: 10px;
 }
 
-/*.logo {
+.logo {
 	width: 150.25px;
 	height: 28px;
 	margin-top: -15px !important;
-}*/
-
-.care {
-	font-family: monospace;
 }
 
 .home-banner {
@@ -92,17 +84,15 @@
 	padding: 110px 0 50px;
 }
 
-.bottom-links h3 {
-	border-bottom: 1px solid #666666;
+.bottom-links .social-icons {
+	width: 45px;
+	height: 45px;
+	line-height: 45px;
 }
 
 @media (max-width: 768px) {
 	.navbar-center {
 		display: none !important;
-	}
-
-	.navbar-left, .navbar-right {
-		margin: 18px 0 20px !important;
 	}
 
 }

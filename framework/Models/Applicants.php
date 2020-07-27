@@ -69,7 +69,7 @@ class Applicants extends Model {
 			return ["status" => "success", "redirect" => DOMAIN."/apply/success"];
         } catch (\Exception $error) {
         	$databse->rollback();
-        	Logger::log("ADDING APPLICANT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("ADDING APPLICANT ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
         }
 	}
@@ -79,7 +79,7 @@ class Applicants extends Model {
 			$result = Query::read(["*"], $this->table, "", "", "", "", "", "");
 			return count($result["fetchAll"]);
         } catch (\Exception $error) {
-        	Logger::log("GETING ALL APPLICANTS COUNT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("GETING ALL APPLICANTS COUNT ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
         }
 	}
@@ -92,7 +92,7 @@ class Applicants extends Model {
 			$result = Query::read(["*"], $this->table, "", "", "", "date DESC", $limit, $offset);
 			return ["applicants" => $result["fetchAll"], "pagination" => $pagination];
 		} catch (\Exception $error) {
-			Logger::log("GETTING ALL APPLICANTS WITH PAGINATION ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+			Logger::log("GETTING ALL APPLICANTS WITH PAGINATION ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
 		}
 	}
@@ -132,34 +132,52 @@ class Applicants extends Model {
 			$result = Query::update($this->table, $fields, $condition, 1);
 			return ($result["rowCount"] > 0) ? ["status" => "success"] : ["status" => "none"];
         } catch (\Exception $error) {
-        	Logger::log("EDITING APPLICANT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("EDITING APPLICANT ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
         }
 	}
 
-	public function getProfile() {
-		try {
-			$fields = ["{$this->table}.*"];
-			$options = ", login";
-			$condition = ["login.id" => Session::get("id"), "{$this->table}.login" => Session::get("id")];
-			$result = Query::read($fields, $this->table, $options, $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
-        } catch (\Exception $error) {
-        	Logger::log("GETING APPLICANT PROFILE ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
-        	return false;
-        }
-	}
-
-	public function getByCode($code) {
+	public function getByCode($code = "") {
 		try {
 			$fields = ["code", "id"];
 			$condition = ["code" => $code];
 			$result = Query::read($fields, $this->table, "", $condition, "", "", 1, "");
 			return $result["fetchAll"];
         } catch (\Exception $error) {
-        	Logger::log("GETTING APPLICANT BY REFERRAL CODE ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("GETTING APPLICANT BY REFERRAL CODE ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
         }
+	}
+
+	public function delete($id = "") {
+		try {
+			$databse = Database::connect();
+        	$databse->beginTransaction();
+			$condition = ["login" => $id];
+			Query::delete($this->table, "", $condition, 1);
+			$databse->commit();
+			return ["status" => "success"];
+        } catch (\Exception $error) {
+        	$databse->rollback();
+        	Logger::log("DELETING APPLICANT ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return ["status" => "error"];
+        }
+	}
+
+	public function search($page = "", $query) {
+		try{
+			$query = $this->escape($query);
+	        $pagination = Pagination::paginate($this->table, "", "", $page);
+			$offset = $pagination->getOffset();
+			$limit = $pagination->itemsPerPage;
+			$search = ["firstname" => $query, "surname" => $query, "date" => $query, "phone" => $query];
+			$condition = ["status" => "active"];
+			$result = Query::search(["*"], $this->table, "", $search, "", "", "date DESC", $limit, $offset);
+			return ["search" => $result["fetchAll"], "pagination" => $pagination];
+		} catch (\Exception $error) {
+			Logger::log("GETTING APPLICANTS SEARCH RESULT ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+		}
 	}
 
 }

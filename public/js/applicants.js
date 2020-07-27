@@ -195,44 +195,43 @@
 
     });
 
-    // $('.delete-patient').on('click', function() {
-    //     var caller = $(this);
-    //     var id = caller.attr('id');
-    //     var confirm = caller.confirm({
-    //         text: "Are You Sure To Delete?",
-    //         confirm: function(button) {
+    $('.delete-applicant').on('click', function() {
+        var caller = $(this);
+        var confirm = caller.confirm({
+            text: "Are You Sure To Delete?",
+            confirm: function(button) {
 
-    //             var request = $.ajax({
-    //                 method: 'POST',
-    //                 url: 'patients/deleteById/'+id,
-    //                 processData: false,
-    //                 contentType: false
-    //             });
+                var request = $.ajax({
+                    method: 'POST',
+                    url: caller.attr('data-url'),
+                    processData: false,
+                    contentType: false
+                });
 
-    //             request.done(function(response) {
-    //                 if (response.status === "success") {
-    //                     window.location.reload();
+                request.done(function(response) {
+                    if (response.status === "success") {
+                        window.location.reload();
 
-    //                 } else if (response.status === "error") {
-    //                     alert('An error ocurred. Try again');
-    //                 }
-    //             });
+                    } else if (response.status === "error") {
+                        alert('An error ocurred. Try again');
+                    }
+                });
 
-    //             request.fail(function() {
-    //                 alert('Network Error');
-    //             });
-    //         },
-    //         cancel: function(button) {},
-    //         confirmButton: "Yes",
-    //         cancelButton: "No",
-    //         post: true,
-    //         confirmButtonClass: "btn-danger",
-    //         cancelButtonClass: "btn-success",
-    //         dialogClass: "modal-dialog modal-sm modal-dialog-centered"
-    //     });
-    // });
+                request.fail(function() {
+                    alert('Network Error');
+                });
+            },
+            cancel: function(button) {},
+            confirmButton: "Yes",
+            cancelButton: "No",
+            post: true,
+            confirmButtonClass: "btn-danger",
+            cancelButtonClass: "btn-success",
+            dialogClass: "modal-dialog modal-sm modal-dialog-centered"
+        });
+    });
 
-    // $('.delete-all-patients').on('click', function() {
+    // $('.delete-all-applicants').on('click', function() {
     //     var caller = $(this);
     //     var confirm = caller.confirm({
     //         text: "Are You Sure To Delete All?",
