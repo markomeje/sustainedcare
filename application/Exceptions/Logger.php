@@ -12,7 +12,7 @@ class Logger{
 
     public static function log($subject = "", $message = "", $fileName = "", $lineNumber = ""){
         $error = "*******************************************************************\n";
-        $logfile = FRAMEWORK_PATH . DS . "errors.txt";
+        $logfile = ROOT . DS . "errors.txt";
         $error .= "| ".mb_strtoupper($subject)." | "." Logged On ".Help::formatDatetime()." | "."\n\n";
         $error .= is_array($message) ? implode("\n", $message) : $message." | "."\n\n";
 

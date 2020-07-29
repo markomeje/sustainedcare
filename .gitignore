@@ -1,3 +1,4 @@
 # Ignore files in extension .env
 *.env
 *.htaccess
+*.errors.txt
