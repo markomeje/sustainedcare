@@ -11,6 +11,57 @@
 	z-index: -1;
 }
 
+.backend-menu {
+    width: 28px;
+    height: 32.5px;
+    -webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+}
+
+.backend-menu .menu-sticks {
+    width: 28px;
+    height: 4px;
+    border-radius: 8px;
+    -webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+    background-color: #DC4805;
+}
+
+.menu-sticks::before,
+.menu-sticks::after {
+	content: '';
+	position: absolute;
+	width: 28px;
+    height: 4px;
+    background-color: #DC4805;
+    border-radius: 8px;
+    -webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+}
+
+.menu-sticks::before {
+	transform: translateY(-9px);
+}
+
+.menu-sticks::after {
+	transform: translateY(9px);
+}
+
+.backend-menu.open .menu-sticks {
+	background: transparent;
+}
+
+.backend-menu.open .menu-sticks::before {
+	transform: rotate(45deg)
+}
+
+.backend-menu.open .menu-sticks::after {
+	transform: rotate(-45deg)
+}
+
 .icon-circle {
 	width: 35px; 
 	height: 35px; 
@@ -69,9 +120,43 @@
 	height: 40px !important;
 }
 
+.right-sidebar {
+	height: 100vh;
+	z-index: 100;
+	padding-top: 60px;
+	top: 0;
+	bottom: 0;
+	right: -100%;
+	-webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+}
+
+.right-sidebar .inner {
+	/*width: 25vw;*/
+	height: 100vh;
+	z-index: 110;
+	overflow-y: scroll;
+}
+
+.inner::-webkit-scrollbar {
+    display: none;
+}
+
+.sidebar-right {
+	right: 0;
+	-webkit-transition: 0.8s;
+	-o-transition: 0.8s;
+	transition: 0.8s;
+}
+
 @media (max-width: 575.98px) {
 	.dashboard-wrapper:before {
 		height: 290px;
+	}
+
+	.right-sidebar .inner {
+		/*width: 50vw;*/
 	}
 
 }

@@ -211,7 +211,6 @@
                 request.done(function(response) {
                     if (response.status === "success") {
                         window.location.reload();
-
                     } else if (response.status === "error") {
                         alert('An error ocurred. Try again');
                     }

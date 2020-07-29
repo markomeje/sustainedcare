@@ -12,7 +12,7 @@ class ProfileController extends Controller {
 		parent::__construct();
 	}
 
-	public function index($referrer = "") {
+	public function index() {
 		$id = Session::get("id");
 		$profile = $this->profile->getProfile();
 		View::render("profile/index", "backend", ["title" => "Profile Page", "controller" => $this->controller, "links" => $this->links, "profile" => $profile, "id" => $id]);

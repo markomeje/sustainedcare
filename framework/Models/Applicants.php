@@ -155,6 +155,7 @@ class Applicants extends Model {
         	$databse->beginTransaction();
 			$condition = ["login" => $id];
 			Query::delete($this->table, "", $condition, 1);
+			$this->login->delete($id);
 			$databse->commit();
 			return ["status" => "success"];
         } catch (\Exception $error) {

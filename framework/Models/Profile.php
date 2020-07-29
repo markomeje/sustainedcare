@@ -23,7 +23,32 @@ class Profile extends Model {
 			$result = Query::read($fields, "applicants", $options, $condition, "", "", 1, "");
 			return $result["fetchAll"][0];
         } catch (\Exception $error) {
-        	Logger::log("GETING USER PROFILE ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("GETING USER PROFILE ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+        }
+	}
+
+	public function delete() {
+		try {
+			$id = Session::get("id");
+			$condition = ["applicants.login" => $id, "login.id" => $id];
+			$result = Query::delete("login", ", applicants", $condition, 1);
+			if($result["rowCount"] > 0) return ["status" => "success"];
+        } catch (\Exception $error) {
+        	Logger::log("DELETING APPLICANT ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return ["status" => "error"];
+        }
+	}
+
+	public function getReferrals() {
+		try {
+			$fields = ["code", "referrer"];
+			$id = Session::get("id");
+			$condition = ["applicants.login" => $id];
+			$result = Query::read($fields, "applicants", "", $condition, "", "", "", "");
+			return $result["fetchAll"][0];
+        } catch (\Exception $error) {
+        	Logger::log("GETING USER PROFILE ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
         }
 	}

@@ -5,6 +5,7 @@ use Application\Core\Model;
 use Application\Library\{Session, Cookie, Validate};
 use Application\Components\Query;
 use Application\Exceptions\Logger;
+use Framework\Models\Passwords;
 
 
 class Login extends Model {
@@ -16,9 +17,14 @@ class Login extends Model {
 	}
 
 	public function getLoginDetails($email) {
-		$condition = ["email" => $email];
-        $result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-        return $result["fetchAll"];
+		try{
+			$condition = ["email" => $email];
+	        $result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
+	        return $result["fetchAll"][0];
+        } catch (\Exception $error) {
+        	Logger::log("GETTING LOGIN DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+        }
 	}
 
 	public function login() {
@@ -36,25 +42,25 @@ class Login extends Model {
         	return ["status" => "not-found"];
         }elseif ($this->isBlocked($logger) === true) {
         	return ["status" => "blocked"];
-        }elseif(empty($logger[0]->status) || $logger[0]->status !== "active") {
+        }elseif(empty($logger->status) || $logger->status !== "active") {
         	return ["status" => "inactive"];
-        }elseif (password_verify($this->password, $logger[0]->password)) {
+        }elseif ($this->passwords->verify($this->password, $logger->password)) {
 	        $this->loginWithSession($logger);
 			$this->setRememberMeCookie($logger);
-			$fields = ["failed" => null, "attempts" => null, "token" => session_id(), "timestamp" => time(), "counter" => $logger[0]->counter + (int)1];
-			$this->updateLoginState($fields, $logger[0]->id);
+			$fields = ["failed" => null, "attempts" => null, "token" => session_id(), "timestamp" => time(), "counter" => $logger->counter + (int)1];
+			$this->updateLoginState($fields, $logger->id);
 			if (Cookie::exists(ACCESS_DENIED_KEY)) Cookie::destroy(ACCESS_DENIED_KEY);
-			$redirect = ($logger[0]->role === "admin") ? DOMAIN."/dashboard" : DOMAIN."/profile";
+			$redirect = ($logger->role === "admin") ? DOMAIN."/dashboard" : DOMAIN."/profile";
 			return ["status" => "success", "redirect" => $redirect];
 		}else {
-			$fields = ["failed" => time(), "attempts" => $logger[0]->attempts + 1];
-	    	$this->updateLoginState($fields, $logger[0]->id);
-		    return ["status" => "invalid-login", "attempts" => (int)$logger[0]->attempts];
+			$fields = ["failed" => time(), "attempts" => $logger->attempts + 1];
+	    	$this->updateLoginState($fields, $logger->id);
+		    return ["status" => "invalid-login", "attempts" => (int)$logger->attempts];
 		}
 	}
 
 	public function loginWithSession($logger) {
-		$data = ["id" => $logger[0]->id, "isLoggedIn" => true, "email" => $logger[0]->email, "role" => $logger[0]->role];
+		$data = ["id" => $logger->id, "isLoggedIn" => true, "email" => $logger->email, "role" => $logger->role];
 		Session::log($data);
 		Cookie::set(session_name(), session_id(), time() + SESSION_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
 	}
@@ -66,7 +72,7 @@ class Login extends Model {
 			$result = Query::create($this->table, $fields);
 			return $result;
         } catch (\Exception $error) {
-        	Logger::log("ADDING LOGIN DETAILS ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+        	Logger::log("ADDING LOGIN DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
         }
 	}
@@ -75,16 +81,16 @@ class Login extends Model {
 		if (empty($logger)) {
 			return false;
 		}else {
-            $timeElapsed = time() - $logger[0]->failed;
+            $timeElapsed = time() - $logger->failed;
 	    	$timeLeft = ($timeElapsed < (60 * 10)); /** if 10 munites **/
-	    	return ($logger[0]->attempts >= 5 && $timeLeft) ? true : false;
+	    	return ($logger->attempts >= 5 && $timeLeft) ? true : false;
 		}
 	}
 
 	public function setRememberMeCookie($logger) {
         if(isset($this->rememberMe)) {
 			if ($this->rememberMe === "on") {
-				Cookie::set(REMEMBER_ME_COOKIE_NAME, $logger[0]->id, time() + REMEMBER_ME_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
+				Cookie::set(REMEMBER_ME_COOKIE_NAME, $logger->id, time() + REMEMBER_ME_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
 			}
 		}
 	}
@@ -101,9 +107,9 @@ class Login extends Model {
 			$this->updateLoginState($fields, Session::get("id"));
 			Session::destroy();
 			Cookie::destroy(REMEMBER_ME_COOKIE_NAME);
-			return ["status" => "logout", "redirect" => DOMAIN."/login"];
+			return ["status" => "success", "redirect" => DOMAIN."/login"];
 		} catch (\Exception $error) {
-			Logger::log("LOGGING OUT ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+			Logger::log("LOGGING OUT ERROR", $error->getMessage(), __FILE__, __LINE__);
 			return ["status" => "error"];
 		}
 	}
@@ -114,9 +120,31 @@ class Login extends Model {
 	        $result = Query::read(["email", "status"], $this->table, "", $condition, "", "", 1, "");
 	        return ($result["rowCount"] > 0) ? true : false;
 	    } catch (\Exception $error) {
-			Logger::log("CHECKING VERIFIED EMAIL ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
+			Logger::log("CHECKING VERIFIED EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
 			return ["status" => "error"];
 		}
     }
+
+    public function delete($id = "") {
+		try {
+			$condition = ["id" => $id];
+			$result = Query::delete($this->table, "", $condition, 1);
+			if($result["rowCount"] > 0) return ["status" => "success"];
+        } catch (\Exception $error) {
+        	Logger::log("DELETING LOGIN DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return ["status" => "error"];
+        }
+	}
+
+	public function getLoggedInSession() {
+		try{
+			$condition = ["id" => Session::get("id")];
+	        $result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
+	        return $result["fetchAll"][0];
+        } catch (\Exception $error) {
+        	Logger::log("GETTING LOGGED IN SESSION DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+        }
+	}
 
 }

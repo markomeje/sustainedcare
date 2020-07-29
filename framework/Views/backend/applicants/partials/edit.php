@@ -8,7 +8,7 @@
                     <i class="icofont-close text-danger"></i>
                 </div>
             </div>
-            <form method="POST" action="javascript:;" class="edit-form" data-action="<?= DOMAIN; ?>/applicants/edit/<?= $applicant->id; ?>">
+            <form method="POST" action="javascript:;" class="edit-form" data-action="<?= DOMAIN; ?>/applicants/edit/<?= empty($applicant->id) ? "" : $applicant->id; ?>">
                 <div class="modal-body">
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">

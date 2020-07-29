@@ -91,13 +91,13 @@
         });
 
         request.done(function(response){
-            if (response.status === 'logout') {
+            if (response.status === 'success') {
                 window.location.href = response.redirect;
             }
         });
 
         request.fail(function() {
-            alert('System Error');
+            alert('Network Error');
         });
     });
 

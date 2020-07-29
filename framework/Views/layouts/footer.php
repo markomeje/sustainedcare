@@ -10,8 +10,10 @@
 <script src="<?= PUBLIC_URL; ?>/jquery/jquery.confirm.js" type="text/javascript"></script>
 <!-- applicants-->
 <script src="<?= PUBLIC_URL; ?>/js/applicants.js" type="text/javascript"></script>
+<!-- password-->
+<script src="<?= PUBLIC_URL; ?>/js/password.js" type="text/javascript"></script>
 <!-- USER LOGIN -->
-<script src="<?= PUBLIC_URL; ?>/js/login.js" type="text/javascript"></script>
+<script src="<?= PUBLIC_URL; ?>/js/login.js" type="text/javascript"></script> 
 <!-- general-->
 <script src="<?= PUBLIC_URL; ?>/js/general.js" type="text/javascript"></script>
 <script src="https://cdn.userbot.ai/widget-chat/dist/userbot.js" type="text/javascript"></script>

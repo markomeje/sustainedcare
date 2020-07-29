@@ -87,6 +87,10 @@ p {
     border: 1px solid #DC4805 !important;
 }
 
+.border-bottom-orange {
+    border-bottom: 1px solid #DC4805 !important;
+}
+
 .text-orange {
     color: #DC4805;
 }
