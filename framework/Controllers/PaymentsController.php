@@ -21,4 +21,8 @@ class PaymentsController extends Controller {
 		}
 	}
 
+	public function success() {
+		View::render("payments/index", "backend", ["title" => "Payments Page"]);
+	}
+
 }
