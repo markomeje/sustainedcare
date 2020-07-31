@@ -8,9 +8,9 @@ class Generate {
 		return empty($duration) ? time() + $duration : time();
 	}
 
-	public static function hash() {
-		$hash = hash("sha256", mt_rand());
-		return str_shuffle($hash);
+	public static function hash($value = "") {
+		$algorithm = "sha256";
+		return hash($algorithm, empty($value) ? mt_rand() : $value);
 	}
 
 	public static function bytes($length = "") {

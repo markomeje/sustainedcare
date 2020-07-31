@@ -2,8 +2,9 @@
 
 namespace Framework\Controllers;
 use Application\Core\{View, Controller};
-use Application\Models\Profile;
+use Application\Models\{Profile, Payments};
 use Application\Library\{Session};
+use Application\Exceptions\{Logger};
 
 
 class ProfileController extends Controller {
@@ -17,5 +18,4 @@ class ProfileController extends Controller {
 		$profile = $this->profile->getProfile();
 		View::render("profile/index", "backend", ["title" => "Profile Page", "controller" => $this->controller, "links" => $this->links, "profile" => $profile, "id" => $id]);
 	}
-
 }

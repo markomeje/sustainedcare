@@ -86,7 +86,7 @@ class Session {
 
     public static function csrf() {
         $token = Generate::bytes(85);
-        Session::set("csrf", $token);
+        self::set("csrf", $token);
         return $token;
     }
 

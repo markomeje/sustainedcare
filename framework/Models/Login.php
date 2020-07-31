@@ -47,7 +47,7 @@ class Login extends Model {
         }elseif ($this->passwords->verify($this->password, $logger->password)) {
 	        $this->loginWithSession($logger);
 			$this->setRememberMeCookie($logger);
-			$fields = ["failed" => null, "attempts" => null, "token" => session_id(), "timestamp" => time(), "counter" => $logger->counter + (int)1];
+			$fields = ["failed" => null, "attempts" => null, "session" => session_id(), "timestamp" => time(), "counter" => $logger->counter + (int)1];
 			$this->updateLoginState($fields, $logger->id);
 			if (Cookie::exists(ACCESS_DENIED_KEY)) Cookie::destroy(ACCESS_DENIED_KEY);
 			$redirect = ($logger->role === "admin") ? DOMAIN."/dashboard" : DOMAIN."/profile";
@@ -65,10 +65,10 @@ class Login extends Model {
 		Cookie::set(session_name(), session_id(), time() + SESSION_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
 	}
 
-	public function addLoginDetails($data = []) {
+	public function addLoginDetails($data) {
 		try {
 			$password = password_hash($this->password, PASSWORD_DEFAULT);
-			$fields = ["email" => $this->email, "password" => $password, "role" => $data["role"], "status" => $data["status"]];
+			$fields = ["email" => $this->email, "password" => $password, "role" => $data["role"], "status" => $data["status"], "token" => $data["token"]];
 			$result = Query::create($this->table, $fields);
 			return $result;
         } catch (\Exception $error) {
@@ -103,7 +103,7 @@ class Login extends Model {
 
 	public function logout() {
 		try {
-			$fields = ["token" => null];
+			$fields = ["session" => null];
 			$this->updateLoginState($fields, Session::get("id"));
 			Session::destroy();
 			Cookie::destroy(REMEMBER_ME_COOKIE_NAME);
@@ -125,7 +125,7 @@ class Login extends Model {
 		}
     }
 
-    public function delete($id = "") {
+    public function delete($id) {
 		try {
 			$condition = ["id" => $id];
 			$result = Query::delete($this->table, "", $condition, 1);

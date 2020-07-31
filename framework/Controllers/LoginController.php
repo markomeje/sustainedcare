@@ -11,7 +11,7 @@ class LoginController extends Controller {
 	}
 
 	public function index() {
-		View::render("login/index", "frontend", ["title" => "Home Page"]);
+		View::render("login/index", "frontend", ["title" => "Login Page"]);
 	}
 
 	public function login() {

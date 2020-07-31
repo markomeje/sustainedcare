@@ -1,9 +1,9 @@
 {
-    "name": "speck/daignostics",
+    "name": "sustainedcare/foundation",
     "type": "project",
-    "description": "Imaging, Diagnostics and Healthcare Software",
-    "keywords": ["control", "authorization", "security", "login", "encryption", "validation", "files", "accounts"],
-    "homepage": "https://speckdiagnostics.com",
+    "description": "Sustained Care Foundation",
+    "keywords": ["control", "authorization", "security", "login", "validation", "accounts"],
+    "homepage": "https://sustainedcare.org",
     
     "authors": [{
         "name": "Mark Omeje",
@@ -30,11 +30,12 @@
     },
 
     "require": {
-        "phpmailer/phpmailer": "~6.1",
+        "phpmailer/phpmailer": "6.1",
         "whichbrowser/parser": "*",
         "gregwar/captcha": "1.*",
-        "tecnickcom/tcpdf": "^6.3",
-        "vlucas/phpdotenv": "^5.0"
+        "tecnickcom/tcpdf": "6.3",
+        "vlucas/phpdotenv": "5.0",
+        "yabacon/paystack-php": "2.1.20"
     },
 
     "autoload": {

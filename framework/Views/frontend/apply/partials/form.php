@@ -69,8 +69,16 @@
         <div class="form-group input-group-lg col-md-6">
             <label class="text-muted" for="lga">Amount</label>
             <select class="custom-select amount" name="amount">
-                <option value="">Select grant amount</option>
-                <option value="1000000">NGN1,000,000</option>
+                <?php if(empty($grantAmounts)): ?>
+                    <option value="">No amounts available</option>
+                <?php else: ?>
+                    <option value="">Select amount</option>
+                    <?php foreach($grantAmounts as $amount): ?>
+                        <option value="<?= (int)$amount; ?>">
+                            NGN<?= number_format($amount); ?>
+                        </option>
+                    <?php endforeach; ?>
+                <?php endif; ?>
             </select>
             <small class="error amount-error text-danger"></small>
         </div>

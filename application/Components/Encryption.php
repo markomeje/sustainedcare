@@ -6,8 +6,7 @@ namespace Application\Components;
 class Encryption {
  
 
-    private $message = 'This is the encrypted message from the encrhyption function';
-    private $key = hex2bin('000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f');
+    //private static $key = hex2bin('000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f');
 
     /**
      * Encrypts (but does not authenticate) a message
@@ -72,9 +71,9 @@ class Encryption {
      */
     public static function encrypt($message, $key, $encode = false){
         $hash_algorithm = 'sha256';
-        list($encKey, $authKey) = splitKeys($key);
+        list($encKey, $authKey) = self::splitKeys($key);
         // Pass to UnsafeCrypto::encrypt
-        $ciphertext = partial_encrypt($message, $encKey);
+        $ciphertext = self::partial_encrypt($message, $encKey);
         // Calculate a MAC of the IV and ciphertext
         $mac = hash_hmac($hash_algorithm, $ciphertext, $authKey, true);
 
@@ -87,11 +86,11 @@ class Encryption {
 
     public static function decrypt($message, $key, $encoded = false){
         $hash_algorithm = 'sha256';
-        list($encKey, $authKey) = splitKeys($key);
+        list($encKey, $authKey) = self::splitKeys($key);
         if ($encoded) {
             $message = base64_decode($message, true);
             if ($message === false) {
-                throw new Exception('Encryption failure');
+                throw new \Exception('Encryption failure');
             }
         }
 
@@ -108,12 +107,12 @@ class Encryption {
             true
         );
 
-        if (!hashEquals($mac, $calculated)) {
-            throw new Exception('Encryption failure');
+        if (!self::hashEquals($mac, $calculated)) {
+            throw new \Exception('Encryption failure');
         }
 
         // Pass to UnsafeCrypto::decrypt
-        $plaintext = partial_decrypt($ciphertext, $encKey);
+        $plaintext = self::partial_decrypt($ciphertext, $encKey);
         return $plaintext;
     }
 
@@ -135,8 +134,8 @@ class Encryption {
      * @return boolean
      */
     public static function hashEquals($a, $b){
-        $hash_algorithm = 'sha256';
-        if (function_exists('hash_equals')) {
+        $hash_algorithm = "sha256";
+        if (function_exists("hash_equals")) {
             return hash_equals($a, $b);
         }
         $nonce = openssl_random_pseudo_bytes(32);

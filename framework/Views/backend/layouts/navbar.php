@@ -25,17 +25,17 @@
 <div class="sidebar right-sidebar position-fixed h-100 w-100">
 	<div class="d-flex justify-content-end">
 		<div class="inner light-shadow bg-white pt-2">
-			<ul class="p-0 m-0">
-				<li class="border-bottom-orange p-3">
+			<ul class="pt-4 px-4 m-0">
+				<li class="border-orange rounded px-3 py-2 mb-3">
 					<a href="javascript:;" class="text-muted" data-toggle="modal" data-target="#update-password">Update password</a>
 				</li>
-				<li class="border-bottom-orange px-3 py-2">
+				<li class="border-orange rounded px-3 py-2 mb-3">
 					<a href="javascript:;" class="text-muted">Change email</a>
 				</li>
-				<li class="border-bottom-orange px-3 py-2">
+				<li class="border-orange rounded px-3 py-2 mb-3">
 					<a href="javascript:;" class="text-muted">My account</a>
 				</li>
-				<li class="border-bottom-orange px-3 py-2">
+				<li class="border-orange rounded px-3 py-2 mb-3">
 					<a href="javascript:;" class="text-muted">My account</a>
 				</li>
 			</ul>

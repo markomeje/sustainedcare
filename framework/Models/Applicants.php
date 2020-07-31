@@ -3,7 +3,7 @@
 namespace Framework\Models;
 use Application\Core\{Model, Help};
 use Application\Library\{Validate, Generate, Session, Database};
-use Application\Components\Query;
+use Application\Components\{Query, Email};
 use Application\Exceptions\Logger;
 use Framework\Models\Pagination;
 
@@ -60,11 +60,15 @@ class Applicants extends Model {
         try {
         	$databse = Database::connect();
         	$databse->beginTransaction();
-        	$data = ["role" => "applicant", "status" => null];
+        	$token = Generate::hash();
+        	$data = ["role" => "applicant", "status" => null, "token" => $token];
         	$result = $this->login->addLoginDetails($data);
-    		$code = Generate::string(15);
-    		$fields = ["surname" => ucfirst($this->surname), "firstname" => ucfirst($this->firstname), "middlename" => ucfirst($this->middlename), "phone" => $this->phone, "referrer" => $this->referrer, "birthdate" => $this->birthdate, "address" => ucfirst($this->address), "amount" => $this->amount, "state" => $this->state, "gender" => $this->gender, "relationship" => $this->relationship, "code" => $code, "how" => ucfirst($this->how), "why" => ucfirst($this->why), "status" => "active", "login" => $result["lastInsertId"]];
-			Query::create($this->table, $fields);
+        	$id = $result["lastInsertId"];
+    		$fields = ["surname" => ucfirst($this->surname), "firstname" => ucfirst($this->firstname), "middlename" => ucfirst($this->middlename), "phone" => $this->phone, "referrer" => $this->referrer, "birthdate" => $this->birthdate, "address" => ucfirst($this->address), "amount" => $this->amount, "state" => $this->state, "gender" => $this->gender, "relationship" => $this->relationship, "code" => Generate::string(15), "how" => ucfirst($this->how), "why" => ucfirst($this->why), "status" => "active", "login" => $id];
+			$result = Query::create($this->table, $fields);
+			//if ($result["rowCount"] > 0) {
+				Email::mailer(EMAIL_VERIFICATION, $this->email, ["token" => $token, "id" => $id]);
+			//}
 			$databse->commit();
 			return ["status" => "success", "redirect" => DOMAIN."/apply/success"];
         } catch (\Exception $error) {

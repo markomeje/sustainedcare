@@ -7,9 +7,51 @@
 	color: #2D641F;
 }
 
-.banner-circle {
-	width: 10px;
-	height: 10px;
+.navbar-menu {
+    width: 28px;
+    height: 28px;
+	transition: 0.8s;
+}
+
+.navbar-menu .menu-lines {
+    width: 28px;
+    height: 3px;
+    border-radius: 3px;
+	transition: 0.8s;
+    background-color: #666666;
+}
+
+.menu-lines::before,
+.menu-lines::after {
+	content: '';
+	position: absolute;
+	width: 28px;
+    height: 3px;
+    background-color: #666666;
+    border-radius: 3px;
+	transition: 0.8s;
+	left: 0;
+	right: 0;
+}
+
+.menu-lines::before {
+	transform: translateY(-9px);
+}
+
+.menu-lines::after {
+	transform: translateY(9px);
+}
+
+.navbar-menu.slide .menu-lines {
+	background: transparent;
+}
+
+.navbar-menu.slide .menu-lines::before {
+	transform: rotate(45deg)
+}
+
+.navbar-menu.slide .menu-lines::after {
+	transform: rotate(-45deg)
 }
 
 .logo {
@@ -18,7 +60,8 @@
 	margin-top: -15px !important;
 }
 
-.home-banner {
+.home-banner,
+.about-banner {
 	padding: 160px 0 80px;
 }
 
@@ -39,17 +82,24 @@
 }
 
 .banner-left h1 {
-	font-size: 56px;
+	font-size: 55px;
 }
 
-.banner-left .icon {
-	width: 24px;
-	height: 24px;
-	line-height: 24px;
+.about-vision,
+.about-mission {
+	padding: 130px 0 120px;
 }
 
 .mission-section {
 	padding: 100px 0;
+}
+
+.mission-section .card {
+	height: 450px;
+}
+
+.about-legal {
+	padding: 120px 0;
 }
 
 .mission-section:before {
@@ -71,9 +121,9 @@
 }
 
 .generic-section .icon {
-	width: 55px;
-	height: 55px;
-	line-height: 55px;
+	width: 50px;
+	height: 50px;
+	line-height: 50px;
 }
 
 .action-section {
@@ -95,34 +145,93 @@
 	line-height: 45px;
 }
 
+.gallery img {
+	height: 192px;
+}
+
 @media (max-width: 768px) {
+
 	.navbar-center {
-		display: none !important;
+		display: none;
+	}
+
+	.navbar-mobile {
+		height: 100vh;
+		z-index: 5;
+		top: 0;
+		bottom: 0;
+		transition: 0.8s;
+		right: -100%;
+	}
+
+	.navbar-mobile .inner {
+		z-index: 6;
+		height: 100vh;
+		overflow-y: scroll;
+	}
+
+	.navbar-mobile ul {
+		padding-top: 100px;
+	}
+
+	.navbar-toggle {
+		right: 0;
+		transition: 0.8s;
+	}
+
+	.banner-right {
+		display: none;
+	}
+
+	.mission-section .card {
+		height: 420px;
 	}
 
 }
 
 @media (min-width: 768.98px) {
-	.navbar-right {
-		display: none !important;
-	}
-
-}
-
-@media (max-width: 425px) {
-	.navbar-wrapper {
-		padding: 12px 0 !important;
+	.navbar-right,
+	.navbar-mobile {
+		display: none;
 	}
 }
 
 /*Extra small devices (portrait phones, less than 576px)*/
-@media (max-width: 575.98px) {}
+@media (max-width: 575.98px) {
+	.navbar-wrapper {
+		padding-top: 5px;
+		padding-bottom: 5px;
+	}
 
-/*Small devices (landscape phones, less than 768px)*/
-@media (max-width: 767.98px) {}
+	.navbar-mobile {
+		width: 100vw;
+	}
 
-/*Medium devices (tablets, less than 992px)*/
-@media (max-width: 991.98px) and (min-width: 768px) {}
+	.navbar-mobile ul {
+		padding-top: 120px;
+	}
 
-/*Large devices (desktops, less than 1200px)*/
-@media (max-width: 1199.98px) {}
+	.navbar-left {
+		padding-left: 0;
+	}
+
+	.navbar-right {
+		padding-right: 0;
+	}
+
+	.generic-section .icon {
+		display: none;
+	}
+}
+
+@media (max-width: 375px) {
+	.navbar-mobile ul {
+		padding-top: 105px;
+	}
+}
+
+@media (max-width: 325px) {
+	.navbar-mobile ul {
+		padding-top: 90px;
+	}
+}

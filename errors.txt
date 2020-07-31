@@ -1,0 +1,14 @@
+
+
+*******************************************************************
+ERROREXCEPTION Logged On July 31, 2020, 11:29 pm
+file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. 
+At File C:\xampp\htdocs\sustainedcare\vendor\yabacon\paystack-php\src\Paystack\Http\Request.php On Line 110
+*******************************************************************
+
+*******************************************************************
+ERROREXCEPTION Logged On July 31, 2020, 11:29 pm
+file_get_contents(): php_network_getaddresses: getaddrinfo failed: No such host is known. 
+At File C:\xampp\htdocs\sustainedcare\vendor\yabacon\paystack-php\src\Paystack\Http\Request.php On Line 110
+*******************************************************************
+

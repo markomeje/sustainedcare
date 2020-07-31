@@ -1,21 +1,21 @@
 <div class="success">
-	<div class="success-banner lemon-gradient position-relative w-100">
+	<div class="success-banner bg-white position-relative w-100">
 		<?php require FRONTEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
 		<div class="banner-content">
 			<div class="container">
 				<div class="row">
 					<div class="col-12 col-md-10 col-lg-8 mb-5">
-						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-down">Application <em class="text-orange">Successful</em></h1>
-						<p class="text-white">Your application was successfull. Please follow the step below carefully.</p>
+						<h1 class="text-shade font-weight-bolder mb-4" data-aos="fade-down">Application <em class="text-orange">Successful</em></h1>
+						<p class="text-muted">Your application was successfull. Please follow the steps below carefully.</p>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="success-section">
+	<div class="success-section bg-gray">
 		<div class="container">
 			<div class="row">
-				<div class="col-12 col-md-10 col-lg-8">
+				<div class="col-12">
 					<h1 class="text-shade">Next Steps</h1>
 					<p class="text-muted"><em>Please read the following steps carefully</em></p>
 					<div class="">

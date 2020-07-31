@@ -21,7 +21,7 @@
             delay: 400, // values from 0 to 3000, with step 50ms
             duration: 800, // values from 0 to 3000, with step 50ms
             easing: 'ease', // default easing for AOS animations
-            once: false, // whether animation should happen only once - while scrolling down
+            once: true, // whether animation should happen only once - while scrolling down
         });
     });
     
@@ -37,6 +37,20 @@
             $('.backend-menu').removeClass('open');
         });
     }
+
+    $('.navbar-menu').on('click', function() {
+        $('.navbar-mobile').toggleClass('navbar-toggle');
+        $('.navbar-menu').toggleClass('slide');
+    });
+
+    if ($('.navbar-mobile').length) {
+        var target = '.navbar-mobile' || window;
+        $(target).on('click', function() {
+            $('.navbar-mobile').removeClass('navbar-toggle');
+            $('.navbar-menu').removeClass('slide');
+        });
+    }
+
 
     backendLinksNavigation();
 

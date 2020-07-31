@@ -5,7 +5,7 @@
 	    <div class="container pt-5">
 	    	<?php $payment = empty($profile->payment) ? "" : strtolower($profile->payment); ?>
 	    	<?php if($payment !== "paid"): ?>
-		    	<div class="alert-warning mb-4 px-3 py-2 rounded">Click <a href="javascript:;" class="pay">here</a> to pay your application fee and get your referral link so you can start earning.</div>
+		    	<div class="alert-warning mb-4 px-3 py-2 rounded">Click <a href="javascript:;" class="paystack-payment" data-url="<?= DOMAIN; ?>/payments/paystack">here</a> to pay your application fee and get your referral link so you can start earning.</div>
 		    <?php endif; ?>
 	        <div class="row align-items-bottom">
 	            <?php require BACKEND_PATH . DS . "layouts" . DS . "links.php"; ?>

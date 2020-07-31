@@ -24,7 +24,7 @@ class Query {
 
 	public static function read($fields, $table, $options, $condition, $group, $order, $limit, $offset){
 		$database = Database::connect();
-		$fields = implode(', ', $fields);
+		$fields = implode(", ", $fields);
 
 		$counter = 1;
 		$query = "SELECT {$fields} FROM {$table}";
@@ -66,7 +66,7 @@ class Query {
 
 	public static function update($table, $fields, $condition, $limit){
 		$database = Database::connect();
-		$columns = ' ';
+		$columns = " ";
 		$counter = 1;
 
 		foreach ($fields as $key => $value){

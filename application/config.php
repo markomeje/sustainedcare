@@ -25,6 +25,8 @@ foreach (["LIVE_DATABASE_HOST", "LIVE_DATABASE_NAME", "LIVE_DATABASE_USERNAME", 
 	define($CREDENTIAL, $_ENV[$CREDENTIAL]);
 }
 
+define("PAYSTACK_LIVE_SECRET_KEY", $_ENV["PAYSTACK_LIVE_SECRET_KEY"]);
+
 define("REMEMBER_ME_COOKIE_EXPIRY", 3600 * 24 * 365); /** One Year **/
 define("REMEMBER_ME_COOKIE_NAME", "__reh89hIteIHB7nb5yh3ufer7fad2q9yv98");
 define("COOKIE_PATH", "/");
@@ -40,3 +42,22 @@ define("REMEMBER_ME_SESSION_NAME", "4638295qgkh81y8qhrkngan8y4985ghnkjg");
 
 define("ACCESS_DENIED_KEY", "672kbauh892ytqBGKA89jnbproeqnjhrwk017Ty89");
 define("PAGINATION_DEFAULT_LIMIT", 30);
+
+define('EMAIL_HOST', 'sustainedcare.org');
+define('EMAIL_USERNAME', 'support@sustainedcare.org');
+define('EMAIL_PASSWORD', '}06vh~@KUYiN');
+define('EMAIL_SMTPSECURE', 'ssl');
+define('EMAIL_PORT', 465);
+define('EMAIL_FROM', 'support@sustainedcare.org');
+define('EMAIL_FROM_NAME', 'SUSTAINEDCARE FOUNDATION');
+define('EMAIL_REPLY_TO', 'support@sustainedcare.org');
+define('EMAIL_DEBUG', 4);
+define('EMAIL_AUTH', true);
+
+define("EMAIL_VERIFICATION", 1);
+define("EMAIL_VERIFICATION_SUBJECT", "EMAIL VERIFICATION");
+define("EMAIL_VERIFICATION_URL", DOMAIN."login/index");
+
+define("PASSWORD_RESET", 2);
+define("PASSWORD_RESET_SUBJECT", "PASSWORD RESET");
+define("PASSWORD_RESET_URL", DOMAIN."password/reset");

@@ -81,9 +81,29 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 |
 */
 
-if(!in_array(SERVER_HOST, LOCALHOSTS)) {
+//if(!in_array(SERVER_HOST, LOCALHOSTS)) {
     Application\Exceptions\Handler::register();
-}
+//}
+
+//$hash = Application\Library\Generate::hash(18.5);
+//var_dump($hash);
+//
+//$salt = Application\Library\Generate::salt(19);
+//var_dump($salt);
+
+// $key = hex2bin('000102030405060708090a0b0c0d0e0f101112131415161718191a1b1c1d1e1f');
+// $e = Application\Components\Encryption::encrypt(18, $key, $encode = true);
+// echo $e;
+
+// $d = Application\Components\Encryption::decrypt(18, $key, $encode = true);
+// //echo $d;
+
+// $v = hash_equals("18", $hash);
+// echo ($v) ? "true" : "false" ."\n\n";
+
+// $equals = Application\Components\Encryption::hashEquals("18", $hash);
+// echo ($equals) ? "true" : "false";
+//die();
 
 
 /**
