@@ -15,7 +15,7 @@
 						<a href="<?= DOMAIN; ?>/about" class="text-forest navbar-link">About</a>
 					</li>
 					<li class="ml-4">
-						<a href="<?= DOMAIN; ?>/donate" class="text-forest navbar-link">Donate</a>
+						<a href="http://paypal.me/Suscare" class="text-forest navbar-link">Donate</a>
 					</li>
 					<li class="ml-4">
 						<a href="<?= DOMAIN; ?>/apply" class="text-forest navbar-link">Apply</a>
@@ -27,7 +27,7 @@
 			</div>
 			<div class="col-5 col-md-8 col-lg-1 navbar-right pr-md-0">
 				<div class="text-center float-right d-flex justify-content-center align-items-center pr-md-3">
-					<a href="<?= DOMAIN; ?>/donate" class="text-forest navbar-link mr-3">Donate</a>
+					<a href="http://paypal.me/Suscare" class="text-forest navbar-link mr-3">Donate</a>
 					<div class="navbar-menu position-relative p-md-0 d-flex justify-content-end align-items-center">
 						<div class="menu-lines"></div>
 					</div>
