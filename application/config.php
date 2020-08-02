@@ -56,8 +56,8 @@ define('EMAIL_AUTH', true);
 
 define("EMAIL_VERIFICATION", 1);
 define("EMAIL_VERIFICATION_SUBJECT", "EMAIL VERIFICATION");
-define("EMAIL_VERIFICATION_URL", DOMAIN."login/index");
+define("EMAIL_VERIFICATION_URL", DOMAIN."/login/index");
 
 define("PASSWORD_RESET", 2);
 define("PASSWORD_RESET_SUBJECT", "PASSWORD RESET");
-define("PASSWORD_RESET_URL", DOMAIN."password/reset");
+define("PASSWORD_RESET_URL", DOMAIN."/password/reset");
