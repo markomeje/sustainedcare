@@ -30,17 +30,12 @@ class Email {
                     $mail->AddAddress($email);
                     break;
             }
-            if($mail->send()) {
-                throw new \Exception("Mail sent", 1);
-            }else {
-                throw new \Exception("Error Processing Request", 1);
-            }
+            $mail->send();
         }catch(\Exception $error) {
             die($error->getMessage());
             Logger::log("SENDING EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
             return false;
-        }
-        
+        }   
 	}
 
 	private static function emailVerifyBody($email, $data) {

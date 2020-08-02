@@ -23,6 +23,10 @@ p {
     font-size: 20px;
 }
 
+.border-faint {
+    border: 1px solid #f4f5ee;
+}
+
 .light-shadow {
     box-shadow: 1px 1px 18px rgba(0, 0, 0, 0.05);
 }
@@ -69,6 +73,14 @@ p {
 
 .bg-gray {
     background-color: #F9F8FF;
+}
+
+.border-gray {
+    border: 1px solid #F9F8FF !important;
+}
+
+.border-bottom-gray {
+    border-bottom: 1px solid #F9F8FF !important;
 }
 
 .text-forest {

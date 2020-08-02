@@ -4,9 +4,9 @@
 		<div class="banner-content">
 			<div class="container">
 				<div class="row">
-					<div class="col-12 col-md-10 col-lg-6 banner-left mb-4">
-						<h1 class="text-shade font-weight-bolder mb-4" data-aos="fade-up">Apply for Special <em class="text-orange">Grants</em> for Business and Projects<span class="text-orange d-inline">.</span></h1>
-						<p class="text-muted mb-4" data-aos="fade-up">Stand a chance to get a maximum of one million naira grant for your choice business or project.</p>
+					<div class="col-12 col-md-10 col-lg-8 banner-left mb-4">
+						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up">Apply for Special <em class="text-orange">Grants</em> for Business and Projects<span class="text-orange d-inline">.</span></h1>
+						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get a maximum of one million naira grant for your choice business or project.</p>
 						<div class="" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply</a>
 							<a href="http://paypal.me/Suscare" class="btn btn-lg px-4 lemon-gradient text-white forest-shadow border-0 rounded-pill">Donate</a>
@@ -14,7 +14,7 @@
 					</div>
 					<div class="col-12 col-md-2 col-lg-6 banner-right position-relative mb-4">
 						<div class="text-center text-danger" data-aos="fade-up">
-							<img src="<?= IMAGES_URL; ?>/assets/over.png" class="img-fluid w-100 h-100">
+							<!-- <img src="<?= IMAGES_URL; ?>/assets/over.png" class="img-fluid w-100 h-100"> -->
 						</div>
 					</div>
 				</div>

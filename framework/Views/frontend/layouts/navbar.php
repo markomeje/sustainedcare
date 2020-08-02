@@ -21,6 +21,9 @@
 						<a href="<?= DOMAIN; ?>/apply" class="text-forest navbar-link">Apply</a>
 					</li>
 					<li class="ml-4">
+						<a href="<?= DOMAIN; ?>/gallery" class="text-forest navbar-link">Gallery</a>
+					</li>
+					<li class="ml-4">
 						<a href="<?= DOMAIN; ?>/login" class="py-2 border-0 text-decoration-none orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Login</a>
 					</li>
 				</ul>
@@ -52,7 +55,10 @@
 				<a href="<?= DOMAIN; ?>/apply" class="text-forest bg-gray navbar-link p-3 rounded d-block">Apply</a>
 			</li>
 			<li class="d-block mb-3">
-				<a href="<?= DOMAIN; ?>/login" class="text-forest bg-gray navbar-link p-3 rounded d-block">Login</a>
+				<a href="<?= DOMAIN; ?>/gallery" class="text-forest bg-gray navbar-link p-3 rounded d-block">Gallery</a>
+			</li>
+			<li class="d-block mb-3 mt-4">
+				<a href="<?= DOMAIN; ?>/login" class="py-2 border-0 text-decoration-none orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Login</a>
 			</li>
 		</ul>
     </div>

@@ -66,9 +66,7 @@ class Applicants extends Model {
         	$id = $result["lastInsertId"];
     		$fields = ["surname" => ucfirst($this->surname), "firstname" => ucfirst($this->firstname), "middlename" => ucfirst($this->middlename), "phone" => $this->phone, "referrer" => $this->referrer, "birthdate" => $this->birthdate, "address" => ucfirst($this->address), "amount" => $this->amount, "state" => $this->state, "gender" => $this->gender, "relationship" => $this->relationship, "code" => Generate::string(15), "how" => ucfirst($this->how), "why" => ucfirst($this->why), "status" => "active", "login" => $id];
 			$result = Query::create($this->table, $fields);
-			//if ($result["rowCount"] > 0) {
-				Email::mailer(EMAIL_VERIFICATION, $this->email, ["token" => $token, "id" => $id]);
-			//}
+			Email::mailer(EMAIL_VERIFICATION, $this->email, ["token" => $token, "id" => $id]);
 			$databse->commit();
 			return ["status" => "success", "redirect" => DOMAIN."/apply/success"];
         } catch (\Exception $error) {

@@ -1,0 +1,6 @@
+*******************************************************************
+SENDING EMAIL ERROR Logged On August 2, 2020, 12:11 pm
+mail(): Failed to connect to mailserver at &quot;localhost&quot; port 25, verify your &quot;SMTP&quot; and &quot;smtp_port&quot; setting in php.ini or use ini_set()
+At File C:\xampp\htdocs\sustainedcare\application\Components\Email.php On Line 40
+*******************************************************************
+
