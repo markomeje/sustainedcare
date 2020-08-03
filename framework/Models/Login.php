@@ -114,7 +114,7 @@ class Login extends Model {
 		}
 	}
 
-	public static function isVerifiedEmail($email) {
+	public function isVerifiedEmail($email) {
 		try {
 	        $condition = ["email" => $email, "status" => "active"];
 	        $result = Query::read(["email", "status"], $this->table, "", $condition, "", "", 1, "");
@@ -146,5 +146,34 @@ class Login extends Model {
         	return false;
         }
 	}
+
+	public function isVerifyTokenValid($token, $id) {
+		try {
+	        $condition = ["token" => $token, "id" => $id];
+	        $result = Query::read(["token", "id"], $this->table, "", $condition, "", "", 1, "");
+	        return ($result["rowCount"] > 0) ? true : false;
+	    } catch (\Exception $error) {
+			Logger::log("CHECKING VALID TOKEN EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
+			return false;
+		}
+    }
+
+    public function verifyEmail($token, $id) {
+		try {
+			if (empty($token) && empty($id)) {
+				return null;
+			}elseif ($this->isVerifyTokenValid($token, $id)) {
+				$fields = ["status" => "active"];
+		        $condition = ["token" => $token, "id" => $id];
+		        $result = Query::update($this->table, $fields, $condition, 1);
+		        return ($result["rowCount"] > 0) ? true : false;
+			}else {
+				return false;
+			}
+	    } catch (\Exception $error) {
+			Logger::log("VERIFYING EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
+			return false;
+		}
+    }
 
 }

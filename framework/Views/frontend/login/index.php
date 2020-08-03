@@ -8,6 +8,11 @@
 				<div class="col-12 col-md-6 col-lg-4">
 					<div class="login-form-wrapper">
 						<h1 class="text-forest">Login Here</h1>
+						<?php if($verifyEmail !== null): ?>
+							<?php if($verifyEmail === false): ?>
+								<div class="alert-danger my-3 px-3 py-2 rounded">Operation falied. Try again</div>
+							<?php endif; ?>
+						<?php endif; ?>
 						<form action="javascript:;" method="POST" class="login-form" data-action="<?= DOMAIN; ?>/login/login">
 							<div class="alert my-3 px-3 login-message d-none"></div>
 							<input type="hidden" name="csrf" value="<?= Application\Library\Session::csrf(); ?>">
@@ -27,7 +32,7 @@
 									<label class="custom-control-label text-muted cursor-pointer" for="remember-me">Remember Login</label>
 								</div>
 							</div>
-							<button type="submit" class="btn border-0 orange-shadow orange-gradient rounded-pill text-white login-button px-4 btn-block">
+							<button type="submit" class="btn btn-lg border-0 orange-shadow orange-gradient rounded-pill text-white login-button px-4 btn-block">
 								<img src="<?= IMAGES_URL; ?>/banners/spinner.svg" class="mr-2 d-none login-spinner mb-1">
 								Login
 							</button>

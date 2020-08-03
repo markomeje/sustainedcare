@@ -10,8 +10,9 @@ class LoginController extends Controller {
 		parent::__construct();
 	}
 
-	public function index() {
-		View::render("login/index", "frontend", ["title" => "Login Page"]);
+	public function index($token = "", $id = "") {
+		$verifyEmail = $this->login->verifyEmail($token, $id);
+		View::render("login/index", "frontend", ["title" => "Login Page", "verifyEmail" => $verifyEmail, "token" => $token, "id" => $id]);
 	}
 
 	public function login() {

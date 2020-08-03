@@ -40,16 +40,16 @@ class Email {
 
 	private static function emailVerifyBody($email, $data) {
         $body  = "";
-        $body .= "Dear " . $email . ", Please Click On the Following Link To Verify Your Email: "."\n";
-        $body .= EMAIL_VERIFICATION_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"])."\n";
+        $body .= "Dear " . $email . ", Please Click On the Following Link To Verify Your Email: <br>";
+        $body .= EMAIL_VERIFICATION_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"])."<br>";
         $body .= " If you didn't Perform This Action With your email, Please ignore.";
         return $body;
 	}
 
 	private static function passwordResetBody($email, $data) {
         $body  = "";
-        $body .= "Dear " . $email . ", Please Use The Following Token To Reset Your Password: "."\n";
-        $body .= PASSWORD_RESET_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"])."\n";
+        $body .= "Dear " . $email . ", Please Use The Following Token To Reset Your Password: ";
+        $body .= PASSWORD_RESET_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"]);
         $body .= " If you didn't Perform This Action With your email, Please ignore.";
         return $body;
     }
