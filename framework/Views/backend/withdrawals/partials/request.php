@@ -19,7 +19,11 @@
                             <label class="text-muted">Amount</label>
                             <select class="custom-select amount" name="amount">
                                 <option value="">Select amount</option>
-                                <option value="<?= $balance; ?>">NGN<?= $balance; ?></option>
+                                <?php if(!empty($withdrawableAmount) && $withdrawableAmount >= 2000): ?>
+                                    <option value="<?= $withdrawableAmount; ?>">NGN<?= $withdrawableAmount; ?></option>
+                                <?php else: ?>
+                                    <option value="">No amount</option>
+                                <?php endif; ?>
                             </select>
                             <small class="error amount-error text-danger"></small>
                         </div>

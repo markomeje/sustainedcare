@@ -28,12 +28,12 @@
 	    					<a href="javascript:;" class="copy mr-2" data-toggle="modal" data-target="#update-password">Update password</a>
 	    					<?php if(empty($cashrequest)): ?>
 	    						<?php if(empty($earnings)): ?>
-	    							<div class="text-muted no-earnings">No earnings</div>
-	    						<?php elseif($earnings < 2000): ?>
-                                    <div class="text-muted">Unwithdeawable</div>
+	    							<a href="javascript:;" class="">No earnings</a>
+	    						<?php elseif(!empty($withdrawableAmount) && $withdrawableAmount < 2000): ?>
+                                    <a href="javascript:;" class="">Pending</a>
                                 <?php else: ?>
-		    					<a href="javascript:;" class="text-muted" data-toggle="modal" data-target="#request-cash">Request cash</a>
-		    					<?php require BACKEND_PATH . DS . "withdrawals" . DS . "partials" . DS . "request.php"; ?>
+			    					<a href="javascript:;" class="" data-toggle="modal" data-target="#request-cash">Request cash</a>
+			    					<?php require BACKEND_PATH . DS . "withdrawals" . DS . "partials" . DS . "request.php"; ?>
 		    					<?php endif; ?>
 		    				<?php else: ?>
 		    					<div class="text-danger">Cash pending</div>
@@ -44,6 +44,11 @@
 	    		<?php if(!empty($cashrequest)): ?>
 	    		    <div class="alert-info alert mb-4">
 	    		    	We're processing your request. Note that payments will be made to the bank details you added. If you've not added your bank details, please do that immediately.
+	    		    </div>
+	    		<?php endif; ?>
+	    		<?php if(!empty($withdrawableAmount) && $withdrawableAmount < 2000): ?>
+	    			<div class="alert-info alert mb-4">
+	    		    	Minimum withdrawal amount is NGN2,000.
 	    		    </div>
 	    		<?php endif; ?>
 	    	<?php else: ?>

@@ -19,6 +19,6 @@ class ProfileController extends Controller {
 		$earnings = $this->earnings->getTotalReferrerEarnings($id);
 		$withdrawals = $this->earnings->getTotalReferrerWithdrawals($id);
 		$balance = ($earnings - $withdrawals);
-		View::render("profile/index", "backend", ["title" => "Profile Page", "verify" => $this->payments->verifyPaystack($this->get("reference")), "payments" => $this->payments->getById($id), "applicant" => $this->applicants->getByLogin($id), "referrals" => $referrals, "earnings" => $earnings, "withdrawals" => $withdrawals, "balance" => $balance, "cashrequest" => $this->withdrawals->getUnpaidWithdrawal($id), "nigerianBanks" => Help::nigerianBanks(), "slip" => $this->slips->getById($id), "bank_details" => $this->banks->getDetailsById($id)]);
+		View::render("profile/index", "backend", ["title" => "Profile Page", "verify" => $this->payments->verifyPaystack($this->get("reference")), "payments" => $this->payments->getById($id), "applicant" => $this->applicants->getByLogin($id), "referrals" => $referrals, "earnings" => $earnings, "withdrawals" => $withdrawals, "balance" => $balance, "cashrequest" => $this->withdrawals->getUnpaidWithdrawal($id), "nigerianBanks" => Help::nigerianBanks(), "slip" => $this->slips->getById($id), "bank_details" => $this->banks->getDetailsById($id), "withdrawableAmount" => $this->earnings->getTotalWithdrawableAmount($id)]);
 	}
 }

@@ -57,6 +57,22 @@ class Earnings extends Model {
         }
 	}
 
+	public function getTotalWithdrawableAmount(int $referrer): int {
+		try {
+			$withdrawals = [];
+			$fields = ["withdrawn", "earning"];
+			$condition = ["referrer" => $referrer, "withdrawn" => "no"];
+			$result = Query::read($fields, $this->table, "", $condition, "", "", "", "");
+			foreach ($result["fetchAll"] as $key => $value) {
+				$withdrawals[] = $value->earning;
+			}
+			return array_sum($withdrawals);
+        } catch (Exception $error) {
+        	Logger::log("GETTING REFERRER TOTAL WITHDRAWALS ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+        }
+	}
+
 	public function updateEarningAsWithdrawn(int $applicant, $totalAmount): int {
 		try {
 			$earningFee = ($this->applicationFee * $this->percentageBonus);
