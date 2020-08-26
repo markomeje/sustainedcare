@@ -4,8 +4,8 @@
 		<div class="banner-content">
 			<div class="container">
 				<div class="row justify-content-center">
-					<div class="col-12 col-md-10 col-lg-8 mb-4">
-						<h1 class="text-white text-center font-weight-bolder mb-4" data-aos="fade-up">Sustained<span class="text-forest">Care</span> Foundation is a charity Organization founded in the year 2018<span class="text-orange d-inline">.</span></h1>
+					<div class="col-12 col-md-10 col-lg-8">
+						<h1 class="text-white text-center font-weight-bolder" data-aos="fade-up">Sustained<span class="text-forest">Care</span> Foundation is a charity Organization founded in the year 2018<span class="text-orange d-inline">.</span></h1>
 						<p class="text-white text-center">We are basically in the Mission to encourage early childhood education and also to assist in the gradual eradication of poverty in the World as a vision, but commencing from Africa in Nigeria with our various empowerment schemes and initiatives.</p>
 					</div>
 				</div>

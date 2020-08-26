@@ -139,12 +139,6 @@
 			<h1 class="text-shade mb-2">Send a Message Today<span class="text-orange">.</span></h1>
 			<p class="text-muted">By joining forces together, we can make the world a better place.</p>
 			<a href="<?= DOMAIN; ?>/contact" class="btn mb-4 rounded-pill px-4 text-white border-0 orange-gradient orange-shadow">Contact Us</a>
-			<!-- <div class="row justify-content-center gallery">
-				<div class="col-12 mb-4">
-
-					<?php require FRONTEND_PATH . DS . "contact" . DS . "partials" . DS . "form.php"; ?> 
-				</div>
-			</div> -->
 		</div>
 	</div>
 </div>
