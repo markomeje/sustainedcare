@@ -81,10 +81,9 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 |
 */
 
-//if(!in_array(SERVER_HOST, LOCALHOSTS)) {
+if(!in_array(SERVER_HOST, LOCALHOSTS)) {
    //Application\Exceptions\Handler::register();
-//}
-//
+}
 
 
 /**
