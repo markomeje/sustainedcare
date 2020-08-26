@@ -113,7 +113,7 @@
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
-	height: 550px;
+	height: 580px;
 }
 
 .about-banner:before {
@@ -376,6 +376,11 @@
 		padding-bottom: 5px;
 	}
 
+	.about-banner {
+		min-height: 100vh;
+		height: 820px;
+	}
+
 	.navbar-mobile {
 		width: 100vw;
 	}
@@ -399,6 +404,12 @@
 	.mission-section .card-img-top {
 		height: 180px;
 	}
+
+	.about-mission,
+	.about-vision {
+		text-align: center !important;
+	}
+
 }
 
 @media (max-width: 375px) {

@@ -32,7 +32,7 @@
 	</div>
 	<div class="about-vision bg-white">
 		<div class="container">
-			<div class="row">
+			<div class="row justify-content-center">
 				<div class="col-12 col-md-6 col-lg-6 mb-4">
 					<div class="" data-aos="fade-up">
 						<img src="<?= IMAGES_URL; ?>/gallery/five.jpeg" class="img-fluid object-fit-cover rounded w-100">
