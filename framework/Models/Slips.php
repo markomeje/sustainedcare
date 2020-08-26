@@ -71,24 +71,21 @@ class Slips extends Model {
 			$database = Database::connect();
 			$database->beginTransaction();
 			$slip = $this->getById($id);
-			if ($slip->status === "verified") {
-				return ["status" => "verified"];
-			}else {
-				$this->updateSlipStatus("verified", $id);
-				$applicant = $this->referrals->isApplicantReferred($id);
-				if (!empty($applicant)) $this->earnings->addEarning($applicant);
-				$fields = ["type" => "offline", "reference" => Generate::hash(), "status" => "paid", "amount" => $slip->amount];
-		    	if (empty($this->payments->getById($id))) {
-		    		$merged = array_merge($fields, ["applicant" => $id]);
-		    		$this->payments->addPayments($merged);
-		            $database->commit();
-				    return ["status" => "success"];
-		    	}else {
-		    		$this->payments->update($fields, $id);
-		    		$database->commit();
-				    return ["status" => "success"];
-		    	}
-			}
+			if (!empty($slip) && $slip->status === "verified") return ["status" => "verified"];
+			$this->updateSlipStatus("verified", $id);
+			$applicant = $this->referrals->isApplicantReferred($id);
+			if (!empty($applicant)) $this->earnings->addEarning($applicant);
+			$fields = ["type" => "offline", "reference" => Generate::hash(), "status" => "paid", "amount" => $slip->amount];
+	    	if (empty($this->payments->getById($id))) {
+	    		$merged = array_merge($fields, ["applicant" => $id]);
+	    		$this->payments->addPayments($merged);
+	            $database->commit();
+			    return ["status" => "success"];
+	    	}else {
+	    		$this->payments->update($fields, $id);
+	    		$database->commit();
+			    return ["status" => "success"];
+	    	}
 		} catch (Exception $error) {
 			$database->rollback();
 			Logger::log("VERYING APPLICANT PAYMENT SLIP ERROR", $error->getMessage(), __FILE__, __LINE__);

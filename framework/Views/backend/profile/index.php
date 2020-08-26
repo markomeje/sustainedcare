@@ -27,16 +27,22 @@
 	    				<div class="alert alert-info mb-0">
 	    					<a href="javascript:;" class="copy mr-2" data-toggle="modal" data-target="#update-password">Update password</a>
 	    					<?php if(empty($cashrequest)): ?>
-		    					<a href="javascript:;" class="<?= (empty($earnings) || $earnings < 2000) ? 'no-earnings' : 'cash'; ?>" data-toggle="modal" data-target="#<?= (empty($earnings) || $earnings < 2000) ? 'no-earnings' : 'request-cash'; ?>">Request cash</a>
+	    						<?php if(empty($earnings)): ?>
+	    							<div class="text-muted no-earnings">No earnings</div>
+	    						<?php elseif($earnings < 2000): ?>
+                                    <div class="text-muted">Unwithdeawable</div>
+                                <?php else: ?>
+		    					<a href="javascript:;" class="text-muted" data-toggle="modal" data-target="#request-cash">Request cash</a>
 		    					<?php require BACKEND_PATH . DS . "withdrawals" . DS . "partials" . DS . "request.php"; ?>
+		    					<?php endif; ?>
 		    				<?php else: ?>
-		    					<a href="javascript:;" class="text-danger">Cash pending</a>
+		    					<div class="text-danger">Cash pending</div>
 		    				<?php endif; ?>
 	    				</div>
 	    			</div>
 	    		</div>
 	    		<?php if(!empty($cashrequest)): ?>
-	    		    <div class="alert-danger alert mb-4">
+	    		    <div class="alert-info alert mb-4">
 	    		    	We're processing your request. Note that payments will be made to the bank details you added. If you've not added your bank details, please do that immediately.
 	    		    </div>
 	    		<?php endif; ?>

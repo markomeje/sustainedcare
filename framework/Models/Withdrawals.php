@@ -92,7 +92,7 @@ class Withdrawals extends Model {
 			}
         } catch (Exception $error) {
         	Logger::log("APPROVE CASH ERROR", $error->getMessage(), __FILE__, __LINE__);
-        	return false;
+        	return ["status" => "error"];
         }
 	}
 
@@ -104,7 +104,7 @@ class Withdrawals extends Model {
 			return $result["fetchAll"];
         } catch (Exception $error) {
         	Logger::log("GETTING APPLICANT CASH REQUEST ERROR", $error->getMessage(), __FILE__, __LINE__);
-        	return false;
+        	return ["status" => "error"];
         }
 	}
 
