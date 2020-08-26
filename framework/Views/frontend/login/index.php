@@ -14,8 +14,9 @@
 							<?php endif; ?>
 						<?php endif; ?>
 						<form action="javascript:;" method="POST" class="login-form" data-action="<?= DOMAIN; ?>/login/login">
-							<div class="alert my-3 px-3 login-message d-none"></div>
-							<input type="hidden" name="csrf" value="<?= Application\Library\Session::csrf(); ?>">
+							<div class="alert my-3 px-3 login-message d-none alert-dismissible"></div>
+							<!-- <div class="mb-3 px-3 alert resend-email d-none alert-dismissible">If you did not get any link, please click <a href="javascript:;">Here</a> to resend email.</div> -->
+							<input type="hidden" name="csrf" value="<?= Application\Library\Session::set("csrf", \Application\Library\Generate::bytes(85)); ?>">
 							<div class="form-group input-group-lg">
 								<label for="" class="text-muted mb-2">Email</label>
 								 <input type="email" name="email" class="form-control email" placeholder="e.g., john@doe.com">

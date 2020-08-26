@@ -32,7 +32,7 @@ class Generate {
     }
 
     public static function numbers(){
-		return rand(1000000, 9999999);
+		return mt_rand(1000000, 9999999);
 	}
 	
 }

@@ -9,7 +9,7 @@
 				  	<ul class="pagination mb-0">
 				  		<?php if($pagination->hasPreviousPage()): ?>
 				  			<li class="page-item">
-						        <a class="page-link px-3 border-orange text-orange" href="<?= $link.($currentPage - 1).$string.$query; ?>">
+						        <a class="page-link px-3 border text-muted" href="<?= $link.($currentPage - 1).$string.$query; ?>">
 						        	<small><i class="icofont-arrow-left"></i></small>
 						        </a>
 						    </li>
@@ -19,14 +19,14 @@
 					    <?php for($page = $visiblePages; $page <= $pageEnd; $page++): ?>
 					    	<?php  $active = ($page === $currentPage) ? true : false; ?>
 						    <li class="page-item">
-						        <a class="page-link px-3 border-orange <?= ($active) ? 'orange-gradient text-white' : 'text-orange'; ?>" href="<?= ($active) ? "javascript:;" : $link.$page.$string.$query; ?>">
+						        <a class="page-link px-3 border <?= ($active) ? 'bg-dark text-white' : 'text-muted'; ?>" href="<?= ($active) ? "javascript:;" : $link.$page.$string.$query; ?>">
 						        	<?= ($page); ?>
 						        </a>
 						    </li>
 						<?php endfor; ?>
 						<?php if($pagination->hasNextPage()): ?>
 				  			<li class="page-item">
-						        <a class="page-link px-3 border-orange text-orange" href="<?= $link.($currentPage + 1).$string.$query; ?>">
+						        <a class="page-link px-3 border text-muted" href="<?= $link.($currentPage + 1).$string.$query; ?>">
 						        	<small><i class="icofont-arrow-right"></i></small>
 						        </a>
 						    </li>

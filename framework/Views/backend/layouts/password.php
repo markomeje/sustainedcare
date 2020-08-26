@@ -3,7 +3,7 @@
     <div class="modal-dialog modal-dialog-centered modal-lg" role="document">
         <div class="modal-content">
             <div class="modal-header align-items-center border-bottom-orange">
-                <div class="modal-title text-muted" id="exampleModalLongTitle">Update password</div>
+                <div class="modal-title text-muted">Update password</div>
                 <div class="cursor-pointer" data-dismiss="modal" aria-label="Close">
                     <i class="icofont-close text-danger"></i>
                 </div>
@@ -24,20 +24,20 @@
                         </div>
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted">Current password</label>
-                            <input type="password" name="current-password" class="form-control current-password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-                            <small class="error current-password-error text-danger"></small>
+                            <input type="password" name="currentpassword" class="form-control currentpassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                            <small class="error currentpassword-error text-danger"></small>
                         </div>
                     </div>
                     <div class="form-row">
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted">New password</label>
-                            <input type="password" name="new-password" class="form-control new-password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-                            <small class="error new-password-error text-danger"></small>
+                            <input type="password" name="newpassword" class="form-control newpassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                            <small class="error newpassword-error text-danger"></small>
                         </div>
                         <div class="form-group input-group-lg col-md-6">
                             <label class="text-muted">Confirm password</label>
-                            <input type="password" name="confirm-password" class="form-control confirm-password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-                            <small class="error confirm-password-error text-danger"></small>
+                            <input type="password" name="confirmpassword" class="form-control confirmpassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+                            <small class="error confirmpassword-error text-danger"></small>
                         </div>
                     </div>
                 </div>

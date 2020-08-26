@@ -16,8 +16,9 @@ class Authenticate {
     }
 
     public static function logger($role) {
-        if (Session::get("role") !== $role) {
+        if (Session::get("role") !== $role && Session::get("isLoggedIn") !== true) {
             exit(View::render("pages/500", "errors", ["title" => "Access Denied"]));
         }
     }
+    
 }

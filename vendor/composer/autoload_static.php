@@ -44,6 +44,8 @@ class ComposerStaticInit11edc676631164f31d1d434e3507e697
             'Symfony\\Component\\Debug\\' => 24,
             'Symfony\\Component\\Console\\' => 26,
             'Symfony\\Component\\Config\\' => 25,
+            'Stripe\\' => 7,
+            'SameerShelavale\\PhpCountriesArray\\' => 34,
         ),
         'P' => 
         array (
@@ -157,6 +159,14 @@ class ComposerStaticInit11edc676631164f31d1d434e3507e697
         array (
             0 => __DIR__ . '/..' . '/symfony/config',
         ),
+        'Stripe\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/stripe/stripe-php/lib',
+        ),
+        'SameerShelavale\\PhpCountriesArray\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sameer-shelavale/php-countries-array/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -247,6 +257,13 @@ class ComposerStaticInit11edc676631164f31d1d434e3507e697
                 0 => __DIR__ . '/..' . '/twig/twig/lib',
             ),
         ),
+        'S' => 
+        array (
+            'SameerShelavale\\PhpCountriesArray\\' => 
+            array (
+                0 => __DIR__ . '/..' . '/sameer-shelavale/php-countries-array/src',
+            ),
+        ),
         'P' => 
         array (
             'Pimple' => 
@@ -298,6 +315,9 @@ class ComposerStaticInit11edc676631164f31d1d434e3507e697
     );
 
     public static $classMap = array (
+        'CoinPaymentsNet\\CoinpaymentsAPI' => __DIR__ . '/..' . '/coinpaymentsnet/coinpayments-php/src/CoinpaymentsAPI.php',
+        'CoinPaymentsNet\\CoinpaymentsCurlRequest' => __DIR__ . '/..' . '/coinpaymentsnet/coinpayments-php/src/CoinpaymentsCurlRequest.php',
+        'CoinPaymentsNet\\CoinpaymentsValidator' => __DIR__ . '/..' . '/coinpaymentsnet/coinpayments-php/src/CoinpaymentsValidator.php',
         'Datamatrix' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/datamatrix.php',
         'PDF417' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/pdf417.php',
         'QRcode' => __DIR__ . '/..' . '/tecnickcom/tcpdf/include/barcodes/qrcode.php',

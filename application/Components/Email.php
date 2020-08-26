@@ -29,10 +29,14 @@ class Email {
                     $mail->Subject = PASSWORD_RESET_SUBJECT;
                     $mail->AddAddress($email);
                     break;
+                case (EMAIL_CONTACT):
+                    $mail->Body = self::contactEmailBody($email, $data);
+                    $mail->Subject = EMAIL_CONTACT_SUBJECT;
+                    $mail->AddAddress($email);
+                    break;
             }
             $mail->send();
         }catch(\Exception $error) {
-            die($error->getMessage());
             Logger::log("SENDING EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
             return false;
         }   
@@ -50,6 +54,13 @@ class Email {
         $body  = "";
         $body .= "Dear " . $email . ", Please Use The Following Token To Reset Your Password: ";
         $body .= PASSWORD_RESET_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"]);
+        $body .= " If you didn't Perform This Action With your email, Please ignore.";
+        return $body;
+    }
+
+    private static function contactEmailBody($email, $data) {
+        $body  = "";
+        $body .= $data["firstname"]." ".$data["lastname"]. " contacted you with the following ";
         $body .= " If you didn't Perform This Action With your email, Please ignore.";
         return $body;
     }

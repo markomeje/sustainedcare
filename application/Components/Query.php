@@ -87,7 +87,7 @@ class Query {
 			$counter++;
 		}
 
-		$query .= isset($limit) ? "" : " LIMIT " .$limit;
+		$query .= ($limit) ? " LIMIT " .$limit : "";
         $database->prepare($query);
         foreach ($fields as $key => $value){
 			$database->bindValue(":{$key}", $value);

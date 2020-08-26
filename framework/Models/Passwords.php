@@ -20,27 +20,30 @@ class Passwords extends Model {
 		$loggedIn = $this->login->getLoggedInSession();
 		if(empty($this->reason) || !$this->reason) {
 			return ['status' => "invalid-reason"];
-		}elseif(!$this->verify($this->currentPassword, $loggedIn->password)) {
+		}elseif(!$this->verify($this->currentpassword, $loggedIn->password)) {
 			return ['status' => "incorrect-password"];
-		}elseif (empty($this->newPassword) || !Validate::range($this->newPassword, 6, 15)) {
+		}elseif (empty($this->newpassword) || !Validate::range($this->newpassword, 6, 15)) {
             return ['status' => "invalid-password"];
-		} elseif ($this->newPassword !== $this->confirmPassword) {
+		} elseif ($this->newpassword !== $this->confirmpassword) {
 			return ['status' => "invalid-confirm-password"];
 		}
 
 		try{
-			$password = $this->passwordHash($this->newPassword);
+			$password = $this->hash($this->newpassword);
 			$fields = ["password" => $password];
 			$condition = ["id" => $loggedIn->id];
 	        $result = Query::update("login", $fields, $condition, 1);
-	        if($result["rowCount"] > 0) $this->login->logout(); return ["status" => "success", "redirect" => DOMAIN."/login"];
+	        if($result["rowCount"] > 0) { 
+	        	$this->login->logout(); 
+	        	return ["status" => "success", "redirect" => DOMAIN."/login"];
+	        }
         } catch (\Exception $error) {
         	Logger::log("UPDATING PASSWORD ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
         }
 	}
 
-	public function passwordHash($password) {
+	public function hash($password) {
 		return password_hash($password, PASSWORD_DEFAULT);
 	}
 

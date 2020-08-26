@@ -8,7 +8,7 @@
 				  	<ul class="pagination mb-0">
 				  		<?php if($pagination->hasPreviousPage()): ?>
 				  			<li class="page-item">
-						        <a class="page-link px-3 border-orange orange-color" href="<?= $link.($currentPage - 1); ?>">
+						        <a class="page-link px-3 border text-muted" href="<?= $link.($currentPage - 1); ?>">
 						        	<small><i class="icofont-arrow-left"></i></small>
 						        </a>
 						    </li>
@@ -18,14 +18,14 @@
 					    <?php for($page = $visiblePages; $page <= $pageEnd; $page++): ?>
 					    	<?php  $active = ($page === $currentPage) ? true : false; ?>
 						    <li class="page-item">
-						        <a class="page-link px-3 border-orange <?= ($active) ? 'bg-orange text-white' : 'orange-color'; ?>" href="<?= ($active) ? "javascript:;" : $link.$page; ?>">
+						        <a class="page-link px-3 border <?= ($active) ? 'bg-dark text-white' : 'text-muted'; ?>" href="<?= ($active) ? "javascript:;" : $link.$page; ?>">
 						        	<?= ($page); ?>
 						        </a>
 						    </li>
 						<?php endfor; ?>
 						<?php if($pagination->hasNextPage()): ?>
 				  			<li class="page-item">
-						        <a class="page-link px-3 border-orange orange-color" href="<?= $link.($currentPage + 1); ?>">
+						        <a class="page-link px-3 border text-muted" href="<?= $link.($currentPage + 1); ?>">
 						        	<small><i class="icofont-arrow-right"></i></small>
 						        </a>
 						    </li>

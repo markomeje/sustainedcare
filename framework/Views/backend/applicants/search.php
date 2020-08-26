@@ -1,19 +1,21 @@
-<div class="wrapper bg-gray">
+<div class="position-relative">
     <?php require BACKEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
     <div class="pt-5">
 	    <div class="container pt-5">
 	        <div class="row">
-	            <?php require BACKEND_PATH . DS . "layouts" . DS . "links.php"; ?>
+                <div class="col-12 col-md-6 col-lg-6 mb-4">
+	                <?php require BACKEND_PATH . DS . "layouts" . DS . "links.php"; ?>
+                </div>
 	            <div class="col-12 col-md-6 col-lg-6 mb-4">
 	                <form action="<?= DOMAIN; ?>/applicants/search/" method="GET" class="search-applicant">
                         <div class="row no-gutters">
                             <div class="col-10 col-md-10 col-lg-10">
                                 <div class="form-group input-group-lg mb-0">
-                                    <input type="search" name="query" class="form-control backend-search-input border-orange" placeholder="Search applicants" autocomplete="on" value="<?= isset($_GET['query']) ? $_GET['query'] : ''; ?>">
+                                    <input type="search" name="query" class="form-control backend-search-input border" placeholder="Search applicants" autocomplete="on" value="<?= isset($_GET['query']) ? $_GET['query'] : ''; ?>">
                                 </div>
                             </div>
                             <div class="col-2 col-md-2 col-lg-2">
-                                <button type="submit" class="btn orange-gradient btn-block text-white mb-0 backend-search-button border-orange">
+                                <button type="submit" class="btn bg-light btn-block text-muted mb-0 backend-search-button border">
                                     <i class="icofont-ui-search"></i>
                                 </button>
                             </div>
@@ -50,10 +52,8 @@
                 	    <?php require BACKEND_PATH . DS . "applicants" . DS . "partials" . DS . "edit.php"; ?>
                 	<?php endforeach; ?>
                 </div>
-            <?php endif; ?>
-            <div class="">
                 <?php require BACKEND_PATH . DS . "applicants" . DS . "pagination" . DS . "search.php"; ?>
-            </div>
+            <?php endif; ?>
 	    </div>
     </div>
 </div>

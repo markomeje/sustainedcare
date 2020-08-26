@@ -28,10 +28,7 @@ class Login extends Model {
 	}
 
 	public function login() {
-		if (!Session::exists("csrf") || Session::get("csrf") !== $this->csrf) {
-            Cookie::set(ACCESS_DENIED_KEY, $this->IpAddress(), time() + SESSION_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
-            return ["status" => "blocked"];
-        }elseif (empty($this->email) || !Validate::email($this->email)) {
+		if (empty($this->email) || !Validate::email($this->email)) {
 			return ['status' => "invalid-email"];
 		}elseif (empty($this->password)) {
 			return ['status' => "empty-password"];
@@ -50,7 +47,7 @@ class Login extends Model {
 			$fields = ["failed" => null, "attempts" => null, "session" => session_id(), "timestamp" => time(), "counter" => $logger->counter + (int)1];
 			$this->updateLoginState($fields, $logger->id);
 			if (Cookie::exists(ACCESS_DENIED_KEY)) Cookie::destroy(ACCESS_DENIED_KEY);
-			$redirect = ($logger->role === "admin") ? DOMAIN."/dashboard" : DOMAIN."/profile";
+			$redirect = Session::get("role") === "applicant" ? DOMAIN."/profile" : DOMAIN."/dashboard";
 			return ["status" => "success", "redirect" => $redirect];
 		}else {
 			$fields = ["failed" => time(), "attempts" => $logger->attempts + 1];
@@ -61,7 +58,9 @@ class Login extends Model {
 
 	public function loginWithSession($logger) {
 		$data = ["id" => $logger->id, "isLoggedIn" => true, "email" => $logger->email, "role" => $logger->role];
-		Session::log($data);
+		foreach ($data as $key => $value) {
+			Session::set($key, $value);
+		}
 		Cookie::set(session_name(), session_id(), time() + SESSION_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
 	}
 

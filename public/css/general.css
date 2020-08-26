@@ -12,11 +12,24 @@ body, html {
 }
 
 a:hover {
-    opacity: 0.9;
+    opacity: 0.8;
 }
 
 body {
     font-family: "Poppins", serif;
+}
+
+.input-group-prepend,
+.input-group-append {
+    height: 45px;
+}
+
+.border-raduis {
+    border-radius: 20px;
+}
+
+.light-ash {
+    background-color: rgba(0, 0, 0, 0.08);
 }
 
 p {
@@ -32,7 +45,7 @@ p {
 }
 
 .lemon-shadow {
-    box-shadow: 1px 1px 15px rgba(45, 100, 31, 0.05);
+    box-shadow: 1px 1px 10px rgba(45, 100, 31, 0.05);
 }
 
 .bg-black {
@@ -40,11 +53,15 @@ p {
 }
 
 .forest-shadow {
-    box-shadow: 1px 1px 15px rgba(140, 198, 66, 1);
+    box-shadow: 1px 1px 5px rgba(140, 198, 66, 1);
 }
 
 .orange-shadow {
-    box-shadow: 1px 1px 15px rgba(220, 72, 5, 1);
+    box-shadow: 1px 1px 8px rgba(220, 72, 5, 1);
+}
+
+.border-bottom-white {
+    border-bottom: 1px solid #fff;
 }
 
 .text-black {
@@ -71,16 +88,24 @@ p {
     border: 1px solid #8cc642;
 }
 
+.border-top-darker {
+    border-top: 1px solid #333333;
+}
+
+.border-bottom-forest {
+    border-bottom: 1px solid #8cc642;
+}
+
 .bg-gray {
     background-color: #F9F8FF;
 }
 
 .border-gray {
-    border: 1px solid #F9F8FF !important;
+    border: 1px solid #F9F8FF;
 }
 
 .border-bottom-gray {
-    border-bottom: 1px solid #F9F8FF !important;
+    border-bottom: 1px solid #F9F8FF;
 }
 
 .text-forest {

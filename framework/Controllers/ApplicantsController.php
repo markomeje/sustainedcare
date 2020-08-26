@@ -1,7 +1,7 @@
 <?php
 
 namespace Framework\Controllers;
-use Application\Core\{View, Controller, Help};
+use Application\Core\{View, Controller, Help, Authenticate};
 use Framework\Models\{Applicants};
 
 
@@ -9,6 +9,7 @@ class ApplicantsController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
+		Authenticate::logger("admin");
 	}
 
 	public function index($pageNumber = "") {
@@ -34,7 +35,7 @@ class ApplicantsController extends Controller {
 	public function search($page = "") {
 		$query = $this->get('query');
 		if (empty($query) || $query === "") {
-			exit(View::render("pages/404", "errors", ["title" => "Page Not Found"]));
+			$this->redirect("/applicants");
 		}else {
 			$applicants = $this->applicants->search($page, $query);
 			View::render("applicants/search", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["search"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders()]);
@@ -46,6 +47,10 @@ class ApplicantsController extends Controller {
 			$response = $this->applicants->delete($id);
 			$this->jsonEncode($response);
 		}
+	}
+
+	public function applicant($id) {
+		View::render("applicants/applicant", "backend", ["bank_details" => $this->banks->getDetailsById($id), "application_details" => $this->applicants->getByLogin($id)]);
 	}
 
 }

@@ -1,20 +1,14 @@
 <div class="home">
-	<div class="home-banner bg-white position-relative w-100">
+	<div class="home-banner position-relative w-100">
 		<?php require FRONTEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
 		<div class="banner-content">
 			<div class="container">
-				<div class="row">
-					<div class="col-12 col-md-10 col-lg-8 banner-left mb-4">
-						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up">Apply for Special <em class="text-orange">Grants</em> for Business and Projects<span class="text-orange d-inline">.</span></h1>
-						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get a maximum of one million naira grant for your choice business or project.</p>
+				<div class="row justify-content-center text-center">
+					<div class="col-12 col-md-12 col-lg-8 py-4 mb-4">
+						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up">Apply for Special <span class="text-orange">Grant</span> for Your Business or Project<span class="text-orange d-inline">.</span></h1>
+						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get a maximum of NGN200,000 (Two hundred thousand naira) grant for your choice business or project.</p>
 						<div class="" data-aos="fade-up">
-							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply</a>
-							<a href="http://paypal.me/Suscare" class="btn btn-lg px-4 lemon-gradient text-white forest-shadow border-0 rounded-pill">Donate</a>
-						</div>
-					</div>
-					<div class="col-12 col-md-2 col-lg-6 banner-right position-relative mb-4">
-						<div class="text-center text-danger" data-aos="fade-up">
-							<!-- <img src="<?= IMAGES_URL; ?>/assets/over.png" class="img-fluid w-100 h-100"> -->
+							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
 						</div>
 					</div>
 				</div>
@@ -30,46 +24,37 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 col-md-6 col-lg-3">
-					<div class="card mb-4 light-shadow border-forest" data-aos="fade-up">
-					    <img class="card-img-top object-fit-cover" height="200" src="<?= IMAGES_URL; ?>/assets/gifts.png" alt="SustainedCare">
+				<div class="col-12 col-md-4 col-lg-4">
+					<div class="card mb-4 light-shadow orange-gradient border-0" data-aos="fade-up">
+					    <img class="card-img-top object-fit-cover rounded-top" src="<?= IMAGES_URL; ?>/gallery/fourtheen.jpeg" alt="Elderly Care">
 					    <div class="card-body">
-						    <h5 class="text-shade">Elderly Care</h5>
-						    <p class="text-muted">We provide basic Relief Health Materials for aged ones</p>
+						    <h5 class="text-white">Elderly Care</h5>
+						    <p class="text-white">We provide basic Relief Health Materials for aged ones</p>
 					    </div>
 					</div>
 				</div>
-				<div class="col-12 col-md-6 col-lg-3">
+				<div class="col-12 col-md-4 col-lg-4">
 					<div class="card mb-4 light-shadow border-forest" data-aos="fade-up">
-					    <img class="card-img-top object-fit-cover" height="200" src="<?= IMAGES_URL; ?>/assets/grand.png" alt="SustainedCare">
+					    <img class="card-img-top object-fit-cover rounded-top" src="<?= IMAGES_URL; ?>/gallery/nine.jpeg" alt="Elderly Care">
 					    <div class="card-body">
 						    <h5 class="text-shade">Student Outreaches</h5>
 						    <p class="text-muted">We have been reaching out to school students in both rural and urban areas</p>
 					    </div>
 					</div>
 				</div>
-				<div class="col-12 col-md-6 col-lg-3">
+				<div class="col-12 col-md-4 col-lg-4">
 					<div class="card mb-4 light-shadow border-forest" data-aos="fade-up">
-					    <img class="card-img-top object-fit-cover" height="200" src="<?= IMAGES_URL; ?>/assets/agree.png" alt="SustainedCare">
-					    <div class="card-body">
-						    <h5 class="text-shade">Our Legalities</h5>
-						    <div class="text-muted">We are officially registered and certified by the Federal Government of Nigeria.</div>
-					    </div>
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3">
-					<div class="card mb-4 light-shadow border-forest" data-aos="fade-up">
-					    <img class="card-img-top object-fit-cover" height="200" src="<?= IMAGES_URL; ?>/assets/love.png" alt="SustainedCare">
+					    <img class="card-img-top object-fit-cover rounded-top" src="<?= IMAGES_URL; ?>/gallery/two.jpeg" alt="Elderly Care">
 					    <div class="card-body">
 						    <h5 class="text-shade">Child Care</h5>
-						    <p class="text-muted">We have been reaching out to children in the streets both in the rural and urban areas</p>
+						    <p class="text-muted">We have been supporting children in the streets and orphanages with basic relief items.</p>
 					    </div>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="generic-section bg-white position-relative">
+	<div class="generic-section position-relative">
 		<div class="container">
 			<div class="row">
 				<div class="col-12 col-md-7 col-lg-5">
@@ -119,84 +104,47 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-5 col-lg-7">
-					<h1 class="text-shade" data-aos="fade-up"> We're a Non-profit Charity Foundation <em class="text-orange">with</em> Focus in Childhood Education.</h1>
-					<p class="text-muted" data-aos="fade-up">To ensure that no child is deprived of their educational rights and also ensuring a poverty free world.</p>
+					<h1 class="text-white" data-aos="fade-up"> We're a Non-profit Charity Foundation <em class="text-orange">with</em> Focus in Childhood Education.</h1>
+					<p class="text-white" data-aos="fade-up">To ensure that no child is deprived of their educational rights and also ensuring a poverty free world.</p>
 					<div class="" data-aos="fade-up">
-						<a href="<?= DOMAIN; ?>/services" class="btn btn-lg border-0 orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Learn More</a>
+						<a href="<?= DOMAIN; ?>/about" class="btn btn-lg border-0 orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Learn More</a>
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="action-section bg-dark">
+	<div class="action-section bg-black">
 		<div class="container">
 			<div class="row align-items-center align-content-center">
 				<div class="col-12 col-md-6 col-lg-6 mb-4">
 					<div class="" data-aos="fade-up">
-						<h1 class="text-white mb-4">Apply for a <em class="text-orange">Grant</em></h1>
-						<p class="text-white mb-4">Stand a chance to get a maximum of one million naira grant for your choice business or project.</p>
+						<h1 class="text-white mb-4"><span class="text-forest">Donate</span> to support our grant project of over 20,000 persons.</h1>
+						<p class="text-white mb-3">You're just helping to ensure that no child is deprived of their educational right and also ensuring a poverty Free World.</p>
+						<h3 class="mb-4 text-orange">That's our vision.</h3>
 						<div class="">
-							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg border-0 orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Apply</a>
+							<a href="<?= DOMAIN; ?>/donate" class="btn btn-lg border-0 forest-shadow rounded-pill px-4 border-0 text-white lemon-gradient">Donate</a>
 						</div>
 					</div>
 				</div>
 				<div class="col-12 col-md-6 col-lg-6 mb-4">
 					<div class="" data-aos="fade-up">
-						<h1 class="text-white mb-4"><em class="text-forest">Make</em> a Donation</h1>
-						<p class="text-white mb-4">Stand a chance to get a maximum of one million naira grant for your choice business or project.</p>
-						<div class="">
-							<a href="http://paypal.me/Suscare" class="btn btn-lg border-0 forest-shadow rounded-pill px-4 border-0 text-white lemon-gradient">Donate</a>
-						</div>
+						<img src="<?= IMAGES_URL; ?>/assets/donate.jpg" class="img-fluid w-100 rounded">
 					</div>
 				</div>
 			</div>
 		</div>
 	</div>
-	<div class="reviews-section bg-gray">
-		<div class="container">
-			<h1 class="text-shade text-center mb-4">Our Gallery</h1>
-			<div class="row justify-content-center gallery">
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/one.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
+	<div class="contact-section bg-gray position-relative px-4">
+		<div class="container bg-gray light-shadow p-4 rounded">
+			<h1 class="text-shade mb-2">Send a Message Today<span class="text-orange">.</span></h1>
+			<p class="text-muted">By joining forces together, we can make the world a better place.</p>
+			<a href="<?= DOMAIN; ?>/contact" class="btn mb-4 rounded-pill px-4 text-white border-0 orange-gradient orange-shadow">Contact Us</a>
+			<!-- <div class="row justify-content-center gallery">
+				<div class="col-12 mb-4">
+
+					<?php require FRONTEND_PATH . DS . "contact" . DS . "partials" . DS . "form.php"; ?> 
 				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/two.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/three.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/four.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/five.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/six.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/seven.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-				<div class="col-12 col-md-6 col-lg-3 mb-4">
-					<div class="">
-						<img src="<?= IMAGES_URL; ?>/gallery/eight.jpeg" class="img-fluid object-fit-cover w-100">
-					</div>
-				</div>
-			</div>
+			</div> -->
 		</div>
 	</div>
 </div>

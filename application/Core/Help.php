@@ -5,28 +5,41 @@ namespace Application\Core;
 
 class Help {
 
-	public static function generateNumbers() {
-		$alphabets = range("A", "Z");
-		$maximum = 1000; $numbers = []; $counter = 0;
-		foreach ($alphabets as $alphabet) {
-		    for ($serial = 1; $serial <= $maximum; $serial++) {
-		        $serial = sprintf('%1$04d', (string)$serial);
-		        $numbers[] = $alphabet.$serial;
-		        $counter++;
-		    }
-		}
-		return ($numbers);
+
+	public static function getFiatCurrencies(): array {
+		return ["NGN", "USD"];
 	}
 
-	public static function getGrantAmounts() {
+	public static function nigerianBanks(): array {
+		return ["Access Bank", "Access Diamond", "Citibank", 'Ecobank', 'Fidelity Bank', 'First Bank', 'FCMB', 'GTB', 'Heritage Bank', 'Keystone Bank', 'Polaris Bank', 'Stanbic IBTC', 'Standard Chartered Bank', 'Sterling Bank', 'Union Bank', 'UBA', 'Unity Bank', 'Wema Bank', 'Zenith Bank'];
+	}
+
+	public static function getCryptoCurrencies(): array {
+		$crypto = ["BTC" => "Bitcoin", "BCH" => "Bitcoin Cash", "LTC" => "Litecoin", "ETH" => "Ether", "TRX" => "TRON", "LTCT" => "Litecoin Testnet"];
+		return $crypto;
+	}
+
+	public static function getGrantAmounts(): array {
 		return ["25000", "50000", "100000", "200000"];
+	}
+
+	public static function getAllCountries(): array {
+		return ["Afghanistan", "Albania", "Algeria", "American Samoa", "Andorra", "Angola", "Anguilla", "Antarctica", "Antigua and Barbuda", "Argentina", "Armenia", "Aruba", "Australia", "Austria", "Azerbaijan", "Bahamas", "Bahrain", "Bangladesh", "Barbados", "Belarus", "Belgium", "Belize", "Benin", "Bermuda", "Bhutan", "Bolivia", "Bosnia and Herzegowina", "Botswana", "Bouvet Island", "Brazil", "British Indian Ocean Territory", "Brunei Darussalam", "Bulgaria", "Burkina Faso", "Burundi", "Cambodia", "Cameroon", "Canada", "Cape Verde", "Cayman Islands", "Central African Republic", "Chad", "Chile", "China", "Christmas Island", "Cocos (Keeling) Islands", "Colombia", "Comoros", "Congo", "Democratic Republic of Congo", "Cook Islands", "Costa Rica", "Ivory Coast", "Croatia (Hrvatska)", "Cuba", "Cyprus", "Czech Republic", "Denmark", "Djibouti", "Dominica", "Dominican Republic", "East Timor", "Ecuador", "Egypt", "El Salvador", "Equatorial Guinea", "Eritrea", "Estonia", "Ethiopia", "Falkland Islands (Malvinas)", "Faroe Islands", "Fiji", "Finland", "France", "France Metropolitan", "French Guiana", "French Polynesia", "French Southern Territories", "Gabon", "Gambia", "Georgia", "Germany", "Ghana", "Gibraltar", "Greece", "Greenland", "Grenada", "Guadeloupe", "Guam", "Guatemala", "Guinea", "Guinea-Bissau", "Guyana", "Haiti", "Heard and Mc Donald Islands", "Holy See (Vatican City State)", "Honduras", "Hong Kong", "Hungary", "Iceland", "India", "Indonesia", "Iran (Islamic Republic of)", "Iraq", "Ireland", "Israel", "Italy", "Jamaica", "Japan", "Jordan", "Kazakhstan", "Kenya", "Kiribati", "Korea", "Korea Democratic People's Republic", "Kuwait", "Kyrgyzstan", "Lao, People's Democratic Republic", "Latvia", "Lebanon", "Lesotho", "Liberia", "Libyan Arab Jamahiriya", "Liechtenstein", "Lithuania", "Luxembourg", "Macau", "Macedonia, The Former Yugoslav Republic of", "Madagascar", "Malawi", "Malaysia", "Maldives", "Mali", "Malta", "Marshall Islands", "Martinique", "Mauritania", "Mauritius", "Mayotte", "Mexico", "Micronesia, Federated States of", "Moldova, Republic of", "Monaco", "Mongolia", "Montserrat", "Morocco", "Mozambique", "Myanmar", "Namibia", "Nauru", "Nepal", "Netherlands", "Netherlands Antilles", "New Caledonia", "New Zealand", "Nicaragua", "Niger", "Nigeria", "Niue", "Norfolk Island", "Northern Mariana Islands", "Norway", "Oman", "Pakistan", "Palau", "Panama", "Papua New Guinea", "Paraguay", "Peru", "Philippines", "Pitcairn", "Poland", "Portugal", "Puerto Rico", "Qatar", "Reunion", "Romania", "Russian Federation", "Rwanda", "Saint Kitts and Nevis", "Saint Lucia", "Saint Vincent and the Grenadines", "Samoa", "San Marino", "Sao Tome and Principe", "Saudi Arabia", "Senegal", "Seychelles", "Sierra Leone", "Singapore", "Slovakia (Slovak Republic)", "Slovenia", "Solomon Islands", "Somalia", "South Africa", "South Georgia and the South Sandwich Islands", "Spain", "Sri Lanka", "St. Helena", "St. Pierre and Miquelon", "Sudan", "Suriname", "Svalbard and Jan Mayen Islands", "Swaziland", "Sweden", "Switzerland", "Syrian Arab Republic", "Taiwan, Province of China", "Tajikistan", "Tanzania, United Republic of", "Thailand", "Togo", "Tokelau", "Tonga", "Trinidad and Tobago", "Tunisia", "Turkey", "Turkmenistan", "Turks and Caicos Islands", "Tuvalu", "Uganda", "Ukraine", "United Arab Emirates", "United Kingdom", "United States", "United States Minor Outlying Islands", "Uruguay", "Uzbekistan", "Vanuatu", "Venezuela", "Vietnam", "Virgin Islands (British)", "Virgin Islands (U.S.)", "Wallis and Futuna Islands", "Western Sahara", "Yemen", "Yugoslavia", "Zambia", "Zimbabwe"];
 	}
 
 	public static function getMonthsOfYear() {
 		return ["01" => "January", "02" => "February", "03" => "March", "04" => "April", "05" => "May", "06" => "June", "07" => "July", "08" => "August", "09" => "September", "10" => "October", "11" => "November", "12" => "December"];
 	}
 
-	public static function limitStringLength($string, $length = "") {
+	public static function getNairaAmounts() {
+		return ["1000", "2000", "5000", "7500", "10000", "12000", "15000", ""];
+	}
+
+	public static function getDollarAmounts() {
+		return ["25", "50", "100", "200", "500", "750", "1000", ""];
+	}
+
+	public static function limitStringLength(string $string, int $length): string {
 		$dots = " . . .";
 		$length = empty($length) ? 25 : $length;
 		if (strlen($string) > $length) {
@@ -134,11 +147,11 @@ class Help {
 		return ["Married", "Widowed", "Single", "Divorced"];
 	}
 
-	public static function formatDatetime($datetime = "") {
+	public static function formatDatetime(string $datetime): string {
 		return empty($datetime) ? date("F j, Y, g:i a") : date("F j, Y, g:i a", strtotime($datetime));
 	}
 
-	public static function formatDate($datetime = "") {
+	public static function formatDate(string $datetime): string {
 		return empty($datetime) ? date("F j, Y") : date("F j, Y", strtotime($datetime));
 	}
 

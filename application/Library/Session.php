@@ -33,6 +33,7 @@ class Session {
      * @param [mixed] $value [any data type - boolean, string, integer ...]
      */
     public static function set($key, $value){
+        session_regenerate_id();
         return $_SESSION[$key] = $value;
     }
 
@@ -71,23 +72,6 @@ class Session {
         }
 
         return false;
-    }
-
-    public static function regenerate() {
-        return session_regenerate_id();
-    }
-
-    public static function log($data = []) {
-        foreach ($data as $key => $value) {
-            self::regenerate();
-            self::set($key, $value);
-        }
-    }
-
-    public static function csrf() {
-        $token = Generate::bytes(85);
-        self::set("csrf", $token);
-        return $token;
     }
 
 

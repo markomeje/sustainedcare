@@ -8,13 +8,12 @@ use Application\Library\{Session, Cookie};
 
 class Controller extends Application {
 
-    public $links = ["dashboard", "referrer", "accounts", "applicants", "profile", "payments", "expenses", "users"];
+    public $links = ["dashboard", "applicants", "payments", "slips", "withdrawals"];
     public $controller;
 
 
     public function __construct() {
         parent::__construct();
-        // Authenticate::logged();
         $this->controller = View::active($this->get("url"));
     }
 

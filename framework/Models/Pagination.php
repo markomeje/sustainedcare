@@ -22,7 +22,6 @@ class Pagination {
             $totalCount = ($result["rowCount"] > 0) ? $result["rowCount"] : (int)0;
             $extraOffset = (int)$extraOffset > $totalCount ? 0 : (int)$extraOffset;
             return new Pagination((int)$pageNumber, $totalCount - $extraOffset);
-
         } catch (\Exception $error) {
             Logger::log("GETTING PAGINATION DATA ERROR", $error->getMessage(), __FILE__, __LINE__);
             return false;

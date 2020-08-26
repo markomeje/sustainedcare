@@ -49,8 +49,8 @@
         </div>
         <div class="form-group input-group-lg col-md-6">
           	<label class="text-muted">Confirm password</label>
-          	<input type="password" name="confirm-password" class="form-control confirm-password" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
-          	<small class="error confirm-password-error text-danger"></small>
+          	<input type="password" name="confirmpassword" class="form-control confirmpassword" placeholder="&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;&#9679;">
+          	<small class="error confirmpassword-error text-danger"></small>
         </div>
     </div>
     <div class="form-row">

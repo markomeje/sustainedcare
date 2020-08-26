@@ -15,10 +15,10 @@
 
 .navbar-menu .menu-lines {
     width: 28px;
-    height: 3px;
-    border-radius: 3px;
+    height: 2px;
+    border-radius: 2px;
 	transition: 0.8s;
-    background-color: #666666;
+    background-color: #DC4805;
 }
 
 .menu-lines::before,
@@ -26,20 +26,20 @@
 	content: '';
 	position: absolute;
 	width: 28px;
-    height: 3px;
-    background-color: #666666;
-    border-radius: 3px;
+    height: 2px;
+    background-color: #DC4805;
+    border-radius: 2px;
 	transition: 0.8s;
 	left: 0;
 	right: 0;
 }
 
 .menu-lines::before {
-	transform: translateY(-9px);
+	transform: translateY(-7px);
 }
 
 .menu-lines::after {
-	transform: translateY(9px);
+	transform: translateY(7px);
 }
 
 .navbar-menu.slide .menu-lines {
@@ -61,7 +61,7 @@
 }
 
 .home-banner {
-	background-image: url(../images/nature.jpg);
+	background-image: url(../images/assets/nature.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: repeat;
@@ -75,7 +75,7 @@
     left: 0;
     right: 0;
     z-index: 0;
-    background-color: rgba(0, 0, 0, 0.8);
+    background-color: rgba(0, 0, 0, 0.9);
     width: 100%;
     height: 100%;
 }
@@ -84,9 +84,72 @@
 	z-index: 6;
 }
 
+.banner-content .home-right {
+	background-image: url(../images/assets/child.jpg);
+	background-position: center;
+	background-repeat: no-repeat;
+	background-size: cover;
+}
+
 .home-banner,
-.about-banner {
+.about-banner,
+.donate-banner {
 	padding: 160px 0 80px;
+}
+
+.gallery-banner {
+	padding: 100px 0;
+}
+
+.donate-banner,
+.about-banner {
+	background-image: url(../images/village.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat;
+}
+
+.donate-banner:before, 
+.about-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
+}
+
+.donate-option::hover {
+	background-color: #D3D6D1 !important;
+}
+
+.donate-banner .payment-brands {
+	height: 115px;
+}
+
+.donate-options-banner {
+	padding: 160px 0 80px;
+	background-image: url(../images/assets/child.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: repeat;
+}
+
+.donate-options-banner:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.9);
+    width: 100%;
+    height: 100%;
 }
 
 .apply-banner, 
@@ -97,7 +160,8 @@
 
 .apply-section, 
 .terms-section,
-.success-section{
+.success-section,
+.donate-options-section{
 	padding: 80px 0 100px;
 }
 
@@ -105,7 +169,7 @@
 	padding: 140px 0;
 }
 
-.banner-left h1 {
+.banner-content h1 {
 	font-size: 55px;
 }
 
@@ -119,11 +183,40 @@
 }
 
 .mission-section .card {
-	height: 450px;
+   height: 400px;
+}
+
+.mission-section .card-img-top {
+	height: 200px;
 }
 
 .about-legal {
 	padding: 120px 0;
+}
+
+.stripe-checkout {
+	min-height: 100vh;
+	z-index: 2;
+}
+
+.stripe-checkout:after {
+	content: '';
+	top: 0;
+	right: 0;
+	background-color: #0a2540;
+	position: absolute;
+	z-index: 1;
+	width: 100%;
+	height: 45%;
+	z-index: -2;
+}
+
+.stripe-checkout .container {
+	z-index: 5;
+}
+
+.stripe-checkout .powered {
+	background-color: #00d4ff;
 }
 
 .mission-section:before {
@@ -142,7 +235,25 @@
 
 .generic-section {
 	padding: 125px 0 120px;
+	background-image: url(../images/village.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center;
 }
+
+.generic-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    width: 100%;
+    height: 100%;
+}
+
 
 .generic-section .icon {
 	width: 50px;
@@ -152,15 +263,30 @@
 
 .action-section {
 	padding: 140px 0;
-	clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);
+	/*clip-path: polygon(0 0, 100% 0, 100% 70%, 0 100%);*/
 }
 
-.reviews-section {
-	padding: 120px 0;
+.contact-section {
+	padding: 120px 0 0;
+	z-index: 3;
+}
+
+.contact-section:before {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    z-index: 0;
+    background-color: #121212;
+    width: 100%;
+    height: 30%;
+    z-index: -1;
 }
 
 .bottom-section {
 	padding: 100px 0 0;
+	/*clip-path: polygon(0 10%, 100% 0, 100% 100%, 0 100%);*/
 }
 
 .bottom-links .social-icons {
@@ -203,12 +329,16 @@
 		transition: 0.8s;
 	}
 
-	.banner-right {
-		display: none;
+	.banner-content h1 {
+		font-size: 42.5px;
 	}
 
 	.mission-section .card {
-		height: 420px;
+	   height: 420px;
+	}
+
+	.mission-section .card-img-top {
+		height: 160px;
 	}
 
 }
@@ -245,6 +375,10 @@
 
 	.generic-section .icon {
 		display: none;
+	}
+
+	.mission-section .card-img-top {
+		height: 180px;
 	}
 }
 

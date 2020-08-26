@@ -1,45 +1,27 @@
-<div class="fixed-top py-3 bg-white light-shadow">
+<div class="fixed-top py-3 bg-dark light-shadow">
 	<div class="container">
-		<div class="row d-flex justify-content-between px-3 align-items-center">
-			<ul class="nav backend-navbar">
-			    <li class="position-relative mt-0 rounded-circle text-center text-orange bg-gray cursor-pointer icon-circle">
-			    	<i class="icofont-signal"></i>
-			    </li>
+		<div class="d-flex justify-content-between align-items-center align-content-center">
+			<ul class="m-0 p-0 d-flex">
+				<li class="font-weight-bold">
+					<?php if(Application\Library\Session::get("role") === "applicant"): ?>
+						<a href="<?= DOMAIN; ?>/profile" class="text-white">My Profile</a>
+					<?php else: ?>
+						<a href="<?= DOMAIN; ?>/dashboard" class="text-white">Dashboard</a>
+					<?php endif; ?>
+				</li>
 			</ul>
-			<ul class="nav">
+			<ul class="m-0 p-0 d-flex">
 				<li class="position-relative mt-0 ml-3 rounded-circle text-center text-orange bg-gray cursor-pointer icon-circle" data-toggle="modal" data-target="#settings">
 			    	<i class="icofont-alarm"></i>
 			    </li>
 			    <li class="position-relative mt-0 ml-3 rounded-circle text-center text-white bg-danger cursor-pointer logout icon-circle" data-url="<?= DOMAIN; ?>/login/logout">
 			    	<i class="icofont-power"></i>
 			    </li>
-			    <li class="ml-3 mt-0 cursor-pointer toggle-right-sidebar text-orange">
-			    	<div class="backend-menu position-relative d-flex justify-content-center align-items-center">
-			    		<div class="menu-sticks"></div>
-			    	</div>
-			    </li>
 			</ul>
 		</div>
 	</div>
 </div>
-<div class="sidebar right-sidebar position-fixed h-100 w-100">
-	<div class="d-flex justify-content-end">
-		<div class="inner light-shadow bg-white pt-2">
-			<ul class="pt-4 px-3 m-0">
-				<li class="border-bottom-gray px-3 py-2">
-					<a href="javascript:;" class="text-muted ml-2" data-toggle="modal" data-target="#update-password">Update password</a>
-				</li>
-				<li class="border-bottom-gray px-3 py-2" data-toggle="modal" data-target="#update-password">
-					<a href="javascript:;" class="text-muted ml-2">Change email</a>
-				</li>
-			</ul>
-		</div>
-	</div>
-</div>
-<div class="">
+<div class="update-password-modal">
 	<?php require BACKEND_PATH . DS . "layouts" . DS . "password.php"; ?>
-</div>
-<div class="">
-	<?php require BACKEND_PATH . DS . "layouts" . DS . "email.php"; ?>
 </div>
 
