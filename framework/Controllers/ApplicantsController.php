@@ -9,10 +9,10 @@ class ApplicantsController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
-		Authenticate::logger("admin");
 	}
 
 	public function index($pageNumber = "") {
+		Authenticate::logger("admin");
 		$applicants = $this->applicants->getAllWithPagination($pageNumber);
 		$applicantsCount = $this->applicants->getCount();
 		View::render("applicants/index", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["applicants"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "applicantsCount" => $applicantsCount]);
@@ -33,6 +33,7 @@ class ApplicantsController extends Controller {
 	}
 
 	public function search($page = "") {
+		Authenticate::logger("admin");
 		$query = $this->get('query');
 		if (empty($query) || $query === "") {
 			$this->redirect("/applicants");

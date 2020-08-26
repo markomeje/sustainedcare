@@ -1,5 +1,5 @@
 <div class="about">
-	<div class="about-banner">
+	<div class="about-banner position-relative">
 		<?php require FRONTEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
 		<div class="banner-content">
 			<div class="container">

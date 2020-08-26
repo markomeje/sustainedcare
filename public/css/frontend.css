@@ -101,12 +101,19 @@
 	padding: 100px 0;
 }
 
-.donate-banner,
+.donate-banner {
+	background-image: url(../images/village.jpg);
+	background-size: cover;
+	background-position: center;
+	background-repeat: no-repeat;
+}
+
 .about-banner {
 	background-image: url(../images/village.jpg);
 	background-size: cover;
 	background-position: center;
 	background-repeat: no-repeat;
+	height: 550px;
 }
 
 .about-banner:before {
@@ -182,7 +189,7 @@
 }
 
 .banner-content h1 {
-	font-size: 55px;
+	font-size: 50px;
 }
 
 .about-vision,
@@ -342,7 +349,7 @@
 	}
 
 	.banner-content h1 {
-		font-size: 42.5px;
+		font-size: 40px;
 	}
 
 	.mission-section .card {
