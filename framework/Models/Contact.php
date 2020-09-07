@@ -25,10 +25,8 @@ class Contact extends Model {
 
 		try {
 			if(stripos(PROTOCOL, "https") !== false) {
-				$sent = Email::mailer(EMAIL_CONTACT, "contact@sustainedcare.org", ["firstname" => $this->firstname, "lastname" => $this->lastname, "email" => $this->email, "phone" => $this->phone, "message" => $this->message]);
-				return (!$sent) ? ["status" => "error"] : ["status" => "success"];
-			}else {
-				return ["status" => "error"];
+				Email::mailer(EMAIL_CONTACT, "contact@sustainedcare.org", ["firstname" => $this->firstname, "lastname" => $this->lastname, "email" => $this->email, "phone" => $this->phone, "message" => $this->message]);
+				return ["status" => "success"];
 			}
 		} catch (Exception $error) {
 			Logger::log("SENDING CONTACT EMAIL ERROR", $error->getMessage(), __FILE__, __LINE__);
