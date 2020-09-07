@@ -136,7 +136,7 @@
 			</div>
 		</div>
 	</div>
-	<div class="action-section bg-black"></div>
+	<!-- <div class="action-section bg-black"></div> -->
 	<div class="contact-section bg-gray position-relative px-4">
 		<div class="container bg-gray light-shadow p-4 rounded">
 			<h1 class="text-shade mb-2">Send a Message Today<span class="text-orange">.</span></h1>
