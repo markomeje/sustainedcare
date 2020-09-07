@@ -24,7 +24,7 @@ class Contact extends Model {
 		}
 
 		try {
-			if(stripos(PROTOCOL, "http") === false) {
+			if(stripos(PROTOCOL, "https") !== false) {
 				$sent = Email::mailer(EMAIL_CONTACT, "contact@sustainedcare.org", ["firstname" => $this->firstname, "lastname" => $this->lastname, "email" => $this->email, "phone" => $this->phone, "message" => $this->message]);
 				return (!$sent || $sent === false) ? ["status" => "error"] : ["status" => "success"];
 			}else {
