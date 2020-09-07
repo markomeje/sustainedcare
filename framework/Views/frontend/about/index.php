@@ -58,14 +58,19 @@
 				</div>
 			</div>
 			<div class="row">
-				<div class="col-12 col-md-6 mb-4">
+				<div class="col-12 col-md-4 mb-4">
 					<div class="">
 						<img src="<?= IMAGES_URL; ?>/documents/1.jpeg" class="img-fluid">
 					</div>
 				</div>
-				<div class="col-12 col-md-6 mb-4">
+				<div class="col-12 col-md-4 mb-4">
 					<div class="">
-						<img src="<?= IMAGES_URL; ?>/documents/1.jpeg" class="img-fluid">
+						<img src="<?= IMAGES_URL; ?>/documents/2.jpeg" class="img-fluid">
+					</div>
+				</div>
+				<div class="col-12 col-md-4 mb-4">
+					<div class="">
+						<img src="<?= IMAGES_URL; ?>/documents/3.jpeg" class="img-fluid">
 					</div>
 				</div>
 			</div>
