@@ -147,11 +147,11 @@ class Help {
 		return ["Married", "Widowed", "Single", "Divorced"];
 	}
 
-	public static function formatDatetime(string $datetime): string {
+	public static function formatDatetime(string $datetime = "") {
 		return empty($datetime) ? date("F j, Y, g:i a") : date("F j, Y, g:i a", strtotime($datetime));
 	}
 
-	public static function formatDate(string $datetime): string {
+	public static function formatDate(string $datetime = "") {
 		return empty($datetime) ? date("F j, Y") : date("F j, Y", strtotime($datetime));
 	}
 

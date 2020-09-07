@@ -11,7 +11,7 @@ class Logger{
 
 
     public static function log($subject = "", $message = "", $fileName = "", $lineNumber = ""){
-        $error = "*******************************************************************\n\n";
+        $error = "*******************************************************************\n";
         $logfile = ROOT . DS . "errors.txt";
         $error .= mb_strtoupper($subject)." Logged On ".Help::formatDatetime()."\n";
         $error .= is_array($message) ? implode("\n", $message) : $message."\n";

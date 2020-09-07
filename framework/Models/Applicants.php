@@ -72,10 +72,7 @@ class Applicants extends Model {
 				$fields = ["applicant" => $id, "code" => $referrer->code, "referrer" => $referrer->login];
 				$this->referrals->addReferral($fields);
 			}
-			if(stripos(PROTOCOL, "http") === false) {
-				Email::mailer(EMAIL_VERIFICATION, $this->email, ["token" => $token, "id" => $id]);
-			}
-			
+			if(stripos(PROTOCOL, "https") !== false) Email::mailer(EMAIL_VERIFICATION, $this->email, ["token" => $token, "id" => $id]);
 			$databse->commit();
 			return ["status" => "success", "redirect" => DOMAIN."/apply/success"];
         } catch (\Exception $error) {
@@ -162,6 +159,7 @@ class Applicants extends Model {
 
 	public function delete($id = "") {
 		try {
+			$condition = ["login" => $id];
 			Query::delete($this->table, "", $condition, 1);
 			$this->login->delete($id);
 			return ["status" => "success"];

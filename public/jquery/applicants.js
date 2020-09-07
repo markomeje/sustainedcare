@@ -174,7 +174,7 @@
                 handleButton(button, spinner);
                 message.removeClass('alert-danger d-none').addClass('alert-success');
                 message.html('Operation Successfull').fadeIn();
-                // window.location.reload();
+                window.location.reload();
             } else if (response.status === 'none') {
                 handleButton(button, spinner);
                 message.removeClass('alert-danger alert-success d-none').addClass('alert-warning');
