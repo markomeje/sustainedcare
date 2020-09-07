@@ -7,7 +7,6 @@ class DonationsController extends Controller {
 
 	public function __construct() {
 		parent::__construct();
-		Authenticate::logger("admin");
 	}
 
 	public function index() {}

@@ -80,11 +80,7 @@ $visitor = ["browserName" => $result->browser->getName(), "operationSystemName" 
 | Only log exceptions on live server but display on development.
 |
 */
-
-if(!in_array(SERVER_HOST, LOCAL_WEBSITE_DOMAIN)) {
-   Application\Exceptions\Handler::register();
-}
-
+Application\Exceptions\Handler::register();
 
 /**
  * Routing the application using the url parameter from the .htaccess file
