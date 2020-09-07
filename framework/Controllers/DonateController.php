@@ -30,10 +30,4 @@ class DonateController extends Controller {
 		View::render("donate/paystack", "frontend", ["title" => "Paystack Donation", "countries" => $countries, "nairaAmounts" => $nairaAmounts, "nairaSymbol" => "NGN", "type" => "paystack"]);
 	}
 
-	public function stripe($status = "") {
-		$countries = Help::getAllCountries();
-		$dollarAmounts = Help::getDollarAmounts();
-		View::render("donate/stripe", "frontend", ["title" => "Stripe Donation", "type" => "stripe", "dollarAmounts" => $dollarAmounts, "countries" => $countries, "status" => $status]);
-	}
-
 }

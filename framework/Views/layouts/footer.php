@@ -41,36 +41,6 @@
         alert('Error');
     });
 </script>
-<!-- Stripe API -->
-<?php if(isset($type) && $type === "stripe"): ?>
-<!-- Stripe API -->
-<script src="https://js.stripe.com/v3/"></script>
-<!-- stripe-->
-<script type="text/javascript">
-    var stripe = Stripe('<?= STRIPE_PUBLISHABLE_TEST_KEY; ?>');
-    var checkoutButton = document.getElementById('checkout-button');
-    if (checkoutButton) {
-        checkoutButton.addEventListener('click', function() {
-            stripe.redirectToCheckout({
-                sessionId: sessionId
-            }).then(function (result) {
-                alert(result.error.message);
-            });
-        });
-
-        var sessionId;
-        fetch('<?= DOMAIN; ?>/donations/stripe', {
-            method: "POST",
-            headers: {"Content-Type": "application/json"},
-            body: JSON.stringify({}),
-        }).then(function(result) {
-            return result.json();
-        }).then(function(response) {
-            sessionId = response.id;
-        });
-    }
-</script>
-<?php endif; ?>
 </body>
 </html>
 <?php ob_end_flush(); ?>

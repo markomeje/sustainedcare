@@ -91,5 +91,4 @@ if(!in_array(SERVER_HOST, LOCAL_WEBSITE_DOMAIN)) {
  * @var [type] Array
  */
 $url = isset($_GET["url"]) ? explode("/", filter_var(rtrim(strtolower($_GET["url"]), "/"), FILTER_SANITIZE_URL)) : [];
-$router = new Application\Core\Router;
-$router->route($url);
+Application\Core\Router::route($url);

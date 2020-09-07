@@ -1,11 +1,11 @@
 <div class="home">
 	<div class="home-banner position-relative w-100">
 		<?php require FRONTEND_PATH . DS . "layouts" . DS . "navbar.php"; ?>
-		<div class="banner-content">
+		<div class="banner-content position-absolute">
 			<div class="container">
-				<div class="row justify-content-center text-center">
-					<div class="col-12 col-md-12 col-lg-8 py-4 mb-4">
-						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up">Apply for Special <span class="text-orange">Grant</span> for Your Business or Project<span class="text-orange d-inline">.</span></h1>
+				<div class="row justify-content-center text-center pt-5">
+					<div class="col-12 col-md-12 col-lg-8 pt-5 mb-4">
+						<h1 class="text-white font-weight-bolder pt-5 mb-4" data-aos="fade-up">Apply for Special <span class="text-orange">Grant</span> for Your Business or Project<span class="text-orange d-inline">.</span></h1>
 						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get a maximum of NGN200,000 (Two hundred thousand naira) grant for your choice business or project.</p>
 						<div class="" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
@@ -14,6 +14,7 @@
 				</div>
 			</div>
 		</div>
+		<video id="player" type="video/mp4" class="w-100 h-100" src="<?= PUBLIC_URL; ?>/videos/1.mp4" autoplay loop muted></video>
 	</div>
 	<div class="mission-section bg-gray position-relative">
 		<div class="container">
@@ -104,7 +105,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-5 col-lg-7">
-					<h1 class="text-white" data-aos="fade-up"> We're a Non-profit Charity Foundation <em class="text-orange">with</em> Focus in Childhood Education.</h1>
+					<h1 class="text-white" data-aos="fade-up"> We're a Non-profit Charity Foundation <span class="text-orange">with</span> Focus in Early Childhood Education.</h1>
 					<p class="text-white" data-aos="fade-up">To ensure that no child is deprived of their educational rights and also ensuring a poverty free world.</p>
 					<div class="" data-aos="fade-up">
 						<a href="<?= DOMAIN; ?>/about" class="btn btn-lg border-0 orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Learn More</a>
@@ -118,7 +119,7 @@
 			<div class="row align-items-center align-content-center">
 				<div class="col-12 col-md-6 col-lg-6 mb-4">
 					<div class="" data-aos="fade-up">
-						<h1 class="text-white mb-4"><span class="text-forest">Donate</span> to support our grant project of over 20,000 persons.</h1>
+						<h1 class="text-white mb-4">Kindly <span class="text-forest">Donate</span> to Support our GRANT PROJECT in Empowering Thousands of Nigerians.</h1>
 						<p class="text-white mb-3">You're just helping to ensure that no child is deprived of their educational right and also ensuring a poverty Free World.</p>
 						<h3 class="mb-4 text-orange">That's our vision.</h3>
 						<div class="">

@@ -10,7 +10,7 @@
 					</div>
 				</div>
 				<div class="row">
-					<div class="col-12 col-md-6 col-lg-3 mb-4">
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
 						<div class="card border-0" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/donate/paypal">
 							    <div class="card-body border-0 payment-brands paypal">
@@ -19,16 +19,7 @@
 						    </a>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3 mb-4">
-						<div class="card border-0" data-aos="fade-up">
-							<a href="<?= DOMAIN; ?>/donate/stripe">
-							    <div class="card-body border-0 payment-brands stripe">
-								    <img src="<?= IMAGES_URL; ?>/stripe/stripe.png" class="img-fluid h-100 w-100">
-							    </div>
-						    </a>
-						</div>
-					</div>
-					<div class="col-12 col-md-6 col-lg-3 mb-4">
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
 						<div class="card border-0" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/donate/paystack">
 							    <div class="card-body border-0 payment-brands paystack">
@@ -37,7 +28,7 @@
 						    </a>
 						</div>
 					</div>
-					<div class="col-12 col-md-6 col-lg-3 mb-4">
+					<div class="col-12 col-md-6 col-lg-4 mb-4">
 						<div class="card border-0" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/donate/crypto">
 							    <div class="card-body border-0 payment-brands crypto">
@@ -47,7 +38,6 @@
 						</div>
 					</div>
 				</div>
-				
 			</div>
 		</div>
 	</div>

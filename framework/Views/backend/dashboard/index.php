@@ -11,14 +11,14 @@
                 </div>
 	            <div class="col-12 col-md-6 col-lg-6 mb-4">
                     <div class="d-flex align-items-center bg-white px-3 py-2 border rounded top-right-bar">
-                        <a href="javascript:;" class="text-muted mr-3">Add moderator</a>
+                        <a href="javascript:;" class="text-muted mr-3" data-toggle="modal" data-target="#update-password">Update password</a>
                     </div>
                 </div>
 	        </div>
 	    	<div class="row mb-1">
 				<?php require BACKEND_PATH . DS . "dashboard" . DS . "partials" . DS . "panels.php"; ?>
 			</div>
-			<div class="row">
+			<!-- <div class="row">
 				<div class="col-12 mb-4">
 					<div class="card bg-light border-0">
 						<div class="card-header border-0 bg-dark pb-0 pt-4 my-0">
@@ -46,7 +46,7 @@
 						</div>
 					</div>
 				</div>
-			</div>
+			</div> -->
 	    </div>
     </div>
 </div>

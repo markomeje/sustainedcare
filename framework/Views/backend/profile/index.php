@@ -136,6 +136,40 @@
 					</div>
 				</div>
 			</div>
+			<div class="pdfs">
+				<div class="accordion mb-4" id="accordions-four">
+    				<div class="cursor-pointer bg-dark p-3 clearfix mb-4 rounded" data-toggle="collapse" data-target="#my-pdfs">
+					    <div class="text-white float-left">
+					        My Pdfs
+					    </div>
+					    <div class="float-right text-white">
+					        <i class="icofont-rounded-down"></i>
+					    </div>
+					</div>
+				    <div id="my-pdfs" class="collapse mb-3 show" data-parent="#accordions-four">
+						<?php if(empty($pdfs)): ?>
+							<div class="alert alert-danger">No pdf files yet</div>
+						<?php else: ?>
+							<div class="row">
+								<?php foreach($pdfs as $pdf => $value): ?>
+									<div class="col-12 col-md-6 col-lg-3 mb-4">
+										<div class="card rounded bg-dark">
+											<div class="card-body">
+												<div class="text-white">
+													<?= Application\Core\Help::limitStringLength($value, 37); ?>
+												</div>
+											</div>
+											<div class="card-footer">
+												<a href="<?= DOMAIN; ?>/profile/download/<?= $pdf; ?>">Download</a>
+											</div>
+										</div>
+									</div>
+								<?php endforeach; ?>
+							</div>
+						<?php endif; ?>
+					</div>
+				</div>
+			</div>
 	    </div>
     </div>
 </div>

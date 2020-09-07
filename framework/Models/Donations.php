@@ -5,7 +5,6 @@ use Application\Core\{Model, Help, Gateways};
 use Application\Library\{Session, Generate, Validate, Database, Cookie};
 use Application\Components\Query;
 use Application\Exceptions\Logger;
-use PayPalCheckoutSdk\Orders\OrdersCreateRequest;
 
 
 class Donations extends Model {
@@ -61,43 +60,12 @@ class Donations extends Model {
 		        $result = $this->addDetails($fields);
 		    	$database->commit();
 			    return ($result > 0) ? ["status" => "success", "redirect" => $url] : ["status" => "error"];
-			}elseif ($this->type === "stripe") {
-				$reference = Generate::hash();
-				$credentials = ["amount" => $posted["amount"], "email" => $posted["email"], "reference" => $reference];
-				foreach ($credentials as $key => $value) {
-					Cookie::set("_stripe_donation_".$key, $value, time() + STRIPE_AMOUNT_COOKIE_EXPIRY, COOKIE_PATH, COOKIE_DOMAIN, COOKIE_SECURE, COOKIE_HTTP);
-				}
-				
-				$custom = ["reference" => $reference];
-				$fields = array_merge($posted, $custom);
-				$result = $this->addDetails($fields);
-		    	$database->commit();
-		    	return ["status" => "success", "redirect" => DOMAIN.'/donate/stripe/checkout']; 
-		    }	
+			}	
 	    } catch(\Exception $error){
 	    	$database->rollback();
 	        Logger::log("DONATION ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
 	    }
-	}
-
-	public function stripe() {
-		$amount = Cookie::get("_stripe_donation_amount");
-		$gateway = new Gateways;
-		return $gateway->stripe()->checkout->sessions->create([
-			'payment_method_types' => ['card'], 
-			"line_items" => [[
-				"name" => "SustainedCare Foundation",
-			    'description' => 'Donation to SustainedCare Foundation', 
-			    'images' => ['https://sustainedcare.org/public/images/assets/logo.png'], 
-			    'amount' => $amount * 100, 
-			    'currency' => 'usd', 
-			    'quantity' => 1,
-			]], 
-		    'success_url' => DOMAIN.'/donate/stripe/success', 
-		    'cancel_url' => DOMAIN.'/donate/stripe/cancel'
-		]);
-
 	}
 
 	public function addDetails($fields) {

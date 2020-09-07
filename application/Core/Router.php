@@ -9,12 +9,21 @@ class Router {
 
 	public function __construct() {}
 
-    /**
-     method that routes the url
-     * @param  [array] $url [contains an array of current url in the browser]
-     * @return [object]      [an instance ocontroller being called]
-     */
-	public function route($url) {
+    public static function redirect($location) {
+        if (!headers_sent()) {
+            header('Location: '.DOMAIN.$location);
+        }else {
+            echo '<script type="text/javascript">';
+            echo 'window.location.href="'.DOMAIN.$location.'";';
+            echo '</script>';
+            echo '<noscript>';
+            echo '<meta http-equiv="refresh" content="0;url='.$location.'" />';
+            echo '</noscript>';
+            exit;
+        }
+    }
+
+	public static function route($url) {
         $controller = (isset($url[0]) && $url[0] !== "") ? ucwords($url[0])."Controller" : "HomeController";
         $controller = "Framework\Controllers\\".$controller;
         array_shift($url);

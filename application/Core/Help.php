@@ -15,12 +15,12 @@ class Help {
 	}
 
 	public static function getCryptoCurrencies(): array {
-		$crypto = ["BTC" => "Bitcoin", "BCH" => "Bitcoin Cash", "LTC" => "Litecoin", "ETH" => "Ether", "TRX" => "TRON", "LTCT" => "Litecoin Testnet"];
+		$crypto = ["BTC" => "Bitcoin", "BCH" => "Bitcoin Cash", "LTC" => "Litecoin", "ETH" => "Ether", "TRX" => "TRON"];
 		return $crypto;
 	}
 
 	public static function getGrantAmounts(): array {
-		return ["25000", "50000", "100000", "200000"];
+		return ["50000", "100000", "150000", "200000"];
 	}
 
 	public static function getAllCountries(): array {

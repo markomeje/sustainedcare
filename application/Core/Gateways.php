@@ -6,7 +6,6 @@ use CoinPaymentsNet\CoinpaymentsAPI;
 use Yabacon\Paystack;
 use PayPalCheckoutSdk\Core\PayPalHttpClient;
 use PayPalCheckoutSdk\Core\SandboxEnvironment;
-use Stripe\Stripe;
 
 
 class Gateways {
@@ -23,7 +22,7 @@ class Gateways {
 
 	public function paystack() {
         try{
-            return new Paystack(PAYSTACK_TEST_SECRET_KEY);
+            return new Paystack(PAYSTACK_LIVE_SECRET_KEY);
         } catch(\Exception $error){
             Logger::log("PAYSTACK API ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
             return false;
@@ -36,25 +35,6 @@ class Gateways {
             return new PayPalHttpClient($environment);
         } catch(\Exception $error){
             Logger::log("PAYPAL API ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
-            return false;
-        }
-    }
-
-    public function stripe() {
-        try{
-            return new \Stripe\StripeClient(STRIPE_SECRET_TEST_KEY);
-        } catch(\Exception $error){
-            Logger::log("STRIPE API ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
-            return false;
-        }
-    }
-
-    public function braintree() {
-        try{
-            $config = new \Braintree\Configuration(['environment' => 'sandbox', 'merchantId' => BRAINTREE_SANDBOX_MARCHANT_ID, 'publicKey' => BRAINTREE_SANDBOX_PUBLIC_KEY, 'privateKey' => BRAINTREE_SANDBOX_PRIVATE_KEY]);
-            return new \Braintree\Gateway($config);
-        } catch(\Exception $error){
-            Logger::log("BRAINTREE API ERROR", $error->getMessage(), $error->getFile(), $error->getLine());
             return false;
         }
     }

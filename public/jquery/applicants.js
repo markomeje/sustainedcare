@@ -82,7 +82,7 @@
                 handleButton(button, spinner);
                 message.removeClass('alert-danger d-none').addClass('alert-success');
                 message.html('Operation Successfull').fadeIn();
-                // window.location.href = response.redirect;
+                window.location.href = response.redirect;
             } else if (response.status === 'error') {
                 handleButton(button, spinner);
                 message.removeClass('alert-success d-none').addClass('alert-danger');
