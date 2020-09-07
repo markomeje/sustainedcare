@@ -6,8 +6,7 @@
 				<div class="row justify-content-center">
 					<div class="col-12 col-md-10 col-lg-8 mb-3 text-center">
 						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up"><span class="text-orange">Apply</span> Here</h1>
-						<p class="text-white" data-aos="fade-up">Stand a chance to get UP TO A MAXIMUM of NGN200,000 (Two Hundred Thousand Naira) Grant for your choice of Business or Project.</p>
-						<p class="text-white">You can also REFER A FRIEND and EARN AN INSTANT NGN400 with a Minimum Withdrawal of NGN2,000.</p>
+						<p class="text-white" data-aos="fade-up">Kindly note that a Non-refundable registration fee of NGN 1,000 is required to Activate you for this Grant. Once our Foundation reaches the Total number of participants as requested by our SPONSORS, the Grant shall then be Awarded based on LUCK using the Foundation's LIVE Automated SELECTING SOFTWARE. Terms and Conditions Apply.</p>
 					</div>
 				</div>
 				<div class="mb-5">

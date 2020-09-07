@@ -61,7 +61,7 @@
 }
 
 .home-banner {
-	height: 600px;
+	height: 750px;
 }
 
 .home-banner .banner-content {
@@ -344,7 +344,7 @@
 	}
 
 	.home-banner {
-		height: 680px !important;
+		height: 750px !important;
 	}
 
 	.home-banner video {
@@ -377,6 +377,10 @@
 	.navbar-wrapper {
 		padding-top: 5px;
 		padding-bottom: 5px;
+	}
+
+	.home-banner {
+		height: 880px !important;
 	}
 
 	.about-banner {

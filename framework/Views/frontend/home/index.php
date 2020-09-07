@@ -6,10 +6,11 @@
 				<div class="row justify-content-center text-center pt-5">
 					<div class="col-12 col-md-12 col-lg-8 pt-5 mb-4">
 						<h1 class="text-white font-weight-bolder pt-5 mb-4" data-aos="fade-up">Apply for Special <span class="text-orange">Grant</span> for Your Business or Project<span class="text-orange d-inline">.</span></h1>
-						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get a maximum of NGN200,000 (Two hundred thousand naira) grant for your choice business or project.</p>
-						<div class="" data-aos="fade-up">
+						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get UP TO A MAXIMUM of NGN200,000 (Two Hundred Thousand Naira) Grant for your choice of Business or Project.</p>
+						<div class="mb-4" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
 						</div>
+						<p class="text-white bg-dark p-3 rounded" data-aos="fade-up">You can also REFER A FRIEND and EARN AN INSTANT NGN400 with a Minimum Withdrawal of NGN2,000.</p>
 					</div>
 				</div>
 			</div>
@@ -135,6 +136,7 @@
 			</div>
 		</div>
 	</div>
+	<div class="action-section bg-black"></div>
 	<div class="contact-section bg-gray position-relative px-4">
 		<div class="container bg-gray light-shadow p-4 rounded">
 			<h1 class="text-shade mb-2">Send a Message Today<span class="text-orange">.</span></h1>
