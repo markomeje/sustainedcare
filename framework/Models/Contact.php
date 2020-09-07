@@ -19,14 +19,14 @@ class Contact extends Model {
 			return ['status' => "invalid-phone"];
 		} elseif (empty($this->email) || !Validate::email($this->email)) {
 			return ["status" => "invalid-email"];
-		} elseif (empty($this->message) || !Validate::range($this->message, 3, 55)) {
+		} elseif (empty($this->message) || !Validate::range($this->message, 3, 255)) {
 			return ["status" => "invalid-message"];
 		}
 
 		try {
 			if(stripos(PROTOCOL, "https") !== false) {
 				$sent = Email::mailer(EMAIL_CONTACT, "contact@sustainedcare.org", ["firstname" => $this->firstname, "lastname" => $this->lastname, "email" => $this->email, "phone" => $this->phone, "message" => $this->message]);
-				return (!$sent || $sent === false) ? ["status" => "error"] : ["status" => "success"];
+				return (!$sent) ? ["status" => "error"] : ["status" => "success"];
 			}else {
 				return ["status" => "error"];
 			}

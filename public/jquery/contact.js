@@ -39,7 +39,7 @@
                 handleErrors($('.email'), $('.email-error'), 'Invalid email format.');
             } else if (response.status === 'invalid-message') {
                 handleButton(button, spinner);
-                handleErrors($('.message'), $('.message-error'), 'Message must be between 3 - 55 characters.');
+                handleErrors($('.message'), $('.message-error'), 'Message must be between 3 - 255 characters.');
             } else if (response.status === 'success') {
                 handleButton(button, spinner);
                 message.removeClass('alert-danger d-none').addClass('alert-success');

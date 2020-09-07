@@ -60,8 +60,8 @@ class Email {
 
     private static function contactEmailBody($email, $data) {
         $body  = "";
-        $body .= $data["firstname"] . " " . $data["lastname"] . " contacted you with the following email " . $data["email"] . " and phone number " . $data["phone"] . "\n\n";
-        $body .= $data["message"] . "\n\n";
+        $body .= ucfirst($data["firstname"]) . " " . ucfirst($data["lastname"]) . " contacted you with the following email " . $data["email"] . " and phone number " . $data["phone"] . ".\n\n";
+        $body .= " And message " . ucfirst($data["message"]);
         return $body;
     }
 
