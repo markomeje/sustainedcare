@@ -56,7 +56,7 @@ class Withdrawals extends Model {
 		try {
 			$condition = ["applicant" => $applicant];
 			$result = Query::read(["amount"], $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (Exception $error) {
         	Logger::log("GETTING WITHDRAWALS REQUEST AMOUNT ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;

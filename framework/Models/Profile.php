@@ -21,7 +21,7 @@ class Profile extends Model {
 			$id = Session::get("id");
 			$condition = ["login.id" => $id, "applicants.login" => $id];
 			$result = Query::read($fields, "applicants", $options, $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETING USER PROFILE ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
@@ -46,7 +46,7 @@ class Profile extends Model {
 			$id = Session::get("id");
 			$condition = ["applicants.login" => $id];
 			$result = Query::read($fields, "applicants", "", $condition, "", "", "", "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETING USER PROFILE ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;

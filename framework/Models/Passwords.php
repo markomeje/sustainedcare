@@ -51,7 +51,7 @@ class Passwords extends Model {
 		try{
 			$condition = ["email" => $email];
 	        $result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-	        return $result["fetchAll"][0];
+	        return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETTING LOGIN DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
@@ -62,7 +62,7 @@ class Passwords extends Model {
 		try{
 			$condition = ["email" => $email];
 	        $result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-	        return $result["fetchAll"][0];
+	        return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETTING LOGIN DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;

@@ -29,7 +29,7 @@ class Referrals extends Model {
 		try {
 			$condition = ["applicant" => $id];
 			$result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETING APPLICANT AS REFERRED ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
@@ -40,7 +40,7 @@ class Referrals extends Model {
 		try {
 			$condition = ["referrer" => $id];
 			$result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETING REFERRAL ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];

@@ -150,7 +150,7 @@ class Applicants extends Model {
 			$fields = ["code", "id", "login"];
 			$condition = ["code" => $code];
 			$result = Query::read($fields, $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETTING APPLICANT BY REFERRAL CODE ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
@@ -189,7 +189,7 @@ class Applicants extends Model {
 		try {
 			$condition = ["login" => $login];
 			$result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETTING APPLICANT BY ID ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
