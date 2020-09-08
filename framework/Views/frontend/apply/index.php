@@ -10,7 +10,7 @@
 					</div>
 				</div>
 				<div class="mb-5">
-					<h1 class="text-white mb-4 pt-0 mt-0 text-center">In Partnership With</h1>
+					<h3 class="text-white mb-4 pt-0 mt-0 text-center">In Partnership With</h3>
 					<div class="row justify-content-center">
 						<div class="col-12 col-md-4 mb-4">
 							<div class="h-100">
