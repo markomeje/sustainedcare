@@ -105,7 +105,7 @@ class Payments extends Model {
 		try {
 			$condition = ["applicant" => $id];
 			$result = Query::read(["*"], $this->table, "", $condition, "", "", 1, "");
-			return $result["fetchAll"][0];
+			return empty($result["fetchAll"]) ? $result["fetchAll"] : $result["fetchAll"][0];
         } catch (\Exception $error) {
         	Logger::log("GETING PAYERS PAYEMNT DETAILS ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return ["status" => "error"];
