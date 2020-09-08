@@ -10,7 +10,7 @@
 						<div class="mb-4" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
 						</div>
-						<p class="text-white bg-dark p-3 rounded" data-aos="fade-up">You can also REFER A FRIEND and EARN AN INSTANT NGN400 with a Minimum Withdrawal of NGN2,000.</p>
+						<p class="text-white p-3 rounded" data-aos="fade-up" style="background-color: rgba(0, 0, 0, 0.5);">You can also REFER A FRIEND and EARN AN INSTANT NGN400 with a Minimum Withdrawal of NGN2,000.</p>
 					</div>
 				</div>
 			</div>

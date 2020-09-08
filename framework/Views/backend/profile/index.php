@@ -6,7 +6,7 @@
 	    	<?php if($verify === false): ?>
     			<div class="alert alert-danger">Transaction verification failed. Please contact us immediately.</div>
     		<?php endif; ?>
-	    	<?php if(strtolower($payments->status) === "paid"): ?>
+	    	<?php if(!empty($payments) && strtolower($payments->status) === "paid"): ?>
 	    		<?php if(empty($bank_details)): ?>
 	    			<div class="alert alert-warning mb-4">
 	    				Please <a href="javascript:;" data-toggle="modal" data-target="#add-bank-details">Click here</a> to add your bank details of choice.
