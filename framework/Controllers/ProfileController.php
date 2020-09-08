@@ -30,7 +30,7 @@ class ProfileController extends Controller {
 			header('Cache-control: private');
 			header('Content-Type: application/octet-stream');
 			header('Content-Length: '.filesize($pdfFile));
-			header('Content-Disposition: filename='.$download_file);
+			header('Content-Disposition: filename='.$pdfFile);
 			flush();
 			$file = fopen($pdfFile, "r");
 			while(!feof($file)){

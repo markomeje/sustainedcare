@@ -130,6 +130,7 @@ class Help {
 	}
 
 	public static function calculatePercent($top, $bottom) {
+		$bottom = empty($bottom) ? 1 : $bottom;
 		$percent = (($top/$bottom) * 100);
 		return round($percent);
 	}
