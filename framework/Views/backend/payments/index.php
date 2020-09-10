@@ -12,7 +12,7 @@
 	            <div class="col-12 col-md-6 col-lg-6 mb-4">
                     <div class="d-flex align-items-center bg-white px-3 py-2 border rounded top-right-bar">
                         <a href="javascript:;" class="text-muted mr-3"><?= empty($count) ? 0 : $count; ?> payment(s)</a>
-                        <a href="javascript:;" class="text-muted mr-3">Multiple delete</a>
+                        <a href="javascript:;" class="text-muted mr-3">Delete</a>
                     </div>
                 </div>
 	        </div>
