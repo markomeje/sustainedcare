@@ -44,7 +44,7 @@ class Email {
 
 	private static function emailVerifyBody($email, $data) {
         $body  = "";
-        $body .= "Dear " . $email . ", Please Click On the Following Link To Verify Your Email: <br>";
+        $body .= "Dear " . $email . ", Please Copy the Following Link To Your Browser To Verify Your Email: <br>";
         $body .= EMAIL_VERIFICATION_URL . "/" . urlencode($data["token"]) . "/" . urlencode($data["id"])."<br>";
         $body .= " If you didn't Perform This Action With your email, Please ignore.";
         return $body;
