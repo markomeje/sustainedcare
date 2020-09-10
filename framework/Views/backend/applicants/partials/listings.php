@@ -1,7 +1,7 @@
 <div class="col-12 col-md-6 col-lg-3 mb-4">
 	<div class="card border-0 shadow">
 		<div class="card-body">
-			<?php $id = empty($applicant->id) ? "" : $applicant->id; ?>
+			<?php $id = empty($applicant->login) ? "" : $applicant->login; ?>
 			<a href="<?= DOMAIN; ?>/applicants/applicant/<?= $id; ?>">
 				<?php $fullname = Application\Core\Help::limitStringLength($applicant->surname." ".$applicant->firstname." ".$applicant->middlename, 15); ?>
 				<?= $fullname; ?>
