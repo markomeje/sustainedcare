@@ -14,7 +14,7 @@
     <meta property="og:description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only." />
     <meta property="og:url" content="https://sustainedcare.org/" />
     <meta property="og:type" content="Website" />
-    <meta property="og:image" content="http://sustainedcare.org/<?= IMAGES_URL; ?>/logos/logo.png" />  
+    <meta property="og:image" content="<?= IMAGES_URL; ?>/logos/logo.png" />  
     <meta name="description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only.">
     <meta name="author" content="Sustainedcare Foundation">
 

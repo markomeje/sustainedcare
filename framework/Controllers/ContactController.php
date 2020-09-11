@@ -11,7 +11,7 @@ class ContactController extends Controller {
 
 	public function index() {
 		$countries = Help::getAllCountries();
-		View::render("contact/index", "frontend", ["title" => "Contact Us Page", "countries" => $countries]);
+		View::render("contact/index", "frontend", ["title" => "We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World.", "countries" => $countries]);
 	}
 
 	public function emailContact() {
