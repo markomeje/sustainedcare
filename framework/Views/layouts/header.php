@@ -9,8 +9,16 @@
     <meta http-equiv='pragma' content='no-cache'>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta content="" name="keywords">
-    <meta content="" name="description">
+
+    <meta property="og:title" content="We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World." />
+    <meta property="og:description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only." />
+    <meta property="og:url" content="https://sustainedcare.org/" />
+    <meta property="og:type" content="Website" />
+    <meta property="og:image" content="http://sustainedcare.org/<?= IMAGES_URL; ?>/logos/logo.png" />  
+    <meta name="description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only.">
+    <meta name="author" content="Sustainedcare Foundation">
+
+    <meta content="We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World." name="keywords">
     <link rel="apple-touch-icon" sizes="180x180" href="<?= IMAGES_URL; ?>/favicon/apple-touch-icon.png">
     <link rel="icon" type="image/png" sizes="32x32" href="<?= IMAGES_URL; ?>/favicon/favicon-32x32.png">
     <link rel="icon" type="image/png" sizes="16x16" href="<?= IMAGES_URL; ?>/favicon/favicon-16x16.png">

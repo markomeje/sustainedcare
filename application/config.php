@@ -10,7 +10,6 @@ define("CURRENT_URL", isset($_SERVER["REQUEST_URI"]) ? $_SERVER["REQUEST_URI"] :
 define("HTTP_REFERER", isset($_SERVER["HTTP_REFERER"]) ? $_SERVER["HTTP_REFERER"] : "");
 define("PUBLIC_URL", DOMAIN."/public");
 define("IMAGES_URL", DOMAIN."/public/images");
-
 ini_set("session.referer_check", "TRUE");
 define("SOFWARE_NAME", "SustainedCare Foundation");
 
@@ -53,6 +52,8 @@ define("SESSION_COOKIE_NAME", "hjkrueihi548ysgnk3kdnbm,aoprgahit7483uj");
 define("SESSION_COOKIE_EXPIRY", 3600 * 24 * 60); /** 60 Days **/
 define("ENCRYPTION_KEY", "H43ag5js60z4D86tgEsh6w4e385Y");
 define("REMEMBER_ME_SESSION_NAME", "4638295qgkh81y8qhrkngan8y4985ghnkjg");
+
+define("REFERRAL_LINK_CODE_EXPIRY", 3600 * 24 * 90); /** 90 Days **/
 
 define("ACCESS_DENIED_KEY", "672kbauh892ytqBGKA89jnbproeqnjhrwk017Ty89");
 define("PAGINATION_DEFAULT_LIMIT", 30);

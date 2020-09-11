@@ -30,14 +30,15 @@
           	<small class="error email-error text-danger"></small>
         </div>
         <div class="form-group input-group-lg col-md-6">
+            <?php $referralCode = Application\Library\Cookie::get("applicant_referral_code"); ?>
           	<label class="text-muted">Referral code 
-                (<?php if(empty($code)): ?>
-                    <em class="text-info">if any</em> 
+                (<?php if(empty($code) && empty($referralCode)): ?>
+                    <em class="text-info">if any</em>
                 <?php else: ?>
                     <em class="text-success">already filled</em>
                 <?php endif; ?>)
             </label>
-          	<input type="text" name="referrer" class="form-control referrer" placeholder="e.g., tn8e721hd902" value="<?= empty($code) ? "" : $code; ?>">
+          	<input type="text" name="referrer" class="form-control referrer" placeholder="e.g., tn8e721hd902" value="<?php if(!empty($code)) { echo $code; }elseif(!empty($referralCode)) { echo $referralCode; }else { echo ""; } ?>">
           	<small class="error referrer-error text-danger"></small>
         </div>
     </div>

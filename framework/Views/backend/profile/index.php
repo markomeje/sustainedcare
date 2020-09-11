@@ -16,7 +16,7 @@
 	    		<div class="row">
 	    			<div class="col-12 col-md-6 mb-4">
 	    				<div class="alert alert-info mb-0">
-	    					<a href="javascript:;" class="copy mr-2" data-clipboard-text="<?= DOMAIN; ?>/apply/index/<?= empty($applicant->code) ? "" : $applicant->code; ?>">Copy link</a>
+	    					<a href="javascript:;" class="copy mr-2" data-clipboard-text="<?= DOMAIN; ?>/home/index/<?= empty($applicant->code) ? "" : $applicant->code; ?>">Copy link</a>
 	    					<?php if(!empty($bank_details)): ?>
 	    						<a href="javascript:;" class="" data-toggle="modal" data-target="#edit-bank-details">Bank details</a>
 		    					<?php require BACKEND_PATH . DS . "banks" . DS . "partials" . DS . "edit.php"; ?>
