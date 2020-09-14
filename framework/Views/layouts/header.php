@@ -10,12 +10,13 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
 
-    <meta property="og:title" content="We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World." />
+    <?php $title = (stripos(CURRENT_URL, "/home/index/") !== false) ? "Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only." : "We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World."; ?>
+
+    <meta property="og:title" content="<?= $title; ?>" />
     <meta property="og:description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only." />
     <meta property="og:url" content="https://sustainedcare.org/" />
     <meta property="og:type" content="Website" />
     <meta property="og:image" content="<?= IMAGES_URL; ?>/logos/logo.png" />  
-    <meta name="description" content="Get registered today with Sustained Care Foundation and Access our Free On-going GRANTS for Existing and New Businesses up to a tune of NGN200,000 Only.">
     <meta name="author" content="Sustainedcare Foundation">
 
     <meta content="We are ensuring that NO CHILD is deprived of their EDUCATIONAL RIGHTS and also creating various initiatives in order to promote a Poverty-Free World." name="keywords">
