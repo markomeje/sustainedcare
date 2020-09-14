@@ -32,14 +32,8 @@
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/general.css">
     <!-- aos CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/aos/aos.css">
-    <!-- stripe CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/stripe.css">
-    <!-- International telephone CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/intlTelInput.css">
     <!-- Homepage CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/frontend.css">
-    <!-- Chart CSS -->
-    <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/chartjs/chart.min.css">
     <!-- Homepage CSS -->
     <link rel="stylesheet" type="text/css" href="<?= PUBLIC_URL ;?>/css/backend.css">
     <!-- ico font css -->

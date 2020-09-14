@@ -96,8 +96,8 @@
 						</a>
 					</div>
 				</div>
-				<h5 class="text-muted mb-3">September 2019</h5>
-				<p class="text-muted">Our Second Warm visit to Mercy and Praise Orphanage & Children Home in Port Harcourt, Rivers State.</p>
+				<h5 class="text-muted mb-3">October 2019</h5>
+				<p class="text-muted">Continuation of our campaign against DRUG ABUSE, RAPE, GENDER INEQUALITY and CULTISM at Bishop Crowther Memorial Secondary School in Portharcourt Rivers State.</p>
 				<div class="row">
 					<div class="col-6 col-md-4 col-lg-3 mb-4">
 						<a href="<?= IMAGES_URL; ?>/gallery/21.jpeg">
