@@ -37,7 +37,7 @@ class Payments extends Model {
 	            $this->addPayments($merged);
 	            return ["status" => "success", "redirect" => $transaction->data->authorization_url];
 	    	}else {
-	    		$this->update($fields, $id);
+	    		$this->updatePaymentDetails($fields, $id);
 	    		return ["status" => "success", "redirect" => $transaction->data->authorization_url];
 	    	}
 	    } catch(\Exception $error){
@@ -48,7 +48,7 @@ class Payments extends Model {
 
 	public function verifyPaystack($reference) {
 		try {
-		    if(!$reference) return;
+			if(!$reference) return;
 		    $gateway = new Gateways;
 		    $transaction = $gateway->paystack()->transaction->verify(["reference" => $reference]);
 		    if ("success" === $transaction->data->status) {
@@ -57,8 +57,11 @@ class Payments extends Model {
 		    	$condition = ["reference" => $reference, "applicant" => $id];
 		    	$applicant = $this->referrals->isApplicantReferred($id);
 			    if (!empty($applicant)) $this->earnings->addEarning($applicant);
-		        return ($this->update($fields, $id) > 0) ? header("Location:" .DOMAIN."/profile") : false;
-		    }else {return false;}
+		        return ($this->updatePaymentDetails($fields, $id) > 0) ? header("Location:" .DOMAIN."/profile") : false;
+		    }else {
+		    	Logger::log("PAYSTACK TRANSACTION VERIFY ERROR", "Paystack transaction verification was not successfull", __FILE__, __LINE__);
+		    	return false;
+		    }
 		} catch (\Exception $error) {
 			Logger::log("PAYSTACK PAYMENT VERIFICATION ERROR", $error->getMessage(), __FILE__, __LINE__);
         	return false;
@@ -75,14 +78,42 @@ class Payments extends Model {
         }
 	}
 
-	public function update(array $fields, int $id) {
+	public function webhookPaystackVerify($reference) {
+		// Retrieve the request's body and parse it as JSON
+	    $event = \Yabacon\Paystack\Event::capture();
+	    http_response_code(200);
+	    Logger::log("PAYSTACK WEBHOOK EVENT LOG", $event->raw, __FILE__, __LINE__);
+
+	    /* Verify that the signature matches one of your keys*/
+	    $apiKeys = ['live' => PAYSTACK_LIVE_SECRET_KEY, 'test' => PAYSTACK_TEST_SECRET_KEY];
+	    $owner = $event->discoverOwner($apiKeys);
+	    if(!$owner){
+	        die();
+	    }
+
+	    switch($event->obj->event){
+	        // charge.success
+	        case 'charge.success':
+	            if('success' === $event->obj->data->status){
+	                $fields = ["status" => "paid"];
+			    	$id = Session::get("id");
+			    	$condition = ["reference" => $reference, "applicant" => $id];
+			    	$applicant = $this->referrals->isApplicantReferred($id);
+				    if (!empty($applicant)) $this->earnings->addEarning($applicant);
+			        $this->updatePaymentDetails($fields, $id);
+			    }
+	            break;
+	    }
+	}
+
+	public function updatePaymentDetails(array $fields, int $id) {
 		try {
 			$condition = ["applicant" => $id];
 			$result = Query::update($this->table, $fields, $condition, 1);
-			return $result["rowCount"] > 0 ? ["status" => "success"] : ["status" => "error"];
+			return $result["rowCount"];
         } catch (\Exception $error) {
         	Logger::log("UPDATING PAYMENT ERROR", $error->getMessage(), __FILE__, __LINE__);
-        	return ["status" => "error"];
+        	return false;
         }
 	}
 
