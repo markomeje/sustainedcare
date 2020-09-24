@@ -136,6 +136,13 @@
 					</div>
 				</div>
 			</div>
+			<div class="row">
+				<div class="col-12 mb-4">
+					<div class="text-muted">To watch any of our videos,
+					<a href="https://www.youtube.com/channel/UCIaicDgjpPChoTu6OGnS_9w/videos?view_as=subscriber">Click here
+					</a></div>
+				</div>
+			</div>
 			<div class="pdfs">
 				<div class="accordion mb-4" id="accordions-four">
     				<div class="cursor-pointer bg-dark p-3 clearfix mb-4 rounded" data-toggle="collapse" data-target="#my-pdfs">
