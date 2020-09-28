@@ -15,7 +15,7 @@ class ApplicantsController extends Controller {
 		Authenticate::logger("admin");
 		$applicants = $this->applicants->getAllWithPagination($pageNumber);
 		$applicantsCount = $this->applicants->getCount();
-		View::render("applicants/index", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["applicants"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "applicantsCount" => $applicantsCount]);
+		View::render("applicants/index", "backend", ["controller" => $this->controller, "links" => $this->links, "applicants" => $applicants["applicants"], "pagination" => $applicants["pagination"], "nigerianStates" => Help::getNigerianStates(), "relationshipStatus" => Help::getRelationshipStatus(), "genders" => Help::getGenders(), "applicantsCount" => $applicantsCount, "allApplicantsPaymentsStatus" => $this->payments->getAllApplicantsPaymentsStatus()]);
 	}
 
 	public function apply() {

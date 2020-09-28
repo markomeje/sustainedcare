@@ -7,7 +7,7 @@
 			</a>
 			<div class="d-flex justify-content-between align-content-center">
 				<div class="text-muted">
-					Status
+					N<?= empty($withdrawal->amount) ? 0 : number_format($withdrawal->amount); ?>
 				</div>
 				<a href="javascript:;" class="<?= ($withdrawal->status === 'paid') ? 'text-success' : 'text-danger'; ?> <?= strtolower($withdrawal->status); ?>-withdrawal" data-url="<?= DOMAIN; ?>/withdrawals/approveCash/<?= $withdrawal->applicant; ?>">
 					<?= strtolower($withdrawal->status) === "paid" ? "Paid" : "Approve"; ?>

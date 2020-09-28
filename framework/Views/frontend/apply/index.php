@@ -6,7 +6,8 @@
 				<div class="row justify-content-center">
 					<div class="col-12 col-md-10 col-lg-8 mb-3 text-center">
 						<h1 class="text-white font-weight-bolder mb-4" data-aos="fade-up"><span class="text-orange">Apply</span> Here</h1>
-						<p class="text-white" data-aos="fade-up">Kindly Note that a Non-Refundable Fee of NGN1,000 is required to Activate you for this GRANT. Once we reach the Total Number of Applicants as requested by our SPONSORS, we shall Carefully and Professionally go through all Applications and finally Select the very best of all Applications from our Applicants and quickly AWARD them the GRANTS according to the Amount Requested by them individually.</p>
+						<p class="text-white" data-aos="fade-up">Kindly Note that a <span class="text-forest">Non-Refundable</span> Fee of <span class="text-forest">NGN1,000</span> is required to Activate you for this GRANT. </p>
+						<p class="text-white" data-aos="fade-up">Once we reach the Total Number of Applicants as requested by our SPONSORS, we shall Carefully and Professionally go through all Applications and finally Select the very best of all Applications from our Applicants and quickly AWARD them the GRANTS according to the Amount Requested by them individually.</p>
 					</div>
 				</div>
 				<div class="mb-5">

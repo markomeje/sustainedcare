@@ -5,12 +5,12 @@
 			<div class="container">
 				<div class="row justify-content-center text-center pt-5">
 					<div class="col-12 col-md-12 col-lg-8 pt-5 mb-4">
-						<h1 class="text-white font-weight-bolder pt-5 mb-4" data-aos="fade-up">Apply for <span class="text-orange">SPECIAL FREE GRANT</span> for Your Small Business or Project<span class="text-orange d-inline">.</span></h1>
-						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get UP TO A MAXIMUM of <span class="text-orange"> NGN200,000 (Two Hundred Thousand Naira)</span> Grant for your choice of Business or Project.</p>
+						<h1 class="text-white font-weight-bolder pt-5 mb-4" data-aos="fade-up">Apply for <span class="text-forest">SPECIAL FREE GRANT</span> for Your Small Business or Project<span class="text-orange d-inline">.</span></h1>
+						<p class="text-white mb-4" data-aos="fade-up">Stand a chance to get UP TO A MAXIMUM of  <span class="text-forest">  NGN200,000 (Two Hundred Thousand Naira)</span> Grant for your choice of Business or Project.</p>
 						<div class="mb-4" data-aos="fade-up">
 							<a href="<?= DOMAIN; ?>/apply" class="btn btn-lg px-4 mr-4 orange-gradient text-white orange-shadow border-0 rounded-pill">Apply Now</a>
 						</div>
-						<p class="text-white p-3 rounded" data-aos="fade-up" style="background-color: rgba(0, 0, 0, 0.5);">We pay you NGN400 for Registering Anyone, <span class="text-orange">MINIMUM WITHDRAWAL</span> NGN2,000</p>
+						<p class="text-white p-3 rounded" data-aos="fade-up" style="background-color: rgba(0, 0, 0, 0.5);">We pay you NGN400 for Registering Anyone, <span class="text-forest">MINIMUM WITHDRAWAL</span> NGN2,000</p>
 					</div>
 				</div>
 			</div>
@@ -106,7 +106,7 @@
 					</div>
 				</div>
 				<div class="col-12 col-md-5 col-lg-7">
-					<h1 class="text-white" data-aos="fade-up"> We're a Non-profit Charity Foundation <span class="text-orange">with</span> Focus in Early Childhood Education.</h1>
+					<h1 class="text-white" data-aos="fade-up"> We're a Non-profit Charity Foundation <span class="text-forest">with</span> Focus in Early Childhood Education.</h1>
 					<p class="text-white" data-aos="fade-up">To ensure that no child is deprived of their educational rights and also ensuring a poverty free world.</p>
 					<div class="" data-aos="fade-up">
 						<a href="<?= DOMAIN; ?>/about" class="btn btn-lg border-0 orange-shadow rounded-pill px-4 border-0 text-white orange-gradient">Learn More</a>
@@ -139,7 +139,7 @@
 	<!-- <div class="action-section bg-black"></div> -->
 	<div class="contact-section bg-gray position-relative px-4">
 		<div class="container bg-gray light-shadow p-4 rounded">
-			<h1 class="text-shade mb-2">Send a Message Today<span class="text-orange">.</span></h1>
+			<h1 class="text-shade mb-2">Send a Message Today<span class="text-forest">.</span></h1>
 			<p class="text-muted">By joining forces together, we can make the world a better place.</p>
 			<a href="<?= DOMAIN; ?>/contact" class="btn mb-4 rounded-pill px-4 text-white border-0 orange-gradient orange-shadow">Contact Us</a>
 		</div>

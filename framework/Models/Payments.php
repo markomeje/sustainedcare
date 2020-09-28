@@ -189,4 +189,14 @@ class Payments extends Model {
         }
 	}
 
+	public function getAllApplicantsPaymentsStatus() {
+		try {
+			$result = Query::read(["applicant", "status"], $this->table, "", "", "", "", "", "");
+			return $result["fetchAll"];
+        } catch (\Exception $error) {
+        	Logger::log("GETING APPLICANT PAYEMNT STATUS ERROR", $error->getMessage(), __FILE__, __LINE__);
+        	return false;
+        }
+	}
+
 }
