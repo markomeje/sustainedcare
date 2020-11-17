@@ -6,7 +6,7 @@ use Gregwar\Captcha\CaptchaBuilder;
 use Application\Library\{Session, Cookie};
 
 
-class Controller extends Application {
+final class Controller extends Application {
 
     public $links = ["dashboard", "applicants", "payments", "slips", "withdrawals"];
     public $controller;

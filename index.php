@@ -1,13 +1,5 @@
 <?php
 
-/**
- * twice a day for resident 
- * Report bonus for xray only 10%
- * Using price list
- * 4 groups xray, scan. lab. ecg . . . 
- * 
- */
-
 
 date_default_timezone_set("Africa/Lagos");
 /**
