@@ -49,9 +49,9 @@
 								<li>
 									<a href="<?= DOMAIN; ?>/donate" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Donate</a>
 								</li>
-								<li>
+								<!-- <li>
 									<a href="<?= DOMAIN; ?>" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Apply</a>
-								</li>
+								</li> -->
 								<li>
 									<a href="<?= DOMAIN; ?>/login" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Login</a>
 								</li>

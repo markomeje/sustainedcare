@@ -17,9 +17,9 @@
 					<li class="ml-4">
 						<a href="<?= DOMAIN; ?>/donate" class="text-forest navbar-link">Donate</a>
 					</li>
-					<li class="ml-4">
+					<!-- <li class="ml-4">
 						<a href="<?= DOMAIN; ?>/apply" class="text-forest navbar-link">Apply</a>
-					</li>
+					</li> -->
 					<li class="ml-4">
 						<a href="<?= DOMAIN; ?>/gallery" class="text-forest navbar-link">Gallery</a>
 					</li>
