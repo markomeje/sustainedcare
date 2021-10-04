@@ -55,7 +55,6 @@
 				<div class="col-12 col-md-10 col-lg-8 mb-4">
 					<h1 class="text-shade text-center">Our Legalities</h1>
 					<p class="text-muted text-center" data-aos="fade-up">We are officially registered and certified by the Federal Government of Nigeria and also approved by Economic and Financial Crime Commission (EFCC) under EFCC/SCUML against every illegal financial activities also attached with this, are certifications on our registrations.</p>
-					<p class="text-muted">To know more about our legalities with the government email us at <a href="mailto:admin@sustainedcare.org">admin@sustainedcare.org</a></p>
 				</div>
 			</div>
 		</div>

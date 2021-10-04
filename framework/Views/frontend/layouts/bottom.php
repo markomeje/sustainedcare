@@ -49,9 +49,6 @@
 								<li>
 									<a href="<?= DOMAIN; ?>/donate" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Donate</a>
 								</li>
-								<!-- <li>
-									<a href="<?= DOMAIN; ?>" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Apply</a>
-								</li> -->
 								<li>
 									<a href="<?= DOMAIN; ?>/login" class="text-forest navbar-link bg-dark d-block p-3 mb-3 rounded">Login</a>
 								</li>
@@ -77,7 +74,7 @@
 								</li>
 								<h5 class="text-dark">Email</h5>
 								<li class="d-block p-3 border-forest mb-3 rounded">
-									<a href="mailto:contact@sustainedcare.org" class="text-muted">contact@sustainedcare.org</a>
+									<a href="mailto:contact@sustainedcare.com" class="text-muted">contact@sustainedcare.com</a>
 								</li>
 							</ul>
 						</div>
